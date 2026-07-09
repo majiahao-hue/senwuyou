@@ -7,11 +7,11 @@
 <meta name="description" content="森无忧 Senwuyou — 济民可信集团旗下南京恒生制药出品的低蛋白特医食品品牌。专为CKD肾病、PKU苯丙酮尿症患者研发，真米脱蛋白技术，0蛋白低磷低钾，9大品类覆盖三餐加餐。药企GMP标准，出口50+国家。">
 <meta name="keywords" content="森无忧,低蛋白大米,低蛋白米饭,肾病食品,CKD饮食,PKU食品,低蛋白主食,肾友食品,南京恒生制药,济民可信">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://majiahao-hue.github.io/senwuyou/">
+<link rel="canonical" href="https://senwuyou.com">
 <meta property="og:title" content="森无忧 Senwuyou · 低蛋白主食专家">
 <meta property="og:description" content="药企出品低蛋白主食，CKD肾病与PKU患者专用。真米脱蛋白，0蛋白低磷低钾，9大品类全覆盖。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://majiahao-hue.github.io/senwuyou/">
+<meta property="og:url" content="https://senwuyou.com">
 <meta property="og:image" content="https://img01.yzcdn.cn/upload_files/2025/11/06/Fi7v33JKOiMPZ6cG3wEd3EiA3h_U.jpg">
 <meta name="baidu-site-verification" content="待申请后填入">
 <title>森无忧 Senwuyou · 低蛋白主食专家 — CKD肾病/PKU患者专用低蛋白大米米饭</title>
@@ -20,34 +20,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0d1a12;
-  --ink-d:#07120c;
-  --paper:#f8f6f0;
-  --paper2:#e8e4d9;
-  --green:#1a5c3d;
-  --green-d:#0f2e1f;
-  --green-soft:#e4f0e9;
-  --gold:#c5a05c;
-  --muted:#7a756a;
-  --line:#d4d0c4;
-  --glass:rgba(255,255,255,.78);
-  --glass-d:rgba(13,26,18,.82);
+  --ink:#0f1914;
+  --ink-d:#060e0a;
+  --paper:#f9f7f2;
+  --paper2:#ede8dc;
+  --green:#166a42;
+  --green-d:#0c301f;
+  --green-soft:#e2efe7;
+  --gold:#c59b4a;
+  --gold-light:#f5eddb;
+  --amber:#b8862d;
+  --muted:#7a7263;
+  --line:#ddd6c5;
+  --glass:rgba(255,255,255,.82);
+  --glass-d:rgba(15,25,20,.85);
+  --shadow:0 8px 32px rgba(0,0,0,.06);
+  --shadow-l:0 20px 60px rgba(0,0,0,.1);
+  --radius:12px;
+  --radius-l:20px;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+img[loading="lazy"]{background:var(--paper2)}
 .en{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.02em}
 .en-caps{font-family:'Inter',sans-serif;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
 
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--green);z-index:3000;transition:width .12s linear}
 
 /* 导航 */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:background .5s,box-shadow .5s}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:background .5s,box-shadow .5s}
 .nav.scrolled{background:rgba(248,246,240,.82);backdrop-filter:saturate(180%) blur(20px);box-shadow:0 1px 0 var(--line)}
-.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer}
-.nav-logo img{height:38px}
-.nav-logo .w{font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
-.nav-logo .w span{font-family:'Playfair Display',serif;font-weight:700;color:var(--green);margin-left:8px;font-size:17px;letter-spacing:.08em}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}
+.nav-logo .logo-img{height:40px;width:auto;display:block;opacity:.92}
+.nav-logo .brand-group{display:flex;flex-direction:column;line-height:1.25}
+.nav-logo .brand-group .brand-name{font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.nav-logo .brand-group .brand-name span{font-family:'Playfair Display',serif;font-weight:700;color:var(--green);margin-left:6px;font-size:17px;letter-spacing:.08em;font-style:italic}
+.nav-logo .brand-group .brand-sub{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em}
 .nav-tabs{display:flex;gap:4px}
 .nav-tabs button{padding:8px 16px;border:none;background:none;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:color .3s;position:relative;line-height:1.5}
 .nav-tabs button .tab-en{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:.7;margin-top:2px}
@@ -76,11 +86,11 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 
 /* ═══ 背景图区块 ═══ */
 .sec-bg{position:relative;max-width:none;padding:0}
-.sec-bg .bg-img{position:absolute;inset:0;z-index:0;overflow:hidden}
+.sec-bg .bg-img{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--paper2)}
 .sec-bg .bg-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s cubic-bezier(.16,1,.3,1)}
 .sec-bg.reveal.in .bg-img img{transform:scale(1.05)}
-.sec-bg .bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,var(--paper) 0%,rgba(248,246,240,.92) 30%,rgba(248,246,240,.92) 70%,var(--paper) 100%)}
-.sec-bg.dark .bg-overlay{background:rgba(9,19,13,.84)}
+.sec-bg .bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,var(--paper) 0%,rgba(248,246,240,.88) 25%,rgba(248,246,240,.92) 50%,rgba(248,246,240,.88) 75%,var(--paper) 100%)}
+.sec-bg.dark .bg-overlay{background:linear-gradient(180deg,rgba(9,19,13,.92) 0%,rgba(9,19,13,.82) 50%,rgba(9,19,13,.92) 100%)}
 .sec-bg .inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:130px 48px}
 .sec-bg.dark h2,.sec-bg.dark h3,.sec-bg.dark .h2{color:#fff}
 .sec-bg.dark p{color:rgba(255,255,255,.72)}
@@ -88,14 +98,14 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 
 /* ═══ Hero ═══ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;will-change:transform}
+.hero-bg{position:absolute;inset:0;z-index:0;will-change:transform;background:var(--ink-d)}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,18,12,.94) 0%,rgba(7,18,12,.74) 42%,rgba(7,18,12,.22) 100%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,18,12,.92) 0%,rgba(7,18,12,.68) 40%,rgba(7,18,12,.35) 70%,rgba(7,18,12,.15) 100%)}
 .hero-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 48px;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#7fd6a8;margin-bottom:22px}
 .hero-eyebrow::before{content:"";width:24px;height:1px;background:#7fd6a8}
 .hero-eyebrow .en{font-size:12px;color:#5fd49a;opacity:.9;margin-left:8px}
-.hero h1{font-size:clamp(42px,7.5vw,108px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff}
+.hero h1{font-size:clamp(42px,7.5vw,108px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.15)}
 .hero h1 em{font-style:italic;color:#5fd49a}
 .hero-sub{font-size:clamp(15px,1.5vw,19px);color:rgba(255,255,255,.78);margin:30px 0 42px;line-height:1.85;max-width:540px}
 .hero-sub .en{display:block;margin-top:8px;font-size:13px;letter-spacing:.04em;opacity:.85;font-style:italic}
@@ -119,16 +129,17 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 
 /* 信任数字条 */
 .trust{max-width:1280px;margin:-1px auto 0;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2;background:var(--paper)}
-.trust-item{padding:54px 0;border-right:1px solid var(--line);text-align:center}
+.trust-item{padding:54px 0;border-right:1px solid var(--line);text-align:center;transition:background .3s}
+.trust-item:hover{background:var(--paper2)}
 .trust-item:last-child{border:0}
 .trust-item b{display:block;font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1;font-family:'Playfair Display',serif}
 .trust-item span{font-size:12px;color:var(--muted);margin-top:10px;display:block;letter-spacing:.05em}
 .trust-item .en{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
 
 /* 通用区块 */
-.sec{max-width:1280px;margin:0 auto;padding:130px 48px}
+.sec{max-width:1280px;margin:0 auto;padding:130px 48px;position:relative}
 .sec-head{margin-bottom:14px}
-.eyebrow.d{color:var(--green);letter-spacing:.3em;text-transform:uppercase;font-size:12px;font-weight:800;display:block;margin-bottom:18px}
+.eyebrow.d{color:var(--green);letter-spacing:.32em;text-transform:uppercase;font-size:11px;font-weight:800;display:block;margin-bottom:16px}
 .h2{font-size:clamp(32px,4.6vw,62px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.03em;line-height:1.06;color:var(--ink)}
 .h2 .en{display:block;font-size:.38em;letter-spacing:.22em;text-transform:uppercase;margin-top:12px;color:var(--green);opacity:.8;font-weight:700}
 .sec-sub{font-size:17px;color:var(--muted);margin-top:20px;max-width:620px;line-height:1.8}
@@ -137,7 +148,7 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 .feature{display:grid;grid-template-columns:1.1fr .9fr;gap:90px;align-items:center;margin-top:120px}
 .feature.rev{grid-template-columns:.9fr 1.1fr}
 .feature.rev .feature-img{order:2}
-.feature-img{border-radius:4px;overflow:hidden;aspect-ratio:1.15;background:var(--paper2)}
+.feature-img{border-radius:6px;overflow:hidden;aspect-ratio:1.15;background:var(--paper2);min-height:320px}
 .feature-img img{width:100%;height:100%;object-fit:cover}
 .feature-img .fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:120px;opacity:.18}
 .feature-txt .eyebrow-en{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:700;display:block;margin-bottom:14px}
@@ -165,7 +176,8 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 
 /* 价值主张 */
 .values{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px}
-.value{padding:0 44px;border-left:1px solid rgba(255,255,255,.14)}
+.value{padding:0 44px;border-left:1px solid rgba(255,255,255,.14);transition:transform .4s}
+.value:hover{transform:translateY(-6px)}
 .value:first-child{padding-left:0;border:0}
 .value .vi{font-size:34px;margin-bottom:24px}
 .value h4{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.01em;margin-bottom:14px;color:#fff}
@@ -173,7 +185,8 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 
 /* 技术 */
 .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:80px;align-items:start}
-.tech-block{margin-bottom:70px}
+.tech-block{margin-bottom:70px;transition:transform .4s}
+.tech-block:hover{transform:translateY(-4px)}
 .tech-block .tb-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--green);display:block;margin-bottom:14px}
 .tech-block h4{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px}
 .tech-block p{font-size:15px;color:var(--muted);line-height:1.9}
@@ -193,7 +206,7 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 .detail-img{border-radius:8px;overflow:hidden;aspect-ratio:.95;background:var(--paper2);position:sticky;top:96px;box-shadow:0 30px 80px rgba(0,0,0,.12)}
 .detail-img img{width:100%;height:100%;object-fit:cover}
 .detail-img .df{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:140px;opacity:.18}
-.detail-card{background:var(--glass);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.6);border-radius:16px;padding:42px;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.detail-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.5);border-radius:var(--radius-l);padding:42px;box-shadow:var(--shadow-l)}
 .detail-info .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
 .detail-info .tags span{padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;background:var(--green-soft);color:var(--green)}
 .detail-info h1{font-size:clamp(30px,4vw,52px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.03em;line-height:1.08;color:var(--ink)}
@@ -291,18 +304,19 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 .col-us td:first-child{font-weight:700;color:var(--green)}
 
 /* 收尾 */
-.closing{text-align:center;padding:40px 48px 130px;max-width:900px;margin:0 auto}
+.closing{text-align:center;padding:100px 48px 120px;max-width:900px;margin:0 auto;position:relative}
+.closing::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--green);opacity:.3;border-radius:2px}
 .closing h2{font-size:clamp(30px,4vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:var(--ink);margin-bottom:22px;font-family:'Playfair Display','Noto Serif SC',serif}
 .closing p{color:var(--muted);font-size:16px;margin-bottom:36px}
 
 /* 全球出口条 */
-.global-bar{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;padding:40px 24px;background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.global-item{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:14px}
-.global-item b{font-size:24px;font-weight:800;color:var(--ink);font-family:'Playfair Display',serif}
+.global-bar{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;padding:48px 24px;background:linear-gradient(135deg,var(--green-d),var(--green));border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.global-item{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.7);font-size:14px}
+.global-item b{font-size:24px;font-weight:800;color:#fff;font-family:'Playfair Display',serif;text-shadow:0 2px 8px rgba(0,0,0,.2)}
 
 /* 底部 */
 .btm{max-width:1200px;margin:0 auto;padding:0 48px 90px}
-.btm-bar{background:var(--paper2);border-radius:8px;padding:56px 56px;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}
+.btm-bar{background:linear-gradient(135deg,var(--paper2),var(--paper));border-radius:var(--radius-l);padding:56px 56px;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 4px 24px rgba(0,0,0,.04)}
 .btm-bar h3{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.25;font-family:'Playfair Display','Noto Serif SC',serif}
 .btm-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
 .btm-btns button{padding:14px 30px;border-radius:100px;border:1px solid var(--ink);background:none;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;transition:.3s}
@@ -319,9 +333,11 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 .lang-switch button.active{background:var(--ink);color:#fff}
 
 @media(max-width:900px){
-  .nav{padding:0 14px;height:56px}
-  .nav-logo .w{font-size:16px}
-  .nav-logo .w span{font-size:12px}
+  .nav{padding:0 14px;height:60px}
+  .nav-logo .brand-name{font-size:18px}
+  .nav-logo .brand-name span{font-size:13px}
+  .nav-logo .brand-sub{font-size:9px}
+  .nav-logo .logo-img{height:28px}
   .nav-tabs button{padding:5px 8px;font-size:10px;gap:0}
   .nav-tabs button .tab-en{display:none}
   .hero-inner{grid-template-columns:1fr;gap:48px;padding:0 22px}
@@ -409,8 +425,8 @@ body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-s
 <div class="progress" id="prog"></div>
 
 <nav class="nav" id="nav"><div class="nav-logo" onclick="navigate('home')">
-<img src="https://img30.360buyimg.com/popshop/jfs/t1/23816/9/17957/3769/62be5dd7E943ad000/555370770519dfee.jpg" alt="森无忧" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-<span class="w">森无忧<span>Senwuyou</span></span></div>
+<img class="logo-img" src="https://www.hencer.com/images/logo_title.png" alt="恒生制药" onerror="this.style.display='none'">
+<div class="brand-group"><span class="brand-name">森无忧<span>Senwuyou</span></span><span class="brand-sub">南京恒生制药 · 济民可信集团</span></div></div>
 <div class="nav-tabs">
   <button class="on" onclick="navigate('home')">产品<span class="tab-en">Products</span></button>
   <button onclick="navigate('pageBrand')">品牌<span class="tab-en">Brand</span></button>
