@@ -160,6 +160,9 @@ a{color:inherit;text-decoration:none}
 .hero-float .fl{font-size:11px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase}
 .hero-float .fv{font-size:clamp(22px,2.4vw,32px);font-weight:700;color:#fff;letter-spacing:-.02em;grid-column:2;grid-row:1/3}
 .hero-float .fd{font-size:12px;color:rgba(255,255,255,.45);grid-column:1}
+.hero-img{position:relative;border-radius:var(--radius-l);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.35);aspect-ratio:4/3;max-width:440px;justify-self:end;width:100%}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:860px){.hero-img{max-width:320px;justify-self:center}}
 .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.2em}
 .scroll-hint .line{width:1px;height:32px;background:rgba(255,255,255,.3);animation:scrollPulse 2s ease-in-out infinite}
 @keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:.8;transform:scaleY(1.4)}}
@@ -554,6 +557,15 @@ table tbody tr:hover{background:var(--green-soft)}
 .meal-card .mc-stage{display:inline-block;font-size:11px;font-weight:700;color:var(--green);background:var(--green-soft);padding:4px 12px;border-radius:100px;margin-bottom:14px}
 .sec-bg.dark .meal-card .mc-stage{background:rgba(11,94,62,.2)}
 .meal-card h4{font-size:16px;font-weight:700;margin-bottom:14px}
+.meal-img{width:100%;height:140px;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;background:var(--paper-card)}
+.meal-img img{width:100%;height:100%;object-fit:cover}
+.meal-info{padding:16px 20px 20px}
+.meal-info p{font-size:13px;color:var(--muted);line-height:1.7}
+.recipe-img{width:100%;height:140px;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;background:var(--paper-card)}
+.recipe-img img{width:100%;height:100%;object-fit:cover}
+.recipe-info{padding:16px 20px 12px}
+.recipe-info p{font-size:13px;color:var(--muted);line-height:1.7}
+.recipe-tag{display:inline-block;font-size:10px;padding:3px 10px;border-radius:100px;background:var(--green-soft);color:var(--green);font-weight:600;margin:8px 0 0}
 .meal-row{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;padding:8px 0;border-bottom:1px dashed var(--line-l);font-size:13px;align-items:start}
 .meal-row:last-child{border-bottom:none}
 .meal-row .mr-time{font-weight:600;color:var(--green);white-space:nowrap;font-size:12px}
@@ -956,10 +968,12 @@ document.getElementById('app').innerHTML=`
         <span class="link-arrow" onclick="navigate('pageAcademy')">${_T('走进营养学院','Nutrition Academy')} →</span>
       </div>
     </div>
-    <div class="hero-floats">
-      <div class="hero-float" style="margin-right:40px"><div class="fl">${_T('营养理念','Nutrition')}</div><div class="fv">均衡</div><div class="fd">${_T('科学膳食','Scientific Diet')}</div></div>
-      <div class="hero-float" style="margin-right:0"><div class="fl">${_T('产品线','Products')}</div><div class="fv">10+</div><div class="fd">${_T('三餐+加餐','Meals+Snacks')}</div></div>
-      <div class="hero-float" style="margin-right:70px"><div class="fl">${_T('核心理念','Mission')}</div><div class="fv">无忧</div><div class="fd">${_T('国民营养计划2030','Nutrition 2030')}</div></div>
+    <div class="hero-img reveal">
+      <img src="https://images.unsplash.com/photo-1581093458791-9d5ee2b5df13?w=800&q=80&auto=format&fit=crop" alt="${_T('森无忧营养科学院产业园区','Senwuyou Academy Campus')}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+      <div class="hero-floats" style="position:absolute;bottom:12px;left:12px;right:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:5px 12px;border-radius:100px;backdrop-filter:blur(4px)">${_T('科研级生产线','Research Facility')}</span>
+        <span style="background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:5px 12px;border-radius:100px;backdrop-filter:blur(4px)">${_T('30年深耕营养','30 Years Research')}</span>
+      </div>
     </div>
   </div>
   <div class="scroll-hint"><span class="line"></span>SCROLL</div>
@@ -1297,6 +1311,17 @@ ${bgSection(BG.wheat,false,`
   <div class="story-card" onclick="navigate('academyTopic','minerals')"><div class="story-icon">💎</div><h3>${_T('矿物质与微量元素','Minerals & Trace Elements')}</h3><p>${_T('钙、铁、锌、磷、钾等矿物质的营养学意义及日常摄入建议。','Significance of calcium, iron, zinc, phosphorus, potassium and daily intake recommendations.')}</p></div>
   <div class="story-card" onclick="navigate('academyTopic','vitamin')"><div class="story-icon">🍊</div><h3>${_T('维生素全攻略','Vitamin Guide')}</h3><p>${_T('脂溶性与水溶性维生素的功能、食物来源及科学补充原则。','Functions, food sources, and supplementation principles of vitamins.')}</p></div>
   <div class="story-card" onclick="navigate('academyTopic','diet2030')"><div class="story-icon">🎯</div><h3>${_T('国民营养计划2030','National Nutrition Plan 2030')}</h3><p>${_T('解读国家营养政策，了解全民营养目标及健康膳食指南。','Understanding national nutrition policies and healthy dietary guidelines.')}</p></div>
+  <div class="story-card" onclick="navigate('academyTopic','gut')"><div class="story-icon">🦠</div><h3>${_T('肠道微生态与健康','Gut Microbiome & Health')}</h3><p>${_T('探索肠道菌群的奥秘，了解益生菌、益生元对消化和免疫的影响。','Explore gut microbiome secrets and how probiotics & prebiotics affect digestion and immunity.')}</p></div>
+  <div class="story-card" onclick="navigate('academyTopic','water')"><div class="story-icon">💧</div><h3>${_T('科学饮水指南','Hydration Science')}</h3><p>${_T('不同年龄段和活动量下的饮水建议，电解质平衡与健康饮水习惯。','Water intake recommendations for different ages and activity levels, electrolyte balance tips.')}</p></div>
+  <div class="story-card" onclick="navigate('academyTopic','antioxidant')"><div class="story-icon">🫐</div><h3>${_T('抗氧化与抗衰老营养','Antioxidants & Anti-aging')}</h3><p>${_T('了解自由基与衰老的关系，认识天然抗氧化食物及其科学食用方法。','Free radicals, aging, and natural antioxidant foods — science-backed eating strategies.')}</p></div>
+</div>
+
+<div class="meal-grid reveal" style="max-width:var(--max-w);margin:clamp(30px,4vw,50px) auto;padding:0 clamp(20px,4vw,48px)">
+  <div class="sec-head"><span class="eyebrow d">${_T('健康主食','Healthy Staples')}</span><h2 class="h2" style="font-size:clamp(22px,2.5vw,32px)">${_T('森无忧主食科学搭配','Smart Pairing with Senwuyou')}<span class="en">Staple Foods Guide</span></h2></div>
+  <div class="meal-card"><div class="meal-img" style="background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:48px">🍚</div><div class="meal-info"><h4>${_T('低蛋白米饭','Low-Protein Rice')}</h4><p>${_T('开袋即食，180g定量包装。每100g含0g蛋白质，适合作为主食基底。可搭配蔬菜、肉类一起食用，也可直接炒饭。','Ready-to-eat 180g pack. 0g protein per 100g. Perfect as a staple base. Pair with vegetables and protein, or stir-fry.')}</p></div></div>
+  <div class="meal-card"><div class="meal-img" style="background:#fff3e0;display:flex;align-items:center;justify-content:center;font-size:48px">🌾</div><div class="meal-info"><h4>${_T('低蛋白大米','Low-Protein Rice Grain')}</h4><p>${_T('无需淘洗，米水比例1:1.1~1:1.3。保温焖15-20分钟口感最佳。可做饭团、寿司、炒饭，家庭煮饭一锅搞定。','No rinsing needed. Water ratio 1:1.1-1:1.3. Simmer 15-20 min for best texture. Make onigiri, sushi, or fried rice.')}</p></div></div>
+  <div class="meal-card"><div class="meal-img" style="background:#f3e5f5;display:flex;align-items:center;justify-content:center;font-size:48px">🍜</div><div class="meal-info"><h4>${_T('低蛋白面粉/米粉','Low-Protein Flour & Noodles')}</h4><p>${_T('面粉可做饺子、面条、馄饨皮，开水烫面揉团。米粉冷水泡发后汤粉、拌粉、炒粉皆可。','Flour for dumplings, noodles, wontons. Rice noodles for soup, cold mix, or stir-fry after soaking.')}</p></div></div>
+  <div class="meal-card"><div class="meal-img" style="background:#e0f7fa;display:flex;align-items:center;justify-content:center;font-size:48px">🍪</div><div class="meal-info"><h4>${_T('低蛋白曲奇&零食','Low-Protein Cookies & Snacks')}</h4><p>${_T('曲奇三种口味（原味/蔓越莓/奇亚籽），独立10g小包装。谷纤趣零食可可与海苔风味，非油炸高膳食纤维。','Cookies in 3 flavors (original/cranberry/chia), 10g packs. Snack crisps in cocoa & seaweed, non-fried, high fiber.')}</p></div></div>
 </div>
 
 ${bgSection(BG.doctor,true,`
@@ -1305,8 +1330,21 @@ ${bgSection(BG.doctor,true,`
     <div class="myth-card"><h4>${_T('早餐真的是一天中最重要的一餐吗？','Is breakfast really the most important meal?')}</h4><p>${_T('早餐为身体补充夜间消耗的能量。更重要的是全天营养均衡分配，找到适合自己的节奏。','Breakfast replenishes energy after overnight fasting. Balanced nutrition throughout the day matters most.')}</p></div>
     <div class="myth-card"><h4>${_T('低脂食品一定更健康吗？','Are low-fat foods always healthier?')}</h4><p>${_T('许多低脂食品为弥补口感添加了更多糖。脂肪是必需营养素，关键在于选择优质脂肪和控制适量。','Many low-fat foods add extra sugar. Fat is essential; choose quality fats in moderation.')}</p></div>
     <div class="myth-card"><h4>${_T('每天必须喝8杯水吗？','Must we drink 8 glasses daily?')}</h4><p>${_T('8杯水是参考值。实际需水量因人而异，取决于体重、活动量和气候。食物中的水分也计入摄入量。','Actual water needs vary by weight, activity and climate. Food moisture also counts.')}</p></div>
+    <div class="myth-card"><h4>${_T('晚餐吃得越少越好？','Is less dinner always better?')}</h4><p>${_T('晚餐过少可能导致夜间饥饿、影响睡眠。关键在于清淡适量，睡前2-3小时完成进食。','Too little dinner may cause nighttime hunger. The key is light and moderate portions, finishing 2-3h before bed.')}</p></div>
+    <div class="myth-card"><h4>${_T('有机食品营养价值更高？','Are organic foods more nutritious?')}</h4><p>${_T('有机食品与常规食品在核心营养素上差异不大。更重要的是食物多样化和均衡搭配。','Organic and conventional foods have similar core nutrients. Food diversity and balance matter more.')}</p></div>
+    <div class="myth-card"><h4>${_T('运动后必须立刻补充蛋白质？','Must protein be taken immediately after exercise?')}</h4><p>${_T('运动后1-2小时内补充蛋白质即可，不必争分夺秒。全天蛋白质总摄入量比补充时机更重要。','Protein can be consumed within 1-2h post-exercise. Total daily protein intake matters more than timing.')}</p></div>
   </div>
 `)}
+
+<div class="recipe-grid reveal" style="max-width:var(--max-w);margin:clamp(30px,4vw,50px) auto;padding:0 clamp(20px,4vw,48px)">
+  <div class="sec-head"><span class="eyebrow d">${_T('营养食谱','Healthy Recipes')}</span><h2 class="h2" style="font-size:clamp(22px,2.5vw,32px)">${_T('森无忧创意料理','Creative Cooking with Senwuyou')}<span class="en">Recipes</span></h2></div>
+  <div class="recipe-card"><div class="recipe-img" style="background:linear-gradient(135deg,#fff8e1,#ffe0b2);display:flex;align-items:center;justify-content:center;font-size:56px">🍙</div><div class="recipe-info"><h4>${_T('海苔蔬菜饭团','Seaweed Veggie Onigiri')}</h4><p>${_T('森无忧米饭晾至温热，拌入胡萝卜碎、黄瓜丁，捏成三角形，裹上海苔。营养均衡，便当首选。','Cool rice to warm, mix with carrot and cucumber, shape into triangles, wrap with seaweed. Perfect bento choice.')}</p><span class="recipe-tag">${_T('准备5分钟','5 min prep')}</span></div></div>
+  <div class="recipe-card"><div class="recipe-img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;font-size:56px">🍳</div><div class="recipe-info"><h4>${_T('蔬菜蛋炒饭','Veggie Egg Fried Rice')}</h4><p>${_T('森无忧米饭入热锅，加蛋液快速翻炒，加入青豆、玉米粒、胡萝卜丁。色香味俱全的快手午餐。','Heat rice in wok, add beaten egg, stir-fry quickly. Add peas, corn, diced carrot. A colorful quick lunch.')}</p><span class="recipe-tag">${_T('10分钟','10 min')}</span></div></div>
+  <div class="recipe-card"><div class="recipe-img" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);display:flex;align-items:center;justify-content:center;font-size:56px">🥟</div><div class="recipe-info"><h4>${_T('水晶蔬菜饺','Crystal Veggie Dumplings')}</h4><p>${_T('森无忧面粉开水烫面揉团，擀薄皮包入香菇青菜馅，上锅蒸8分钟。皮薄馅大，晶莹剔透。','Hot-water dough with Senwuyou flour, roll thin, fill with mushroom & greens, steam 8 min. Thin skin, generous filling.')}</p><span class="recipe-tag">${_T('20分钟','20 min')}</span></div></div>
+  <div class="recipe-card"><div class="recipe-img" style="background:linear-gradient(135deg,#fff9c4,#fff176);display:flex;align-items:center;justify-content:center;font-size:56px">🍲</div><div class="recipe-info"><h4>${_T('南瓜小米糊','Pumpkin Millet Porridge')}</h4><p>${_T('森无忧低蛋白大米加南瓜块、小米一同熬煮至软烂。温暖养胃，秋冬早餐佳品。','Simmer Senwuyou rice with pumpkin and millet until soft. Warming and stomach-friendly, perfect autumn breakfast.')}</p><span class="recipe-tag">${_T('30分钟','30 min')}</span></div></div>
+  <div class="recipe-card"><div class="recipe-img" style="background:linear-gradient(135deg,#e1f5fe,#b3e5fc);display:flex;align-items:center;justify-content:center;font-size:56px">🥘</div><div class="recipe-info"><h4>${_T('番茄菌菇汤粉','Tomato Mushroom Rice Noodles')}</h4><p>${_T('森无忧米粉温水泡发，番茄炒出汁加水煮汤，放入泡发好的米粉和菌菇煮2分钟。鲜美暖身。','Soak noodles in warm water. Stir-fry tomatoes, add water for broth, add noodles and mushrooms. Simmer 2 min.')}</p><span class="recipe-tag">${_T('15分钟','15 min')}</span></div></div>
+  <div class="recipe-card"><div class="recipe-img" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center;font-size:56px">🍰</div><div class="recipe-info"><h4>${_T('紫薯米糕','Purple Yam Rice Cake')}</h4><p>${_T('森无忧馒头粉加紫薯泥、酵母发酵，模具蒸制15分钟。天然紫色，松软香甜，全家都爱。','Mix Senwuyou bun flour with purple yam puree and yeast, steam in mold 15 min. Natural purple, soft and sweet.')}</p><span class="recipe-tag">${_T('40分钟','40 min')}</span></div></div>
+</div>
 
 <div class="closing reveal" style="padding:clamp(40px,5vw,60px) clamp(20px,4vw,48px)"><h2>${_T('科学营养，从每一餐开始。','Scientific nutrition starts with every meal.')}</h2><p>${_T('森无忧营养科学院持续更新营养知识，助力健康中国。','Senwuyou Academy continuously updates nutrition knowledge for a healthier China.')}</p></div>`;
 document.getElementById('csSection').classList.remove('hidden')}
@@ -1319,6 +1357,9 @@ const ACADEMY_TOPICS={
   minerals:{title:'矿物质与微量元素的营养学意义',sections:[{h:'常量元素——钙',p:'钙是骨骼和牙齿的主要成分，参与神经传导和肌肉收缩。成人每日推荐800-1000mg。奶制品、豆制品、深绿色蔬菜是优质来源。'},{h:'常量元素——磷与钾',p:'磷与钙共同构建骨骼，参与能量代谢。钾维持细胞内渗透压。均衡膳食通常能满足需求，特殊健康状态需遵医嘱控制。'},{h:'微量元素——铁与锌',p:'铁是血红蛋白核心成分，缺铁可导致贫血。红肉、动物肝脏、菠菜含铁丰富。锌参与免疫功能，贝壳类海产、瘦肉是优质来源。'},{h:'微量元素——硒与碘',p:'硒是抗氧化酶重要成分。碘是甲状腺激素必需元素。海产品、坚果、加碘盐是主要来源。均衡膳食一般可满足需要。'}]},
   vitamin:{title:'维生素全攻略',sections:[{h:'脂溶性维生素（A、D、E、K）',p:'维生素A维护视力与免疫；D促进钙吸收，可通过日晒合成；E是抗氧化剂；K参与凝血。脂溶性维生素可在体内储存，过量可能蓄积。'},{h:'水溶性维生素（B族、C）',p:'B族维生素参与能量代谢；维生素C是抗氧化剂，促进铁吸收和胶原蛋白合成。不易在体内储存，需每日补充。新鲜蔬果是主要来源。'},{h:'维生素缺乏与补充',p:'长期不均衡饮食可能导致缺乏。优先从食物获取，补充剂应在医生指导下使用，不建议盲目大剂量补充。'},{h:'烹饪对维生素的影响',p:'水溶性维生素易在清洗和煮制中流失。建议急火快炒、蒸制。蔬菜现切现做，减少营养素损失。'}]},
   diet2030:{title:'国民营养计划2030解读',sections:[{h:'计划背景与目标',p:'国务院办公厅2017年印发《国民营养计划（2017-2030年）》，旨在提高国民营养健康水平，到2030年居民营养状况显著改善。'},{h:'七大实施策略',p:'完善营养政策标准体系、加强营养能力建设、强化营养监测、发展营养健康产业、普及营养知识、推动数据共享、开展生命早期1000天行动等。'},{h:'与日常饮食相关的目标',p:'人均每日食盐摄入量降低20%、膳食脂肪供能比控制在30%以内、5岁以下儿童生长迟缓率降至5%以下。'},{h:'我们能做什么',p:'学习膳食指南、优化家庭餐桌、关注食品营养标签、传播科学营养理念。森无忧以实际行动助力国民营养计划。'}]},
+  gut:{title:'肠道微生态与健康',sections:[{h:'肠道菌群概览',p:'人体肠道内栖息着约100万亿个微生物，包括细菌、真菌、病毒等，总重量约1-2公斤。它们参与食物消化、维生素合成、免疫调节等关键生理过程。'},{h:'益生菌的作用',p:'益生菌是活的微生物，适量摄入可改善肠道菌群平衡。主要作用包括促进消化吸收、抑制有害菌、增强肠道屏障功能、调节免疫。森无忧复合益生菌含多联菌株，每条约300亿CFU。'},{h:'益生元与后生元',p:'益生元是益生菌的"食物"，如低聚果糖、菊粉等，促进有益菌生长。后生元是益生菌代谢产物，也具有健康益处。膳食纤维是最天然的益生元。'},{h:'维护肠道健康的日常建议',p:'多吃富含膳食纤维的食物、适量补充益生菌、减少精制糖和加工食品、规律作息、适度运动、避免滥用抗生素。肠道健康是全身健康的基础。'}]},
+  water:{title:'科学饮水指南',sections:[{h:'人体水分平衡',p:'成年人体内水分约占体重的60%。每天通过呼吸、排汗、排尿等途径流失约2-2.5升水分，需要及时补充以维持正常生理功能。'},{h:'每日饮水建议',p:'中国营养学会建议成人每日饮水1500-1700毫升（约7-8杯）。运动量大、高温环境或出汗多时应适当增加。食物中的水分（汤、蔬果）也计入总量。'},{h:'饮水时机与方式',p:'少量多次优于一次性大量饮用。晨起一杯温水有助于唤醒身体。餐前适量饮水有助于消化。运动前后注意补水，避免脱水和水中毒。'},{h:'不同人群的饮水注意事项',p:'老年人渴觉减退，应定时饮水。儿童活泼好动，需频繁补充。孕期和哺乳期女性需水量增加。某些健康状况需遵医嘱控制饮水。'}]},
+  antioxidant:{title:'抗氧化与抗衰老营养',sections:[{h:'自由基与氧化应激',p:'自由基是细胞代谢的副产物，过量会攻击细胞膜、DNA和蛋白质，加速衰老。环境污染、紫外线、吸烟、压力等会加剧自由基产生。'},{h:'天然抗氧化营养素',p:'维生素C（柑橘、猕猴桃）、维生素E（坚果、植物油）、β-胡萝卜素（胡萝卜、南瓜）、花青素（蓝莓、紫薯）、番茄红素（番茄、西瓜）是主要抗氧化物质。'},{h:'抗氧化食物的科学选择',p:'颜色越深的蔬果通常抗氧化能力越强。建议每天摄入多种颜色的蔬果（彩虹饮食法），如红色番茄、橙色胡萝卜、绿色菠菜、紫色蓝莓。'},{h:'生活方式与抗衰老',p:'均衡膳食是基础，配合规律运动、充足睡眠、防晒、戒烟限酒。营养素补充剂不能替代健康饮食。森无忧全谷物主食是均衡膳食的重要组成。'}]},
 };
 function _academyTopic(topic){setTab(2);const d=ACADEMY_TOPICS[topic];if(!d){navigate('pageAcademy');return}
 document.getElementById('app').innerHTML=`<div class="page-bg">${imgOrFallback(BG.wheat,'','pb-fb')}</div><div class="detail" style="max-width:800px"><div class="detail-card" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-l)"><div class='dtl-hero reveal' style='background:linear-gradient(135deg,#0b5e3e,#073b27);border-radius:var(--radius-xl);padding:clamp(28px,3.5vw,42px);margin-bottom:24px;color:#fff'><div class='hero-deco'>📚</div><div class='tags' style='margin-bottom:10px'><span style='background:rgba(255,255,255,.15);color:#fff'>${_T('营养学院','Academy')}</span></div><h2 style='font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.2'>${d.title}</h2></div>${d.sections.map((s,i)=>`<div class='dtl-card reveal' style='background:#fff;border-radius:var(--radius-l);padding:28px;box-shadow:var(--shadow-card);border:1px solid var(--line-l)'><div style='display:flex;align-items:center;gap:14px;margin-bottom:14px'><div class='card-num'><span>${String(i+1).padStart(2,'0')}</span></div><h3 style='font-size:16px;font-weight:700;color:var(--ink);line-height:1.3'>${s.h}</h3></div><p style='font-size:14px;color:var(--muted);line-height:1.85'>${s.p}</p></div>`).join('')}<button class="nutri-cta" onclick="navigate('pageAcademy')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> ${_T('返回营养学院','Back to Academy')}</button></div></div>`;
