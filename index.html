@@ -658,7 +658,7 @@ table tbody tr:hover{background:var(--green-soft)}
 .cook-card p{font-size:12px;color:var(--muted);line-height:1.5}
 .sec-bg.dark .cook-card p{color:rgba(255,255,255,.6)}
 
-/* ═══ QA CARDS (健康顾问问答) ═══ */
+/* ═══ QA CARDS (有需要的人群问答) ═══ */
 .qa-grid{display:grid;gap:16px;max-width:760px;margin:0 auto}
 .qa-card{background:#fff;border-radius:var(--radius-l);padding:clamp(20px,2vw,28px);border:1px solid var(--line-l);box-shadow:var(--shadow-card)}
 .sec-bg.dark .qa-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
@@ -802,6 +802,7 @@ const IMG={
   cookie:'images/7-cookie.jpg',
   snack:'images/8-snack.png',
   zongzi:'images/9-zongzi.jpg',
+  probiotic:'images/1-rice.jpg',
 };
 const BG={
   riceField:'https://images.unsplash.com/photo-1536617621572-1d5f1f626810?w=1920&q=80&auto=format&fit=crop',
@@ -818,14 +819,15 @@ const IC=['🍚','🌾','🌽','🫓','🥟','🍜','🍪','🥨','🫔'];
 
 const P=[
 {id:1,img:IMG.rice,name:'森无忧低蛋白米饭',en:'Low Protein Ready Rice',tags:['180g','8个月','0g蛋白'],ings:'大米、饮用水、DL-苹果酸、酿造食醋',w:'180g',shelf:'8个月',store:'0℃以上避光避高温',sc:'Q/NJHS 0001S',method:['微波撕口高火2分钟','沸水未拆封浸泡12分钟','开袋直接炒饭'],craft:'真米生物脱蛋白+日式UHT高温灭菌，三层氮气高阻隔包装，0防腐剂，加热即食。',tech:'真米酶解脱蛋白；UHT灭菌；氮气封装',n:{protein:'0g',na:'0mg',k:'0mg',p:'18mg',energy:'671kJ'},advantage:'三餐可提供48%日需热量，13.8元/盒',ni:['🥩','🧂','🍌','🦴','⚡']},
-{id:2,img:IMG.grain,name:'森无忧低蛋白大米',en:'Low Protein Rice',tags:['1kg','18个月','0g蛋白'],ings:'纯大米',w:'1kg',shelf:'18个月',store:'常温、冷藏均可',sc:'Q/NJHS 0002S-2020',method:['无需淘洗，米水1:1.1~1:1.3','保温焖15-20分钟口感最佳'],craft:'科研级生产线，真米酶解脱蛋白，Phe仅0.014%为普通大米1/20。',tech:'完整大米生物酶解，去除90%以上蛋白与Phe',n:{protein:'0g',na:'19mg',k:'1.38mg',p:'34.8mg'},advantage:'药企生产线，CKD+PKU双适配',ni:['🥩','🧂','🍌','🦴']},
+{id:2,img:IMG.grain,name:'森无忧低蛋白大米',en:'Low Protein Rice',tags:['1kg','18个月','0g蛋白'],ings:'纯大米',w:'1kg',shelf:'18个月',store:'常温、冷藏均可',sc:'Q/NJHS 0002S-2020',method:['无需淘洗，米水1:1.1~1:1.3','保温焖15-20分钟口感最佳'],craft:'科研级生产线，真米酶解脱蛋白，Phe仅0.014%为普通大米1/20。',tech:'完整大米生物酶解，去除90%以上蛋白与Phe',n:{protein:'0g',na:'19mg',k:'1.38mg',p:'34.8mg'},advantage:'药企生产线，营养适配双适配',ni:['🥩','🧂','🍌','🦴']},
 {id:3,img:IMG.granule,name:'森无忧低蛋白挤压淀粉颗粒',en:'Low Protein Extruded Starch',tags:['1kg','18个月','0g蛋白'],ings:'小麦淀粉',w:'1kg',shelf:'18个月',store:'干燥通风，开封密封',sc:'',method:['无需浸泡，米水1:1.3~1:1.5','保温焖15-20分钟'],craft:'瑞士布勒热挤压设备，淀粉充分熟化无异味，单餐成本2-3元。',tech:'瑞士布勒热挤压，熟化无异味',n:{protein:'0g',na:'20mg',k:'35mg',p:'44mg'},advantage:'一餐2-3元，高性价比',ni:['🥩','🧂','🍌','🦴']},
 {id:4,img:IMG.flour,name:'森无忧低蛋白面粉',en:'Low Protein Flour',tags:['500g','18个月','0g蛋白'],ings:'小麦淀粉、玉米淀粉、玉米预糊化淀粉、车前子壳粉、南瓜粉',w:'500g',shelf:'18个月',store:'阴凉、干燥、通风处',sc:'',method:['100g粉+45-50g开水搅拌成絮状','降温至40℃揉团，可做面条饺子'],craft:'无食用胶复配配方，添加膳食纤维改善便秘。',tech:'无胶配方，膳食纤维助肠道',n:{protein:'0g',na:'20mg',k:'35mg',p:'44mg'},advantage:'无食用胶，可做面条饺子馄饨皮',ni:['🥩','🧂','🍌','🦴']},
 {id:5,img:IMG.bun,name:'森无忧低蛋白馒头粉',en:'Low Protein Bun Flour',tags:['500g','18个月','0g蛋白'],ings:'小麦淀粉、木薯预糊化淀粉、玉米预糊化淀粉、低聚果糖、燕麦膳食纤维、真菌淀粉酶',w:'500g',shelf:'18个月',store:'阴凉干燥通风',sc:'',method:['500g粉+泡打粉5g+酵母5g+糖5g+醋5g','两次醒发后蒸10分钟焖5分钟'],craft:'专用发酵酶配方，成品松软易操作。',tech:'发酵酶+两次醒发，成品松软',n:{protein:'0g',na:'19mg',k:'39mg',p:'75mg'},advantage:'新手友好，自制馒头花卷',ni:['🥩','🧂','🍌','🦴']},
 {id:6,img:IMG.noodle,name:'森无忧低蛋白米粉',en:'Low Protein Rice Noodles',tags:['750g/125g','12个月','0g蛋白'],ings:'低蛋白大米、玉米淀粉、水',w:'750g/125g',shelf:'12个月',store:'阴凉干燥避光',sc:'',method:['冷水泡6-8h/40-50℃温水泡45分钟','煮熟冲凉，可汤粉拌粉炒粉'],craft:'真米脱蛋白原料，非纯淀粉合成，口感顺滑。',tech:'脱蛋白真米原料，还原传统米粉口感',n:{protein:'0g',na:'9mg',k:'未标注',p:'未标注'},advantage:'钠仅9mg，三吃法百搭',ni:['🥩','🧂']},
-{id:7,img:IMG.cookie,name:'森无忧低蛋白轻松曲奇',en:'Low Protein Cookies',tags:['10g×10包','9个月','1.7~2.7g蛋白'],ings:'安佳黄油、MCT、原味/蔓越莓/奇亚籽',w:'单包10g，整盒100g',shelf:'9个月',store:'阴凉干燥避光',sc:'',method:['开袋即食','独立小包装，精确控量'],craft:'0色素0防腐剂，安佳黄油+MCT快速供能，钠仅9mg。',tech:'0添加，MCT+安佳黄油',n:{protein:'1.7~2.7g',na:'9mg',k:'≤20mg',p:'≤15mg'},advantage:'钠比普通曲奇低98%，健康顾问安全加餐',ni:['🥩','🧂','🍌','🦴']},
-{id:8,img:IMG.snack,name:'森无忧谷纤趣挤压淀粉零食',en:'Low Protein Snacks',tags:['160g/袋','120天','1g蛋白'],ings:'可可、海苔两种口味',w:'160g/袋',shelf:'120天',store:'阴凉干燥避光',sc:'',method:['开袋即食','可搭配酸奶沙拉'],craft:'瑞士布勒热挤压，非油炸，低糖低脂高膳食纤维。',tech:'非油炸，低糖低脂高纤维',n:{protein:'1g',na:'14mg',k:'—',p:'—',more:'低糖低脂高纤维'},advantage:'极低钠健康顾问零食',ni:['🥩','🧂']},
+{id:7,img:IMG.cookie,name:'森无忧低蛋白轻松曲奇',en:'Low Protein Cookies',tags:['10g×10包','9个月','1.7~2.7g蛋白'],ings:'安佳黄油、MCT、原味/蔓越莓/奇亚籽',w:'单包10g，整盒100g',shelf:'9个月',store:'阴凉干燥避光',sc:'',method:['开袋即食','独立小包装，精确控量'],craft:'0色素0防腐剂，安佳黄油+MCT快速供能，钠仅9mg。',tech:'0添加，MCT+安佳黄油',n:{protein:'1.7~2.7g',na:'9mg',k:'≤20mg',p:'≤15mg'},advantage:'钠比普通曲奇低98%，安心日常加餐',ni:['🥩','🧂','🍌','🦴']},
+{id:8,img:IMG.snack,name:'森无忧谷纤趣挤压淀粉零食',en:'Low Protein Snacks',tags:['160g/袋','120天','1g蛋白'],ings:'可可、海苔两种口味',w:'160g/袋',shelf:'120天',store:'阴凉干燥避光',sc:'',method:['开袋即食','可搭配酸奶沙拉'],craft:'瑞士布勒热挤压，非油炸，低糖低脂高膳食纤维。',tech:'非油炸，低糖低脂高纤维',n:{protein:'1g',na:'14mg',k:'—',p:'—',more:'低糖低脂高纤维'},advantage:'极低钠便携零食',ni:['🥩','🧂']},
 {id:9,img:IMG.zongzi,name:'森无忧低蛋白大米粽',en:'Low Protein Rice Dumplings',tags:['100g/只','120天','0g蛋白'],ings:'低蛋白大米为主原料',w:'单只100g',shelf:'120天',store:'阴凉干燥避光',sc:'',method:['真空包装加热即食','单只定量方便管控'],craft:'真米脱蛋白，4种口味（白米/赤豆/桂花红枣/咸粽）。',tech:'真米原料真空锁鲜4味可选',n:{protein:'0g',na:'6mg',k:'≤25mg',p:'≤20mg'},advantage:'节日便携，单只定量',ni:['🥩','🧂','🍌','🦴']},
+{id:10,key:'probiotic',img:IMG.probiotic,name:'森无忧复合益生菌',en:'Probiotics Complex',tags:['2g×20条','18个月','300亿CFU'],ings:'乳双歧杆菌、鼠李糖乳杆菌、嗜酸乳杆菌等',w:'2g×20条',shelf:'18个月',store:'阴凉干燥处保存，避免高温',sc:'',method:['每日1-2条，直接口服或加入40℃以下饮品','建议饭后食用'],craft:'多联菌株科学配比，耐胃酸耐胆汁，高活菌高定殖率。',tech:'多联菌株+冻干保护技术',n:{protein:'0g',more:'每条约300亿CFU活菌'},advantage:'肠道微生态平衡，促进营养吸收',ni:['🦠']},
 ];
 
 // ═══ 语言切换系统 ═══
@@ -835,7 +837,7 @@ function switchLang(l){
   _L=l;
   document.querySelectorAll('#lang button').forEach((b,i)=>b.classList.toggle('active',(i===0&&l==='zh')||(i===1&&l==='en')));
   document.querySelectorAll('.nav-tabs button').forEach((b,i)=>{
-    const t=[_T('产品','Products'),_T('品牌','Brand'),_T('CKD','CKD'),_T('PKU','PKU')];
+    const t=[_T('首页','Home'),_T('品牌','Brand'),_T('营养学院','Academy'),_T('科学成就','Achieve'),_T('科普','Science'),_T('商城','Store'),_T('社区','Community')];
     b.childNodes[0].textContent=t[i];
   });
   if(_curFn)window['_'+_curFn.fn](..._curFn.args);
@@ -847,35 +849,35 @@ function switchLang(l){
 const D={
 1:{
   taste:_T('晶莹剔透，有嚼劲Q弹，大米香自然，口感软糯不渣','Glossy, chewy & springy with natural rice aroma'),
-  scenes:[_T('住院/外出吃饭难，微波2分钟即食','Hospital & travel: microwave 2 min ready'),_T('上班族带饭','Office lunch portable'),_T('PKU儿童上学午餐便当','PKU child school lunch'),_T('健康顾问长途旅行随身携带','Travel companion for kidney patients')],
+  scenes:[_T('住院/外出吃饭难，微波2分钟即食','Hospital & travel: microwave 2 min ready'),_T('上班族带饭','Office lunch portable'),_T('学生上学午餐便当','school lunch preparation'),_T('长途旅行随身携带','Travel companion for daily needs')],
   revs:[{u:'t**9',r:_T('米香自然，口感软糯不渣，无限回购。','Natural rice aroma, soft & chewy, will buy again.'),s:5},{u:'l**5',r:_T('味道不错，客服态度好，无限回购中。','Great taste, good service, buying again.'),s:5},{u:'h**6',r:_T('是真大米，口感和普通一样。','Real rice, tastes just like regular rice.'),s:5},{u:'w**7',r:_T('回购产品，缺点价格高，建议活动时买。','Great product but pricey, buy on sale.'),s:4}],
   pn:_T('¥13.8/盒，多盒装更划算','¥13.8/box, bulk discount available'),
   sd:_T('住院、上班、外出，随时随地吃上一口安心的饭','Hospital, office, travel — safe rice anytime')
 },
 2:{
   taste:_T('接近普通大米，晶莹透亮，有米饭香气','Close to regular rice, glossy with natural fragrance'),
-  scenes:[_T('健康顾问家庭一日三餐主食基底','Daily staple for kidney patients'),_T('PKU儿童日常米饭/饭团/炒饭','PKU kids daily rice/onigiri/fried rice'),_T('与家人同吃一锅饭，无需单独开灶','Cook one pot for the whole family'),_T('初次尝试低蛋白主食的首选规格','Perfect starter size for first-timers')],
+  scenes:[_T('全家营养一日三餐主食基底','Daily staple for daily needs'),_T('日常米饭制作/饭团/炒饭','daily rice cooking/onigiri/fried rice'),_T('与家人同吃一锅饭，无需单独开灶','Cook one pot for the whole family'),_T('初次尝试低蛋白主食的首选规格','Perfect starter size for first-timers')],
   revs:[{u:'📱 购**户',r:_T('煮出来和普通米一样晶莹剔透，香气扑鼻。','Cooked just like regular rice, shiny and aromatic.'),s:5},{u:'📱 用**户',r:_T('做了炒饭，孩子吃得很开心，完全没吃出来是特殊大米。','Made fried rice, the kids loved it — couldn\'t tell the difference.'),s:5}],
   pn:_T('¥198起/1kg，建议活动时囤货','From ¥198/kg, stock up on sale'),
   sd:_T('家庭日常三餐替换普通大米，无需改变做菜习惯','Replace regular rice, change nothing else')
 },
 3:{
   taste:_T('无异味，蒸煮后颗粒分明不易软烂','No off-flavor, stays firm after cooking'),
-  scenes:[_T('经济实惠长期家庭主食','Budget-friendly daily staple'),_T('煮粥、炒饭均可','Porridge & fried rice both work'),_T('适合预算有限的健康顾问家庭','Ideal for budget-conscious families')],
+  scenes:[_T('经济实惠长期家庭主食','Budget-friendly daily staple'),_T('煮粥、炒饭均可','Porridge & fried rice both work'),_T('适合预算有限的全家营养','Ideal for budget-conscious families')],
   revs:[{u:'📱 购**户',r:_T('性价比很高，一餐确实低，做一大锅全家都能吃。','Great value, makes a big pot for the whole family.'),s:4},{u:'📱 用**户',r:_T('口感比想象中好，没有奇怪的淀粉味。','Better than expected, no weird starch taste.'),s:4}],
   pn:_T('一餐仅¥2-3元，最经济的选择','Only ¥2-3 per meal, best value'),
   sd:_T('高性价比长期主食，瑞士设备生产品质稳定','High-value daily staple, Swiss equipment')
 },
 4:{
   taste:_T('面粉细腻，可制作面团有筋性不断裂','Fine flour, makes elastic dough that won\'t crack'),
-  scenes:[_T('家庭自制面条/饺子/馄饨','Homemade noodles/dumplings/wontons'),_T('健康顾问想吃面食时的首选','Go-to for kidney patients craving noodles'),_T('解决市面淀粉粉易断痛点','Solves the cracking problem of starch flours')],
+  scenes:[_T('家庭自制面条/饺子/馄饨','Homemade noodles/dumplings/wontons'),_T('有需要的人群想吃面食时的首选','Go-to for daily needs craving noodles'),_T('解决市面淀粉粉易断痛点','Solves the cracking problem of starch flours')],
   revs:[{u:'📱 用**户',r:_T('加开水烫面能擀饺子皮，不像以前买的容易破。','Hot water dough makes real dumpling wrappers, no cracking.'),s:4}],
   pn:_T('500g装，家庭长期使用','500g pack for long-term use'),
   sd:_T('复配无胶配方，做面条饺子不破裂','Gum-free formula, perfect for noodles & dumplings')
 },
 5:{
   taste:_T('成品松软，有馒头香气，操作简单新手友好','Soft and fluffy, tastes like real steamed buns'),
-  scenes:[_T('自制馒头花卷','Homemade steamed buns'),_T('健康顾问/PKU家庭早餐主食','Breakfast staple for CKD/PKU families'),_T('新手第一次做也能成功','Foolproof for beginners')],
+  scenes:[_T('自制馒头花卷','Homemade steamed buns'),_T('有需要的人群/PKU家庭早餐主食','Breakfast staple for CKD/PKU families'),_T('新手第一次做也能成功','Foolproof for beginners')],
   revs:[{u:'📱 买**家',r:_T('按说明做的，蒸出来的馒头很松软。','Followed instructions — buns came out super soft!'),s:5}],
   pn:_T('500g装，配好比例新手无压力','500g, pre-mixed ratio, beginner-friendly'),
   sd:_T('专用发酵酶配方，成品松软如普通馒头','Special enzyme formula, fluffy as regular buns')
@@ -889,24 +891,24 @@ const D={
 },
 7:{
   taste:_T('酥脆香甜，三种口味各有特色','Crispy & sweet, 3 flavors to enjoy'),
-  scenes:[_T('健康顾问下午茶加餐','Afternoon snack for kidney patients'),_T('PKU儿童课间零食','PKU kids snack break'),_T('出门随身携带，精确控量','Portable 10g packs for precise control')],
+  scenes:[_T('日常下午茶加餐','Afternoon snack for daily needs'),_T('学生课间零食','school break snack'),_T('出门随身携带，精确控量','Portable 10g packs for precise control')],
   revs:[{u:'📱 购**户',r:_T('终于有可以放心吃的饼干了！钠真的低，味道也好。','Finally a safe cookie! Super low sodium, great taste.'),s:5},{u:'📱 回**客',r:_T('独立包装太方便了，每天带两包上班。','Individual packs, take 2 to work daily.'),s:5}],
   pn:_T('10g×10包/盒','10g×10 packs/box'),
-  sd:_T('健康顾问安心加餐零食，钠比普通曲奇低98%','Safe snack for kidney patients, 98% less sodium')
+  sd:_T('有需要的人群安心加餐零食，钠比普通曲奇低98%','Safe snack choice, 98% less sodium')
 },
 8:{
   taste:_T('酥脆可口，可可/海苔两种风味','Crunchy, cocoa & seaweed flavors'),
-  scenes:[_T('健康顾问休闲零食','Leisure snack for kidney patients'),_T('搭配酸奶沙拉更美味','Pair with yogurt or salad'),_T('儿童健康零食替代','Healthy kids snack alternative')],
+  scenes:[_T('有需要的人群休闲零食','Leisure snack for daily needs'),_T('搭配酸奶沙拉更美味','Pair with yogurt or salad'),_T('儿童健康零食替代','Healthy kids snack alternative')],
   revs:[{u:'📱 尝**客',r:_T('海苔味很好吃，酥酥脆脆的，钠含量很低。','Seaweed flavor is great, low sodium.'),s:4}],
   pn:_T('160g/袋','160g/bag'),
-  sd:_T('非油炸低糖高纤，健康顾问专用休闲零食','Non-fried, low sugar, high fiber')
+  sd:_T('非油炸低糖高纤，有需要的人群专用休闲零食','Non-fried, low sugar, high fiber')
 },
 9:{
   taste:_T('真米粽香，软糯适中','Real rice dumpling aroma, perfectly soft'),
-  scenes:[_T('端午节日必备','Must-have for Dragon Boat Festival'),_T('健康顾问节日加餐，单只定量','Festive treat with portion control'),_T('送礼给健康顾问亲友','Gift for kidney patient friends')],
+  scenes:[_T('端午节日必备','Must-have for Dragon Boat Festival'),_T('有需要的人群节日加餐，单只定量','Festive treat with portion control'),_T('送礼给有需要的人群亲友','Gift for kidney person friends')],
   revs:[{u:'📱 购**户',r:_T('真空包装方便保存，加热就能吃。赤豆味很香。','Vacuum-packed, heat & eat. Red bean flavor is great.'),s:5}],
   pn:_T('100g/只，4种口味可选','100g each, 4 flavors'),
-  sd:_T('低磷低钾极低钠，健康顾问也能吃的端午粽','Low phosphorus & potassium, CKD-safe zongzi')
+  sd:_T('低磷低钾极低钠，有需要的人群也能吃的端午粽','Low phosphorus & potassium, CKD-safe zongzi')
 }
 };
 
@@ -916,7 +918,7 @@ function setTab(i){document.querySelectorAll('.nav-tabs button').forEach((b,j)=>
 function navigate(fn,...args){_curFn={fn,args};navStack.push({fn,args});fS();window['_'+fn](...args);window.scrollTo(0,0);setTimeout(setupReveal,30)}
 function goBack(){if(navStack.length<=1){navStack=[];fH();_home();window.scrollTo(0,0);setTimeout(setupReveal,30);return}navStack.pop();let p=navStack[navStack.length-1];if(!p){navStack=[];fH();_home()}else window['_'+p.fn](...p.args);if(navStack.length<=1)fH();window.scrollTo(0,0);setTimeout(setupReveal,30)}
 function prevProduct(id){if(id>1)navigate('detail',id-1)}
-function nextProduct(id){if(id<9)navigate('detail',id+1)}
+function nextProduct(id){if(id<10)navigate('detail',id+1)}
 
 function imgOrFallback(img,fb,cls,lazy=true){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}" ${lazy?'loading="lazy"':''} referrerpolicy="no-referrer" onerror="this.style.display='none'" decoding="async">`:'')}
 function bgSection(img,dark,inner){return `<section class="sec-bg reveal ${dark?'dark':''}"><div class="bg-img ph">${imgOrFallback(img,'','bg-fb')}</div><div class="bg-overlay"></div><div class="inner">${inner}</div></section>`}
@@ -1017,7 +1019,6 @@ document.getElementById('app').innerHTML=`
           <div class="field"><span class="fl">${_T('净含量','Net Weight')}</span><span class="fv">${p.w}</span></div>
           <div class="field"><span class="fl">${_T('保质期','Shelf Life')}</span><span class="fv">${p.shelf}</span></div>
           <div class="field"><span class="fl">${_T('贮存','Storage')}</span><span class="fv">${p.store}</span></div>
-          ${p.sc?`<div class="field"><span class="fl">${_T('标准','Standard')}</span><span class="fv">${p.sc}</span></div>`:''}
           <div class="field"><span class="fl">${_T('配料','Ingredients')}</span><span class="fv">${p.ings}</span></div>
         </div>
         <div class="section-t">${_T('食用方法','How to Use')}</div>
@@ -1184,7 +1185,7 @@ document.getElementById('app').innerHTML=`
         <input type="text" placeholder="${_T('您的称呼','Your name')}" required>
         <input type="tel" placeholder="${_T('联系电话','Phone number')}" required>
         <select required>
-          <option value="">${_T('请选择人群类型','Select patient type')}</option>
+          <option value="">${_T('请选择人群类型','Select person type')}</option>
           <option>CKD ${_T('特殊营养需求','Kidney Disease')}</option>
           <option>PKU ${_T('苯丙酮尿症','Phenylketonuria')}</option>
           <option>${_T('其他','Other')}</option>
