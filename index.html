@@ -175,10 +175,10 @@ a{color:inherit;text-decoration:none}
 
 /* ═══ FEATURE (ALTERNATING) ═══ */
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-bottom:clamp(40px,5vw,72px)}.feature.rev{direction:rtl}.feature.rev>*{direction:ltr}
-.feature-img{aspect-ratio:4/3;border-radius:var(--radius-l);overflow:hidden;position:relative;background:var(--paper-card);box-shadow:var(--shadow)}
+.feature-img{aspect-ratio:4/3;border-radius:var(--radius-l);overflow:hidden;position:relative;background:var(--paper-card);box-shadow:var(--shadow);min-height:200px}
 .feature-img .fb-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
-.feature-img .fb-wrap .fb-icon{font-size:clamp(60px,10vw,100px);opacity:.28}
-.feature-img img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.feature-img .fb-wrap .fb-icon{font-size:clamp(60px,10vw,100px);opacity:.28;color:var(--muted)}
+.feature-img img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;display:block}
 .feature-txt{max-width:480px}
 .feature-txt .eyebrow-en{display:inline-block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:12px;font-family:var(--font-sans)}
 .feature-txt h3{font-size:clamp(20px,2.4vw,28px);font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
@@ -667,7 +667,7 @@ function goBack(){if(navStack.length<=1){navStack=[];fH();_home();window.scrollT
 function prevProduct(id){if(id>1)navigate('detail',id-1)}
 function nextProduct(id){if(id<9)navigate('detail',id+1)}
 
-function imgOrFallback(img,fb,cls){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">`:'')}
+function imgOrFallback(img,fb,cls,lazy=true){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}" ${lazy?'loading="lazy"':''} referrerpolicy="no-referrer" onerror="this.style.display='none'" decoding="async">`:'')}
 function bgSection(img,dark,inner){return `<section class="sec-bg reveal ${dark?'dark':''}"><div class="bg-img ph">${imgOrFallback(img,'','bg-fb')}</div><div class="bg-overlay"></div><div class="inner">${inner}</div></section>`}
 
 let _io;
@@ -722,15 +722,15 @@ document.getElementById('app').innerHTML=`
 ${bgSection(BG.wheat,false,`
   <div class="sec-head reveal"><span class="eyebrow d">${_T('精选','Selected')}</span><h2 class="h2">${_T('为不同场景，准备好每一餐','Prepared for Every Meal')}<span class="en">Prepared for Every Meal</span></h2><p class="sec-sub">${_T('从即食到家常，从主食到加餐，森无忧覆盖 CKD 与 PKU 全场景饮食需求。','From instant to home cooking, Senwuyou covers all CKD & PKU dietary needs.')}</p></div>
   <div class="feature">
-    <div class="feature-img ph clip-reveal">${imgOrFallback(IMG.rice,IC[0],'fb')}</div>
+    <div class="feature-img ph">${imgOrFallback(IMG.rice,IC[0],'fb',false)}</div>
     <div class="feature-txt reveal"><span class="eyebrow-en">01 / Instant</span><h3>${_T('低蛋白米饭','Low Protein Rice')}<span class="en">Low Protein Ready Rice</span></h3><p>${_T('真米生物脱蛋白，日式 UHT 高温灭菌，三层氮气高阻隔包装。微波 2 分钟即食，外出、住院、上班都能随时吃上一口安心的饭。','Real rice bio-enzymatic, UHT sterilized, 3-layer nitrogen packaging. Microwave 2 min ready.')}</p><span class="link-arrow" onclick="navigate('detail',1)">${_T('查看详情','Details')} →</span></div>
   </div>
   <div class="feature rev">
-    <div class="feature-img ph clip-reveal">${imgOrFallback(IMG.grain,IC[1],'fb')}</div>
+    <div class="feature-img ph">${imgOrFallback(IMG.grain,IC[1],'fb',false)}</div>
     <div class="feature-txt reveal"><span class="eyebrow-en">02 / Staple</span><h3>${_T('低蛋白大米','Low Protein Rice Grain')}<span class="en">Low Protein Rice Grain</span></h3><p>${_T('完整大米酶解脱蛋白，Phe 仅 0.014%，为普通大米的 1/20。无需淘洗，米水 1:1.1 即煮，药品级生产线。','Whole rice enzymatic, Phe only 0.014%. No rinsing needed, pharmaceutical-grade.')}</p><span class="link-arrow" onclick="navigate('detail',2)">${_T('查看详情','Details')} →</span></div>
   </div>
   <div class="feature">
-    <div class="feature-img ph clip-reveal">${imgOrFallback(IMG.cookie,IC[6],'fb')}</div>
+    <div class="feature-img ph">${imgOrFallback(IMG.cookie,IC[6],'fb',false)}</div>
     <div class="feature-txt reveal"><span class="eyebrow-en">03 / Snack</span><h3>${_T('低蛋白轻松曲奇','Low Protein Cookies')}<span class="en">Low Protein Cookies</span></h3><p>${_T('安佳黄油 + MCT 快速供能，钠仅 9mg，比普通曲奇低 98%。独立 10g 小包装，精确控量，肾友加餐也能毫无负担。','Anchor butter + MCT, Na only 9mg (98% less than regular cookies). 10g packs, precise control.')}</p><span class="link-arrow" onclick="navigate('detail',7)">${_T('查看详情','Details')} →</span></div>
   </div>
 `)}
