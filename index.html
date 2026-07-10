@@ -814,16 +814,16 @@ table tbody tr:hover{background:var(--green-soft)}
 
 <script>
 const IMG={
-  rice:'images/1-rice.jpg',
-  grain:'images/2-grain.jpg',
-  granule:'images/3-granule.png',
-  flour:'images/4-flour.jpg',
-  bun:'images/5-bun.jpg',
-  noodle:'images/6-noodle.jpg',
-  cookie:'images/7-cookie.jpg',
-  snack:'images/8-snack.png',
-  zongzi:'images/9-zongzi.jpg',
-  probiotic:'images/1-rice.jpg',
+  rice:'https://senwuyou.com/images/1-rice.jpg',
+  grain:'https://senwuyou.com/images/2-grain.jpg',
+  granule:'https://senwuyou.com/images/3-granule.png',
+  flour:'https://senwuyou.com/images/4-flour.jpg',
+  bun:'https://senwuyou.com/images/5-bun.jpg',
+  noodle:'https://senwuyou.com/images/6-noodle.jpg',
+  cookie:'https://senwuyou.com/images/7-cookie.jpg',
+  snack:'https://senwuyou.com/images/8-snack.png',
+  zongzi:'https://senwuyou.com/images/9-zongzi.jpg',
+  probiotic:'https://senwuyou.com/images/1-rice.jpg',
 };
 const BG={
   riceField:'',
@@ -941,7 +941,7 @@ function goBack(){if(navStack.length<=1){navStack=[];fH();_home();window.scrollT
 function prevProduct(id){if(id>1)navigate('detail',id-1)}
 function nextProduct(id){if(id<10)navigate('detail',id+1)}
 
-function imgOrFallback(img,fb,cls,lazy=true){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}" ${lazy?'loading="lazy"':''} decoding="async">`:'')}
+function imgOrFallback(img,fb,cls,lazy=true){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}">`:'')}
 function bgSection(img,dark,inner){return `<section class="sec-bg reveal ${dark?'dark':''}"><div class="bg-img ph">${imgOrFallback(img,'','bg-fb')}</div><div class="bg-overlay"></div><div class="inner">${inner}</div></section>`}
 
 let _io;
