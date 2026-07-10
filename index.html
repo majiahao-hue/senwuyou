@@ -451,6 +451,278 @@ table tbody tr:hover{background:var(--green-soft)}
 .age-card h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--green)}
 .age-card p{font-size:13px;color:var(--muted);line-height:1.7}
 @media(max-width:600px){.stat-grid,.drug-grid,.age-grid{grid-template-columns:1fr}}
+
+/* ═══ STORY CARDS (用户故事) ═══ */
+.story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,28px)}
+.story-card{background:#fff;border-radius:var(--radius-l);padding:clamp(24px,2.5vw,36px);box-shadow:var(--shadow-card);border:1px solid var(--line-l);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.story-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.story-card .sc-avatar{width:56px;height:56px;border-radius:50%;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px}
+.story-card .sc-name{font-size:16px;font-weight:700;margin-bottom:4px}
+.story-card .sc-meta{font-size:12px;color:var(--muted);margin-bottom:16px}
+.story-card .sc-before{padding:12px 16px;background:#fff5f5;border-radius:var(--radius-sm);border-left:3px solid #ff8a73;margin-bottom:12px}
+.story-card .sc-after{padding:12px 16px;background:var(--green-soft);border-radius:var(--radius-sm);border-left:3px solid var(--green)}
+.story-card .sc-before .sc-tag,.story-card .sc-after .sc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;display:block}
+.story-card .sc-before .sc-tag{color:#ff8a73}
+.story-card .sc-after .sc-tag{color:var(--green)}
+.story-card .sc-text{font-size:13px;color:var(--muted);line-height:1.6}
+.sec-bg.dark .story-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.sec-bg.dark .story-card .sc-before{background:rgba(255,138,115,.1)}
+.sec-bg.dark .story-card .sc-after{background:rgba(11,94,62,.15)}
+
+/* ═══ MEDIA LOGO WALL (媒体报道) ═══ */
+.media-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:32px}
+.media-logo{background:#fff;border-radius:var(--radius);padding:20px 16px;text-align:center;border:1px solid var(--line-l);transition:all .3s;font-size:13px;font-weight:700;color:var(--muted)}
+.media-logo:hover{border-color:var(--green-pale);box-shadow:var(--shadow-sm);color:var(--ink)}
+.media-logo .ml-icon{font-size:28px;display:block;margin-bottom:8px;opacity:.6}
+.sec-bg.dark .media-logo{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.7)}
+.award-timeline{display:flex;flex-direction:column;gap:16px}
+.award-item{display:grid;grid-template-columns:auto 1fr;gap:16px 20px;align-items:start;padding:16px 20px;background:rgba(255,255,255,.05);border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.sec-bg:not(.dark) .award-item{background:#fff;border-color:var(--line-l)}
+.award-item .aw-year{font-size:20px;font-weight:700;color:var(--gold);font-family:var(--font-serif);line-height:1;white-space:nowrap}
+.award-item h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.award-item p{font-size:13px;color:var(--muted);line-height:1.5}
+.sec-bg.dark .award-item p{color:rgba(255,255,255,.65)}
+
+/* ═══ FAQ ACCORDION ═══ */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto}
+.faq-item{background:#fff;border-radius:var(--radius);border:1px solid var(--line-l);overflow:hidden;transition:all .3s}
+.faq-item:hover{border-color:var(--green-pale);box-shadow:var(--shadow-sm)}
+.sec-bg.dark .faq-item{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.faq-q{padding:18px 24px;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .3s}
+.faq-q:hover{color:var(--green)}
+.faq-q .faq-icon{font-size:20px;color:var(--green);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 24px 18px;font-size:14px;color:var(--muted);line-height:1.7}
+.sec-bg.dark .faq-a-inner{color:rgba(255,255,255,.65)}
+
+/* ═══ CHANNEL GRID (购买渠道) ═══ */
+.channel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(16px,2vw,24px)}
+.channel-card{background:#fff;border-radius:var(--radius-l);padding:clamp(24px,2.5vw,32px);text-align:center;border:1px solid var(--line-l);box-shadow:var(--shadow-card);transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer}
+.channel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--green-pale)}
+.sec-bg.dark .channel-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.channel-card .ch-icon{font-size:40px;margin-bottom:12px;display:block}
+.channel-card h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.channel-card .ch-desc{font-size:13px;color:var(--muted);line-height:1.5}
+.sec-bg.dark .channel-card .ch-desc{color:rgba(255,255,255,.6)}
+
+/* ═══ TIMELINE (品牌时间线) ═══ */
+.timeline{position:relative;padding-left:clamp(24px,4vw,40px)}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--green),var(--gold));border-radius:2px}
+.tl-item{position:relative;padding-bottom:clamp(24px,3vw,36px)}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:calc(-1 * clamp(24px,4vw,40px) + 3px);top:4px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 2px var(--green);z-index:1}
+.tl-item .tl-year{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.04em;margin-bottom:4px;font-family:var(--font-sans)}
+.tl-item h4{font-size:clamp(15px,1.4vw,18px);font-weight:700;margin-bottom:6px}
+.tl-item p{font-size:clamp(13px,1.1vw,14px);color:var(--muted);line-height:1.6}
+.sec-bg.dark .tl-item p{color:rgba(255,255,255,.65)}
+.sec-bg.dark .tl-item::before{border-color:var(--green-d)}
+
+/* ═══ WORLD MAP (全球版图) ═══ */
+.world-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;margin-bottom:32px}
+.world-stat{text-align:center;padding:20px 12px;background:rgba(255,255,255,.05);border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.sec-bg:not(.dark) .world-stat{background:#fff;border-color:var(--line-l);box-shadow:var(--shadow-card)}
+.world-stat .ws-val{font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--green);line-height:1;margin-bottom:6px;font-family:var(--font-serif)}
+.sec-bg.dark .world-stat .ws-val{color:var(--gold)}
+.world-stat .ws-lbl{font-size:12px;color:var(--muted)}
+.region-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.region-card{padding:16px 20px;background:rgba(255,255,255,.05);border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.sec-bg:not(.dark) .region-card{background:#fff;border-color:var(--line-l)}
+.region-card .rg-name{font-size:14px;font-weight:700;margin-bottom:6px}
+.region-card .rg-countries{font-size:12px;color:var(--muted);line-height:1.5}
+.sec-bg.dark .region-card .rg-countries{color:rgba(255,255,255,.6)}
+
+/* ═══ PRODUCTION FLOW (生产线流程) ═══ */
+.flow-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0;margin-top:20px}
+.flow-step{position:relative;padding:24px 16px;text-align:center;border-right:1px solid var(--line-l)}
+.flow-step:last-child{border-right:none}
+@media(max-width:600px){.flow-step{border-right:none;border-bottom:1px solid var(--line-l);padding:16px}.flow-step:last-child{border-bottom:none}}
+.flow-step .fs-num{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:8px}
+.flow-step .fs-icon{font-size:36px;margin-bottom:8px;display:block}
+.flow-step h5{font-size:14px;font-weight:700;margin-bottom:6px}
+.flow-step p{font-size:12px;color:var(--muted);line-height:1.5}
+.sec-bg.dark .flow-step{border-right-color:rgba(255,255,255,.08);border-bottom-color:rgba(255,255,255,.08)}
+.sec-bg.dark .flow-step p{color:rgba(255,255,255,.6)}
+
+/* ═══ MEAL PLAN (三餐方案) ═══ */
+.meal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px)}
+.meal-card{background:#fff;border-radius:var(--radius-l);padding:clamp(24px,2.5vw,32px);box-shadow:var(--shadow-card);border:1px solid var(--line-l);transition:all .4s}
+.meal-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.sec-bg.dark .meal-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.meal-card .mc-stage{display:inline-block;font-size:11px;font-weight:700;color:var(--green);background:var(--green-soft);padding:4px 12px;border-radius:100px;margin-bottom:14px}
+.sec-bg.dark .meal-card .mc-stage{background:rgba(11,94,62,.2)}
+.meal-card h4{font-size:16px;font-weight:700;margin-bottom:14px}
+.meal-row{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;padding:8px 0;border-bottom:1px dashed var(--line-l);font-size:13px;align-items:start}
+.meal-row:last-child{border-bottom:none}
+.meal-row .mr-time{font-weight:600;color:var(--green);white-space:nowrap;font-size:12px}
+.meal-row .mr-food{color:var(--ink)}
+.meal-row .mr-data{font-size:11px;color:var(--muted);white-space:nowrap}
+.sec-bg.dark .meal-row .mr-food{color:rgba(255,255,255,.85)}
+.sec-bg.dark .meal-row{border-bottom-color:rgba(255,255,255,.08)}
+
+/* ═══ COMPARISON TABLE ENHANCED (食材对比) ═══ */
+.cmp-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card)}
+.cmp-table thead th{background:var(--green);color:#fff;padding:14px 16px;text-align:center;font-weight:600;font-size:12px;white-space:nowrap}
+.cmp-table thead th:first-child{text-align:left}
+.cmp-table thead th.highlight{background:var(--green-d)}
+.cmp-table tbody td{padding:12px 16px;border-bottom:1px solid var(--line-l);text-align:center}
+.cmp-table tbody td:first-child{text-align:left;font-weight:600}
+.cmp-table tbody td.highlight{background:var(--green-soft);color:var(--green);font-weight:700}
+.cmp-table tbody tr:last-child td{border-bottom:none}
+.sec-bg.dark .cmp-table{background:rgba(255,255,255,.06)}
+.sec-bg.dark .cmp-table tbody td{border-bottom-color:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
+.sec-bg.dark .cmp-table tbody td.highlight{background:rgba(11,94,62,.15)}
+
+/* ═══ MYTH CARDS (误区辨析) ═══ */
+.myth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,24px)}
+.myth-card{background:#fff;border-radius:var(--radius-l);overflow:hidden;border:1px solid var(--line-l);box-shadow:var(--shadow-card);transition:all .4s}
+.myth-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.sec-bg.dark .myth-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.myth-card .myth-q{padding:16px 20px;background:#fff5f5;border-bottom:2px solid #ff8a73;font-size:14px;font-weight:600;color:#ff8a73;line-height:1.4}
+.myth-card .myth-a{padding:16px 20px}
+.myth-card .myth-a .ma-tag{font-size:10px;font-weight:700;color:var(--green);letter-spacing:.1em;margin-bottom:6px;display:block}
+.myth-card .myth-a p{font-size:13px;color:var(--muted);line-height:1.6}
+.sec-bg.dark .myth-card .myth-q{background:rgba(255,138,115,.1)}
+.sec-bg.dark .myth-card .myth-a p{color:rgba(255,255,255,.65)}
+
+/* ═══ RECIPE CARDS (食谱) ═══ */
+.recipe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px)}
+.recipe-card{background:#fff;border-radius:var(--radius-l);overflow:hidden;border:1px solid var(--line-l);box-shadow:var(--shadow-card);transition:all .4s}
+.recipe-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.sec-bg.dark .recipe-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.recipe-card .rc-head{padding:20px 24px 12px}
+.recipe-card .rc-icon{font-size:36px;display:block;margin-bottom:8px}
+.recipe-card h4{font-size:16px;font-weight:700;margin-bottom:4px}
+.recipe-card .rc-time{font-size:12px;color:var(--muted)}
+.recipe-card .rc-body{padding:0 24px 16px}
+.recipe-card .rc-ingredients{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6;padding:10px 12px;background:var(--paper);border-radius:var(--radius-sm)}
+.sec-bg.dark .recipe-card .rc-ingredients{background:rgba(255,255,255,.04)}
+.recipe-card .rc-steps{font-size:13px;color:var(--ink);line-height:1.7;padding-left:18px}
+.sec-bg.dark .recipe-card .rc-steps{color:rgba(255,255,255,.8)}
+.recipe-card .rc-steps li{margin-bottom:4px}
+.recipe-card .rc-nutri{display:flex;gap:8px;flex-wrap:wrap;padding:0 24px 20px}
+.recipe-card .rc-nutri span{font-size:10px;padding:4px 8px;border-radius:100px;background:var(--green-soft);color:var(--green);font-weight:600}
+
+/* ═══ CALCULATOR (计算器) ═══ */
+.calc-box{max-width:640px;margin:0 auto;background:#fff;border-radius:var(--radius-xl);padding:clamp(24px,3vw,40px);box-shadow:var(--shadow);border:1px solid var(--line-l)}
+.sec-bg.dark .calc-box{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.calc-field{margin-bottom:20px}
+.calc-field label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}
+.calc-field select,.calc-field input{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:var(--radius);font-size:14px;font-family:var(--font-sans);background:#fff;color:var(--ink)}
+.sec-bg.dark .calc-field select,.sec-bg.dark .calc-field input{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}
+.calc-result{margin-top:24px;padding:20px;background:var(--green-soft);border-radius:var(--radius);border-left:4px solid var(--green)}
+.sec-bg.dark .calc-result{background:rgba(11,94,62,.15)}
+.calc-result .cr-val{font-size:32px;font-weight:700;color:var(--green);line-height:1;margin-bottom:4px}
+.calc-result .cr-lbl{font-size:13px;color:var(--muted)}
+.calc-suggest{margin-top:16px;display:grid;gap:8px}
+.calc-suggest .cs-item{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;padding:10px 14px;background:#fff;border-radius:var(--radius-sm);border:1px solid var(--line-l);font-size:13px;align-items:center}
+.sec-bg.dark .calc-suggest .cs-item{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+.calc-suggest .cs-item .cs-icon{font-size:20px}
+.calc-suggest .cs-item .cs-name{font-weight:600}
+.calc-suggest .cs-item .cs-data{font-size:11px;color:var(--muted)}
+
+/* ═══ CONTACT FORM (联系咨询) ═══ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);max-width:880px;margin:0 auto}
+@media(max-width:680px){.contact-grid{grid-template-columns:1fr}}
+.contact-form{display:grid;gap:16px}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:var(--radius);font-size:14px;font-family:var(--font-sans);background:#fff;color:var(--ink)}
+.sec-bg.dark .contact-form input,.sec-bg.dark .contact-form select,.sec-bg.dark .contact-form textarea{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-info-card{background:rgba(255,255,255,.05);border-radius:var(--radius-l);padding:clamp(24px,2.5vw,32px);border:1px solid rgba(255,255,255,.08)}
+.sec-bg:not(.dark) .contact-info-card{background:#fff;border-color:var(--line-l);box-shadow:var(--shadow-card)}
+.contact-info-card h4{font-size:16px;font-weight:700;margin-bottom:16px}
+.contact-info-card .ci-row{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-l);font-size:13px}
+.sec-bg.dark .contact-info-card .ci-row{border-bottom-color:rgba(255,255,255,.08)}
+.contact-info-card .ci-row:last-child{border-bottom:none}
+.contact-info-card .ci-row .ci-icon{font-size:20px}
+.contact-info-card .ci-row .ci-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.contact-info-card .ci-row .ci-val{font-size:14px;font-weight:600}
+
+/* ═══ COMPARISON TOOL (产品对比) ═══ */
+.cmp-tool{max-width:900px;margin:0 auto}
+.cmp-select-row{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:end;margin-bottom:24px}
+@media(max-width:600px){.cmp-select-row{grid-template-columns:1fr;gap:12px}}
+.cmp-select-row select{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:var(--radius);font-size:14px;font-family:var(--font-sans);background:#fff}
+.sec-bg.dark .cmp-select-row select{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}
+.cmp-vs{text-align:center;font-size:20px;font-weight:700;color:var(--gold);padding-bottom:12px}
+
+/* ═══ COOKING TIPS (烹饪指南) ═══ */
+.cook-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(12px,1.5vw,20px)}
+.cook-card{background:#fff;border-radius:var(--radius-l);padding:clamp(20px,2vw,28px);border:1px solid var(--line-l);box-shadow:var(--shadow-card);transition:all .35s;text-align:center}
+.cook-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.sec-bg.dark .cook-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.cook-card .ck-icon{font-size:40px;margin-bottom:10px;display:block}
+.cook-card h5{font-size:14px;font-weight:700;margin-bottom:8px}
+.cook-card p{font-size:12px;color:var(--muted);line-height:1.5}
+.sec-bg.dark .cook-card p{color:rgba(255,255,255,.6)}
+
+/* ═══ QA CARDS (肾友问答) ═══ */
+.qa-grid{display:grid;gap:16px;max-width:760px;margin:0 auto}
+.qa-card{background:#fff;border-radius:var(--radius-l);padding:clamp(20px,2vw,28px);border:1px solid var(--line-l);box-shadow:var(--shadow-card)}
+.sec-bg.dark .qa-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.qa-card .qa-q{display:flex;gap:12px;align-items:start;margin-bottom:12px}
+.qa-card .qa-q .qa-badge{background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.qa-card .qa-q h5{font-size:15px;font-weight:700;line-height:1.4}
+.qa-card .qa-a{font-size:13px;color:var(--muted);line-height:1.7;padding-left:44px}
+.sec-bg.dark .qa-card .qa-a{color:rgba(255,255,255,.65)}
+
+/* ═══ SCHOOL GUIDE (学校就餐指南) ═══ */
+.guide-list{display:flex;flex-direction:column;gap:16px}
+.guide-item{display:grid;grid-template-columns:auto 1fr;gap:16px 20px;align-items:start;padding:20px 24px;background:rgba(255,255,255,.05);border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.sec-bg:not(.dark) .guide-item{background:#fff;border-color:var(--line-l)}
+.guide-item .gi-num{font-size:28px;font-weight:700;color:var(--green);font-family:var(--font-serif);line-height:1}
+.sec-bg.dark .guide-item .gi-num{color:var(--gold)}
+.guide-item h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.guide-item p{font-size:13px;color:var(--muted);line-height:1.6}
+.sec-bg.dark .guide-item p{color:rgba(255,255,255,.65)}
+
+/* ═══ PREGNANCY (孕期管理) ═══ */
+.preg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(16px,2vw,24px)}
+.preg-card{background:#fff;border-radius:var(--radius-l);padding:clamp(24px,2.5vw,32px);border:1px solid var(--line-l);box-shadow:var(--shadow-card)}
+.sec-bg.dark .preg-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.preg-card .pc-icon{font-size:36px;margin-bottom:12px;display:block}
+.preg-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.preg-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.sec-bg.dark .preg-card p{color:rgba(255,255,255,.65)}
+
+/* ═══ QUALITY TRACE (品质追溯) ═══ */
+.trace-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0}
+.trace-step{padding:24px 20px;text-align:center;border-right:1px solid var(--line-l);position:relative}
+.trace-step:last-child{border-right:none}
+@media(max-width:600px){.trace-step{border-right:none;border-bottom:1px solid var(--line-l)}.trace-step:last-child{border-bottom:none}}
+.trace-step .ts-check{width:36px;height:36px;border-radius:50%;background:var(--green-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:18px}
+.trace-step h5{font-size:14px;font-weight:700;margin-bottom:6px}
+.trace-step p{font-size:12px;color:var(--muted);line-height:1.5}
+.sec-bg.dark .trace-step{border-right-color:rgba(255,255,255,.08);border-bottom-color:rgba(255,255,255,.08)}
+.sec-bg.dark .trace-step p{color:rgba(255,255,255,.6)}
+
+/* ═══ MOBILE EXTRA ═══ */
+@media(max-width:860px){
+  .story-grid{grid-template-columns:1fr}
+  .media-wall{grid-template-columns:1fr 1fr}
+  .channel-grid{grid-template-columns:1fr}
+  .meal-grid{grid-template-columns:1fr}
+  .myth-grid{grid-template-columns:1fr}
+  .recipe-grid{grid-template-columns:1fr}
+  .region-grid{grid-template-columns:1fr}
+  .world-stats{grid-template-columns:1fr 1fr}
+  .cook-grid{grid-template-columns:1fr 1fr}
+  .preg-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .qa-grid{max-width:none}
+  .cmp-table{font-size:11px}
+  .cmp-table thead th,.cmp-table tbody td{padding:8px 6px}
+}
+@media(max-width:480px){
+  .media-wall{grid-template-columns:1fr}
+  .world-stats{grid-template-columns:1fr}
+  .cook-grid{grid-template-columns:1fr}
+  .flow-steps{grid-template-columns:1fr}
+  .trace-grid{grid-template-columns:1fr}
+  .meal-row{grid-template-columns:1fr;gap:4px}
+  .meal-row .mr-data{font-size:11px}
+}
 </style>
 
 <script type="application/ld+json">
@@ -520,6 +792,9 @@ table tbody tr:hover{background:var(--green-soft)}
 <div class="btm-btns">
   <button onclick="document.querySelector('.film')?.scrollIntoView({behavior:'smooth'})">浏览全部产品</button>
   <button onclick="navigate('pageBrand')">了解品牌实力</button>
+  <button onclick="navigate('calculator')" style="background:var(--paper);color:var(--ink);border:1px solid var(--line)">摄入计算器</button>
+  <button onclick="navigate('compare')" style="background:var(--paper);color:var(--ink);border:1px solid var(--line)">产品对比</button>
+  <button onclick="navigate('contact')" style="background:var(--paper);color:var(--ink);border:1px solid var(--line)">营养咨询</button>
 </div>
 </div>
 <div class="btm-info">
@@ -772,7 +1047,78 @@ ${bgSection(BG.doctor,true,`
   </div>
 `)}
 
-<div class="closing reveal"><h2>${_T('为特殊人群，做一顿不用将就的饭。','A meal without compromise for those with special needs.')}<br><span class="en" style="font-size:18px;color:var(--muted);font-weight:500">A Meal Without Compromise.</span></h2><p>${_T('点击下方任意产品，查看配料、吃法与完整营养数据。','Tap any product to see ingredients, instructions & nutrition facts.')}</p><button class="btn-solid" style="background:var(--green);color:#fff" onclick="document.querySelector('.film').scrollIntoView({behavior:'smooth'})">${_T('浏览全部产品','Browse All Products')}</button></div>`;
+<div class="closing reveal"><h2>${_T('为特殊人群，做一顿不用将就的饭。','A meal without compromise for those with special needs.')}<br><span class="en" style="font-size:18px;color:var(--muted);font-weight:500">A Meal Without Compromise.</span></h2><p>${_T('点击下方任意产品，查看配料、吃法与完整营养数据。','Tap any product to see ingredients, instructions & nutrition facts.')}</p><button class="btn-solid" style="background:var(--green);color:#fff" onclick="document.querySelector('.film').scrollIntoView({behavior:'smooth'})">${_T('浏览全部产品','Browse All Products')}</button></div>
+
+${bgSection(BG.family,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">${_T('用户故事','Patient Stories')}</span><h2 class="h2">${_T('他们的生活，因一碗饭改变','Lives Changed')}<span class="en">Patient Stories</span></h2><p class="sec-sub">${_T('真实患者的使用经历，从焦虑到安心。','Real patient journeys from anxiety to peace of mind.')}</p></div>
+  <div class="story-grid">
+    <div class="story-card reveal">
+      <div class="sc-avatar">👨</div>
+      <div class="sc-name">${_T('王先生 · CKD 4期','Mr. Wang · CKD Stage 4')}</div>
+      <div class="sc-meta">${_T('52岁 · 使用森无忧 8 个月','52 years old · 8 months')}</div>
+      <div class="sc-before"><span class="sc-tag">${_T('使用前','Before')}</span><p class="sc-text">${_T('查出CKD 4期后不敢吃主食，每天只吃菜，3个月瘦了8公斤，全身乏力，复查血肌酐不降反升。','After CKD Stage 4 diagnosis, stopped eating staples. Lost 8kg in 3 months, creatinine rose.')}</p></div>
+      <div class="sc-after"><span class="sc-tag">${_T('使用后','After')}</span><p class="sc-text">${_T('用森无忧米饭替代普通米饭后，热量达标，体力恢复，肌酐稳定在320μmol/L，医生说"控制得很好"。','Switched to Senwuyou rice, energy met, strength recovered, creatinine stable at 320.')}</p></div>
+    </div>
+    <div class="story-card reveal">
+      <div class="sc-avatar">👩</div>
+      <div class="sc-name">${_T('李女士 · PKU 患儿家长','Ms. Li · PKU Parent')}</div>
+      <div class="sc-meta">${_T('孩子 5 岁 · 使用森无忧 2 年','Child 5y · 2 years')}</div>
+      <div class="sc-before"><span class="sc-tag">${_T('使用前','Before')}</span><p class="sc-text">${_T('孩子确诊PKU后，每天为做什么饭发愁，普通米饭Phe太高，孩子总说饿，血值反复波动。','After PKU diagnosis, struggled with every meal. Regular rice too high in Phe, blood values fluctuated.')}</p></div>
+      <div class="sc-after"><span class="sc-tag">${_T('使用后','After')}</span><p class="sc-text">${_T('森无忧大米和曲奇成了孩子的日常主食和零食，血Phe稳定在200μmol/L以内，孩子发育正常，快乐自信。','Senwuyou rice & cookies became daily staples. Blood Phe stable under 200, child developing normally.')}</p></div>
+    </div>
+    <div class="story-card reveal">
+      <div class="sc-avatar">👵</div>
+      <div class="sc-name">${_T('张阿姨 · 透析患者','Ms. Zhang · Dialysis')}</div>
+      <div class="sc-meta">${_T('61岁 · 血透 3 年 · 使用 1 年','61y · 3y on HD · 1 year')}</div>
+      <div class="sc-before"><span class="sc-tag">${_T('使用前','Before')}</span><p class="sc-text">${_T('透析后食欲差，普通米饭吃不下，白蛋白持续偏低，医生提醒营养不良风险。','Poor appetite after dialysis, couldn\\u2019t eat regular rice, albumin persistently low.')}</p></div>
+      <div class="sc-after"><span class="sc-tag">${_T('使用后','After')}</span><p class="sc-text">${_T('森无忧米饭微波2分钟即食，口感好愿意吃了，配合优质蛋白，白蛋白从32升到38g/L。','Senwuyou rice microwave 2 min, tasty, albumin rose from 32 to 38 g/L.')}</p></div>
+    </div>
+  </div>
+`)}
+
+${bgSection(BG.lab,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">${_T('媒体与荣誉','Media & Awards')}</span><h2 class="h2">${_T('行业认可与媒体报道','Industry Recognition')}<span class="en">Media & Awards</span></h2></div>
+  <div class="media-wall reveal">
+    <div class="media-logo"><span class="ml-icon">🏥</span>${_T('全国肾病年会','Nephrology Annual Meeting')}</div>
+    <div class="media-logo"><span class="ml-icon">📰</span>${_T('健康报报道','Health News')}</div>
+    <div class="media-logo"><span class="ml-icon">🏆</span>${_T('特医食品创新奖','Medical Food Innovation Award')}</div>
+    <div class="media-logo"><span class="ml-icon">🎓</span>${_T('南京产学研合作','NJ Industry-Academia')}</div>
+    <div class="media-logo"><span class="ml-icon">📡</span>${_T('CCTV健康频道','CCTV Health Channel')}</div>
+    <div class="media-logo"><span class="ml-icon">🔬</span>${_T('国家高新技术企业','National High-Tech Enterprise')}</div>
+  </div>
+  <div class="award-timeline reveal" style="margin-top:32px">
+    <div class="award-item"><div class="aw-year">1995</div><div><h4>${_T('南京恒生制药建厂','Hencer Pharma Founded')}</h4><p>${_T('立足南京溧水，开启30年制药历程。','Founded in Nanjing Lishui, starting 30 years of pharma excellence.')}</p></div></div>
+    <div class="award-item"><div class="aw-year">1999</div><div><h4>${_T('济民可信集团成立','Jemincare Group Established')}</h4><p>${_T('13大制药基地，年销售额超百亿。','13 pharma bases, annual sales over 10 billion RMB.')}</p></div></div>
+    <div class="award-item"><div class="aw-year">2016</div><div><h4>${_T('布局特医食品赛道','Entered Medical Food')}</h4><p>${_T('将药品GMP标准引入特殊医学用途配方食品领域。','Brought pharmaceutical GMP standards to medical foods.')}</p></div></div>
+    <div class="award-item"><div class="aw-year">2020</div><div><h4>${_T('核心专利获批','Core Patent Approved')}</h4><p>${_T('低蛋白米饭炊饭装置专利（ZL 202021188836.6）获授权。','Low-protein rice cooking device patent approved.')}</p></div></div>
+    <div class="award-item"><div class="aw-year">2024</div><div><h4>${_T('9大品类产品线','9 Product Categories')}</h4><p>${_T('覆盖即食米饭到家庭烹饪全场景，服务数万CKD与PKU家庭。','Covering instant to home cooking, serving tens of thousands of families.')}</p></div></div>
+  </div>
+`)}
+
+${bgSection(BG.kitchen,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">FAQ · ${_T('常见问题','FAQ')}</span><h2 class="h2">${_T('您可能想知道','You May Wonder')}<span class="en">Frequently Asked Questions</span></h2></div>
+  <div class="faq-list">
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">${_T('低蛋白主食能长期吃吗？','Can I eat low-protein staples long-term?')}<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">${_T('完全可以。森无忧低蛋白主食以真米为原料，通过生物酶解脱蛋白，保留碳水化合物和微量元素，是CKD和PKU患者的终身饮食方案。国内外临床指南均推荐低蛋白主食作为CKD/PKU的基础饮食管理手段。','Absolutely. Senwuyou uses real rice with enzymatic deproteination, preserving carbs and minerals. It is a lifelong dietary solution for CKD and PKU patients, recommended by clinical guidelines.')}</div></div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">${_T('口感和普通米饭差别大吗？','How does it taste compared to regular rice?')}<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">${_T('差别很小。森无忧采用真米脱蛋白技术（非纯淀粉合成），保留了完整大米的外观、香气和嚼劲。多数患者反馈"和普通米饭几乎一样"，儿童也能接受。即食米饭微波2分钟即可食用。','Very little difference. Senwuyou uses real rice (not starch blend), preserving appearance, aroma and chewiness. Most patients say it tastes "almost identical" to regular rice.')}</div></div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">${_T('需要医生指导才能吃吗？','Do I need a doctor\u2019s guidance?')}<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">${_T('建议在确诊CKD或PKU后，遵医嘱进行低蛋白饮食。森无忧产品为特殊膳食，配合医生制定的蛋白质摄入方案使用效果最佳。如有疑问可拨打400-009-2535咨询。','Recommended to follow your doctor\u2019s dietary plan after CKD/PKU diagnosis. Senwuyou is a special dietary product that works best with your prescribed protein intake plan. Call 400-009-2535 for questions.')}</div></div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">${_T('产品保质期多久？怎么保存？','What is the shelf life and storage?')}<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">${_T('即食米饭保质期8个月，0℃以上避光保存；大米、面粉、馒头粉等保质期18个月，常温阴凉干燥处保存。所有产品均经过UHT灭菌和氮气封装，0防腐剂。','Ready rice: 8 months, above 0\u00b0C. Rice grain, flour, bun flour: 18 months, room temperature. All UHT sterilized, nitrogen packaged, 0 preservatives.')}</div></div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">${_T('在哪里可以买到？','Where can I buy?')}<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">${_T('可通过医院肾病科/营养科推荐购买、天猫/京东旗舰店在线下单、或拨打全国热线400-009-2535电话订购。详见下方购买渠道。','Available through hospital nephrology/nutrition departments, Tmall/JD flagship stores, or call 400-009-2535. See purchase channels below.')}</div></div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">${_T('CKD和PKU患者都能吃吗？','Suitable for both CKD and PKU?')}<span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">${_T('是的。森无忧产品蛋白含量为0g（符合国标"0蛋白"标注），同时Phe含量极低（仅0.014%，为普通大米的1/20），一套产品线同时满足CKD肾病和PKU苯丙酮尿症患者的需求。','Yes. Senwuyou products have 0g protein (national standard) and extremely low Phe (0.014%, 1/20 of regular rice). One product line serves both CKD and PKU patients.')}</div></div></div>
+  </div>
+`)}
+
+${bgSection(BG.riceField,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">${_T('购买','Purchase')}</span><h2 class="h2">${_T('购买渠道','Where to Buy')}<span class="en">Where to Buy</span></h2><p class="sec-sub">${_T('线上线下多渠道购买，方便快捷。','Multiple channels for convenient purchase.')}</p></div>
+  <div class="channel-grid">
+    <div class="channel-card reveal" onclick="window.open('https://senwuyou.com','_blank')"><span class="ch-icon">🏥</span><h4>${_T('医院渠道','Hospital')}</h4><p class="ch-desc">${_T('全国多家三甲医院肾病科、营养科推荐购买，专业医生指导。','Recommended by hospital nephrology & nutrition departments nationwide.')}</p></div>
+    <div class="channel-card reveal" onclick="window.open('https://senwuyou.com','_blank')"><span class="ch-icon">🛒</span><h4>${_T('天猫旗舰店','Tmall Store')}</h4><p class="ch-desc">${_T('搜索"森无忧"，线上下单，顺丰冷链配送。','Search "Senwuyou" on Tmall, SF cold chain delivery.')}</p></div>
+    <div class="channel-card reveal" onclick="window.open('https://senwuyou.com','_blank')"><span class="ch-icon">📦</span><h4>${_T('京东自营','JD Store')}</h4><p class="ch-desc">${_T('京东搜索"森无忧"，当日达/次日达。','Search on JD.com, same/next day delivery.')}</p></div>
+    <div class="channel-card reveal" onclick="window.open('tel:400-009-2535')"><span class="ch-icon">📞</span><h4>${_T('电话订购','Phone Order')}</h4><p class="ch-desc">${_T('全国热线 400-009-2535，工作日 9:00-17:00。','National hotline 400-009-2535, Mon-Fri 9AM-5PM.')}</p></div>
+  </div>
+  <div class="note gold reveal" style="margin-top:32px;max-width:680px;margin-left:auto;margin-right:auto"><p><strong>${_T('批量订购优惠','Bulk Orders')}：</strong>${_T('一次性购买10盒以上享9折优惠，20盒以上享85折。医院团购另有专属方案，请致电咨询。','10+ boxes: 10% off, 20+ boxes: 15% off. Hospital bulk orders: special pricing. Call for details.')}</p></div>
+`)}
+
+<div class="closing reveal"><h2>${_T('为特殊人群，做一顿不用将就的饭。','A Meal Without Compromise.')}</h2><p>${_T('有任何疑问？欢迎联系我们的营养咨询团队。','Questions? Contact our nutrition consultation team.')}</p><button class="btn-solid" style="background:var(--green);color:#fff" onclick="navigate('contact')">${_T('在线咨询','Contact Us')}</button></div>`;
 document.getElementById('csSection').classList.remove('hidden')}
 
 // ═══ 详情 ═══
@@ -824,6 +1170,18 @@ document.getElementById('app').innerHTML=`
     </div>
   </div>
   `:''}
+  <div class="extra-section reveal" style="margin-top:0">
+    <div class="extra-label">${_T('创意吃法','Cooking Tips')}</div>
+    <div class="cook-grid">
+      ${p.id<=3?`<div class="cook-card"><span class="ck-icon">🍙</span><h5>${_T('饭团','Onigiri')}</h5><p>${_T('米饭晾凉捏团裹海苔','Cool rice, shape, wrap nori')}</p></div><div class="cook-card"><span class="ck-icon">🍳</span><h5>${_T('炒饭','Fried Rice')}</h5><p>${_T('热锅快炒加蛋液蔬菜','Stir-fry with egg and veggies')}</p></div><div class="cook-card"><span class="ck-icon">🥣</span><h5>${_T('煮粥','Porridge')}</h5><p>${_T('加水小火慢炖20分钟','Simmer with water 20 min')}</p></div>`:''}
+      ${p.id===4?`<div class="cook-card"><span class="ck-icon">🥟</span><h5>${_T('饺子','Dumplings')}</h5><p>${_T('开水烫面擀皮包馅','Hot water dough, fill, steam')}</p></div><div class="cook-card"><span class="ck-icon">🍜</span><h5>${_T('面条','Noodles')}</h5><p>${_T('揉团擀面切条煮食','Knead, roll, cut, boil')}</p></div><div class="cook-card"><span class="ck-icon">🥧</span><h5>${_T('馄饨','Wontons')}</h5><p>${_T('薄皮包肉馅煮汤','Thin wrapper, fill, boil in soup')}</p></div>`:''}
+      ${p.id===5?`<div class="cook-card"><span class="ck-icon">🥖</span><h5>${_T('馒头','Steamed Buns')}</h5><p>${_T('两次醒发蒸10分钟','Two proofs, steam 10 min')}</p></div><div class="cook-card"><span class="ck-icon">🍞</span><h5>${_T('花卷','Flower Rolls')}</h5><p>${_T('擀面卷层扭花','Roll, layer, twist')}</p></div><div class="cook-card"><span class="ck-icon">🥯</span><h5>${_T('包子','Buns')}</h5><p>${_T('包馅蒸制','Fill and steam')}</p></div>`:''}
+      ${p.id===6?`<div class="cook-card"><span class="ck-icon">🍜</span><h5>${_T('汤粉','Soup Noodles')}</h5><p>${_T('温水泡发煮汤','Soak, cook in broth')}</p></div><div class="cook-card"><span class="ck-icon">🥗</span><h5>${_T('凉拌','Cold Noodles')}</h5><p>${_T('煮熟冲凉拌酱','Cook, rinse, dress')}</p></div><div class="cook-card"><span class="ck-icon">🔥</span><h5>${_T('炒粉','Stir-fry')}</h5><p>${_T('热锅快炒加蔬菜','Hot wok stir-fry with veggies')}</p></div>`:''}
+      ${p.id===7?`<div class="cook-card"><span class="ck-icon">🍪</span><h5>${_T('即食','Direct')}</h5><p>${_T('开袋即食控量','Open and eat, portion control')}</p></div><div class="cook-card"><span class="ck-icon">☕</span><h5>${_T('配茶','With Tea')}</h5><p>${_T('下午茶搭配','Afternoon tea pairing')}</p></div><div class="cook-card"><span class="ck-icon">🥛</span><h5>${_T('配奶','With Milk')}</h5><p>${_T('蘸牛奶更香','Dip in milk for flavor')}</p></div>`:''}
+      ${p.id===8?`<div class="cook-card"><span class="ck-icon">🥨</span><h5>${_T('即食','Direct')}</h5><p>${_T('开袋即食','Open and eat')}</p></div><div class="cook-card"><span class="ck-icon">🥗</span><h5>${_T('配沙拉','With Salad')}</h5><p>${_T('撒在沙拉上','Sprinkle on salad')}</p></div><div class="cook-card"><span class="ck-icon">🥛</span><h5>${_T('配酸奶','With Yogurt')}</h5><p>${_T('搭配酸奶更美味','Pair with yogurt')}</p></div>`:''}
+      ${p.id===9?`<div class="cook-card"><span class="ck-icon">🍚</span><h5>${_T('加热即食','Heat & Eat')}</h5><p>${_T('撕口微波2分钟','Tear, microwave 2 min')}</p></div><div class="cook-card"><span class="ck-icon">🍲</span><h5>${_T('水煮','Boil')}</h5><p>${_T('带包装沸水煮10分钟','Boil in bag 10 min')}</p></div><div class="cook-card"><span class="ck-icon">🍢</span><h5>${_T('切片','Slice')}</h5><p>${_T('切薄片配低蛋白酱','Slice thin with sauce')}</p></div>`:''}
+    </div>
+  </div>
   <div class="detail-nav reveal">
     <button class="prev" onclick="prevProduct(${p.id})" ${prev?'':'disabled'}><div><div class="dn-label">← ${_T('上一款','Previous')}</div><div class="dn-name">${prev?prev.name:_T('已是第一款','First Product')}</div></div></button>
     <button class="next" onclick="nextProduct(${p.id})" ${next?'':'disabled'}><div><div class="dn-label">${_T('下一款','Next')} →</div><div class="dn-name">${next?next.name:_T('已是最后一款','Last Product')}</div></div></button>
@@ -858,6 +1216,156 @@ document.getElementById('app').innerHTML=`
   ${n.more?`<tr><td>${_T('其他','Other')}</td><td>${n.more}</td></tr>`:''}
   <tr><td>${_T('贮存','Storage')}</td><td>${p.store}</td></tr></tbody></table></div></div></div>`;
 document.getElementById('csSection').classList.remove('hidden')}
+
+// ═══ 蛋白质/Phe 计算器 ═══
+function _calculator(){setTab(0);
+document.getElementById('app').innerHTML=`
+<div class="page-bg">${imgOrFallback(BG.lab,'','pb-fb')}</div>
+<div class="detail" style="max-width:760px">
+  <div class="sec-head reveal" style="margin-bottom:32px"><span class="eyebrow d">Calculator · ${_T('计算器','Calculator')}</span><h2 class="h2">${_T('蛋白质 / Phe 摄入计算器','Protein / Phe Calculator')}<span class="en">Intake Calculator</span></h2><p class="sec-sub">${_T('输入体重和病情，自动推荐每日摄入量。','Enter weight and condition for daily intake recommendations.')}</p></div>
+  <div class="calc-box reveal">
+    <div class="calc-field">
+      <label>${_T('患者类型','Patient Type')}</label>
+      <select id="calcType" onchange="updateCalc()">
+        <option value="">${_T('请选择','Please select')}</option>
+        <option value="ckd3">CKD 3期 (GFR 30-59)</option>
+        <option value="ckd4">CKD 4期 (GFR 15-29)</option>
+        <option value="ckd5">CKD 5期未透析 (GFR <15)</option>
+        <option value="hd">${_T('血液透析','Hemodialysis')}</option>
+        <option value="pd">${_T('腹膜透析','Peritoneal Dialysis')}</option>
+        <option value="pku_c">PKU ${_T('儿童','Child')} (1-10岁)</option>
+        <option value="pku_a">PKU ${_T('成人','Adult')}</option>
+      </select>
+    </div>
+    <div class="calc-field">
+      <label>${_T('体重 (kg)','Body Weight (kg)')}</label>
+      <input type="number" id="calcWeight" placeholder="${_T('请输入体重','Enter weight')}" oninput="updateCalc()" min="1" max="200">
+    </div>
+    <div class="calc-result" id="calcResult" style="display:none">
+      <div class="cr-val" id="crVal">--</div>
+      <div class="cr-lbl" id="crLbl"></div>
+    </div>
+    <div class="calc-suggest" id="calcSuggest" style="display:none"></div>
+  </div>
+  <div class="note reveal" style="margin-top:24px;max-width:640px;margin-left:auto;margin-right:auto"><p><strong>${_T('免责声明','Disclaimer')}：</strong>${_T('本工具仅供参考，实际摄入量请遵医嘱。','For reference only. Follow your doctor\u2019s advice.')}</p></div>
+</div>`;
+document.getElementById('csSection').classList.remove('hidden');setTimeout(setupReveal,30)}
+
+function updateCalc(){
+  const type=document.getElementById('calcType').value;
+  const wt=parseFloat(document.getElementById('calcWeight').value);
+  const result=document.getElementById('calcResult');
+  const suggest=document.getElementById('calcSuggest');
+  if(!type||!wt||wt<=0){result.style.display='none';suggest.style.display='none';return}
+  const cfg={
+    ckd3:{protein:0.6,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:true},
+    ckd4:{protein:0.5,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:true},
+    ckd5:{protein:0.6,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:true},
+    hd:{protein:1.1,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:false},
+    pd:{protein:1.0,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:false},
+    pku_c:{protein:1.5,phe:400,unit:'mg/天',label:_T('每日Phe耐受量','Daily Phe Tolerance'),ketoacid:false},
+    pku_a:{protein:1.0,phe:600,unit:'mg/天',label:_T('每日Phe耐受量','Daily Phe Tolerance'),ketoacid:false}
+  };
+  const c=cfg[type];if(!c)return;
+  result.style.display='block';suggest.style.display='grid';
+  if(type.startsWith('pku')){
+    document.getElementById('crVal').textContent=c.phe+' mg';
+    document.getElementById('crLbl').textContent=c.label+_T('（参考值）',' (reference)');
+  }else{
+    const total=(c.protein*wt).toFixed(1);
+    document.getElementById('crVal').textContent=total+' g';
+    document.getElementById('crLbl').textContent=c.label+_T('（',' (')+c.protein+'g/kg \u00d7 '+wt+'kg）';
+  }
+  let sugg='';
+  if(type.startsWith('pku')){
+    sugg=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('森无忧低蛋白米饭','Senwuyou Rice')}</span><span class="cs-data">Phe ~14mg/100g</span></div>
+    <div class="cs-item"><span class="cs-icon">🌾</span><span class="cs-name">${_T('森无忧低蛋白大米','Senwuyou Rice Grain')}</span><span class="cs-data">Phe ~14mg/100g</span></div>
+    <div class="cs-item"><span class="cs-icon">🍪</span><span class="cs-name">${_T('森无忧低蛋白曲奇','Senwuyou Cookies')}</span><span class="cs-data">Phe ~15mg/包</span></div>`;
+  }else{
+    sugg=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('森无忧低蛋白米饭','Senwuyou Rice')}</span><span class="cs-data">0g ${_T('蛋白','protein')} · ${_T('三餐主食','3 meals')}</span></div>
+    <div class="cs-item"><span class="cs-icon">🍜</span><span class="cs-name">${_T('森无忧低蛋白米粉','Senwuyou Noodles')}</span><span class="cs-data">0g ${_T('蛋白','protein')} · ${_T('换口味','variety')}</span></div>
+    <div class="cs-item"><span class="cs-icon">🍪</span><span class="cs-name">${_T('森无忧低蛋白曲奇','Senwuyou Cookies')}</span><span class="cs-data">0.2g ${_T('蛋白/包','protein/pack')} · ${_T('加餐','snack')}</span></div>`;
+    if(c.ketoacid){
+      sugg+=`<div class="cs-item"><span class="cs-icon">💊</span><span class="cs-name">${_T('复方α-酮酸（遵医嘱）','Ketoacid (Rx only)')}</span><span class="cs-data">${_T('配合低蛋白饮食','With low-protein diet')}</span></div>`;
+    }
+  }
+  suggest.innerHTML=sugg;
+}
+
+// ═══ 联系我们 / 营养咨询 ═══
+function _contact(){setTab(0);
+document.getElementById('app').innerHTML=`
+<div class="page-bg">${imgOrFallback(BG.family,'','pb-fb')}</div>
+<div class="detail" style="max-width:880px">
+  <div class="sec-head reveal" style="margin-bottom:32px"><span class="eyebrow d">Contact · ${_T('联系','Contact')}</span><h2 class="h2">${_T('联系我们 / 营养咨询','Contact & Consultation')}<span class="en">Contact & Nutrition Consultation</span></h2><p class="sec-sub">${_T('有任何疑问？填写下方表单或直接联系我们。','Questions? Fill the form or contact us directly.')}</p></div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <form class="contact-form" onsubmit="submitContact(event)">
+        <input type="text" placeholder="${_T('您的称呼','Your name')}" required>
+        <input type="tel" placeholder="${_T('联系电话','Phone number')}" required>
+        <select required>
+          <option value="">${_T('请选择患者类型','Select patient type')}</option>
+          <option>CKD ${_T('肾病','Kidney Disease')}</option>
+          <option>PKU ${_T('苯丙酮尿症','Phenylketonuria')}</option>
+          <option>${_T('其他','Other')}</option>
+        </select>
+        <textarea placeholder="${_T('请描述您的问题或需求...','Describe your question or need...')}" required></textarea>
+        <button type="submit" class="nutri-cta" style="width:100%">${_T('提交咨询','Submit')}</button>
+      </form>
+    </div>
+    <div class="contact-info-card reveal">
+      <h4>${_T('联系方式','Contact Info')}</h4>
+      <div class="ci-row"><span class="ci-icon">📞</span><div><div class="ci-label">${_T('全国热线','Hotline')}</div><div class="ci-val">400-009-2535</div></div></div>
+      <div class="ci-row"><span class="ci-icon">🏢</span><div><div class="ci-label">${_T('厂区电话','Factory')}</div><div class="ci-val">025-57212809</div></div></div>
+      <div class="ci-row"><span class="ci-icon">📍</span><div><div class="ci-label">${_T('地址','Address')}</div><div class="ci-val">${_T('南京市溧水经济开发区机场路18号','No.18 Jichang Rd, Lishui, Nanjing')}</div></div></div>
+      <div class="ci-row"><span class="ci-icon">🕐</span><div><div class="ci-label">${_T('服务时间','Service Hours')}</div><div class="ci-val">${_T('周一至周五 9:00-17:00','Mon-Fri 9AM-5PM')}</div></div></div>
+      <div class="ci-row"><span class="ci-icon">🏥</span><div><div class="ci-label">${_T('营养咨询','Nutrition')}</div><div class="ci-val">${_T('专业营养师团队在线答疑','Professional nutritionist team')}</div></div></div>
+      <div class="ci-row"><span class="ci-icon">🚚</span><div><div class="ci-label">${_T('配送','Shipping')}</div><div class="ci-val">${_T('全国配送 · 顺丰冷链','Nationwide · SF cold chain')}</div></div></div>
+    </div>
+  </div>
+</div>`;
+document.getElementById('csSection').classList.remove('hidden');setTimeout(setupReveal,30)}
+
+function submitContact(e){e.preventDefault();alert(_T('感谢您的咨询！我们将在1个工作日内与您联系。','Thank you! We will contact you within 1 business day.'));e.target.reset()}
+
+// ═══ 产品对比工具 ═══
+function _compare(){setTab(0);
+document.getElementById('app').innerHTML=`
+<div class="page-bg">${imgOrFallback(BG.kitchen,'','pb-fb')}</div>
+<div class="detail" style="max-width:900px">
+  <div class="sec-head reveal" style="margin-bottom:32px"><span class="eyebrow d">Compare · ${_T('对比','Compare')}</span><h2 class="h2">${_T('产品对比工具','Product Comparison')}<span class="en">Product Comparison Tool</span></h2><p class="sec-sub">${_T('选择两款产品，查看详细参数对比。','Select two products for detailed comparison.')}</p></div>
+  <div class="cmp-tool reveal">
+    <div class="cmp-select-row">
+      <select id="cmpA" onchange="updateCompare()">${P.map(p=>`<option value="${p.id}">${p.name}</option>`).join('')}</select>
+      <div class="cmp-vs">VS</div>
+      <select id="cmpB" onchange="updateCompare()">${P.map(p=>`<option value="${p.id}" ${p.id===2?'selected':''}>${p.name}</option>`).join('')}</select>
+    </div>
+    <div id="cmpResult"></div>
+  </div>
+</div>`;
+document.getElementById('csSection').classList.remove('hidden');setTimeout(function(){updateCompare();setupReveal()},30)}
+
+function updateCompare(){
+  const a=P.find(p=>p.id===parseInt(document.getElementById('cmpA').value));
+  const b=P.find(p=>p.id===parseInt(document.getElementById('cmpB').value));
+  if(!a||!b)return;
+  const rows=[
+    [_T('净含量','Net Weight'),a.w,b.w],
+    [_T('保质期','Shelf Life'),a.shelf,b.shelf],
+    [_T('蛋白质','Protein'),a.n.protein,b.n.protein],
+    [_T('钠','Sodium'),a.n.na,b.n.na],
+    [_T('钾','Potassium'),a.n.k,b.n.k],
+    [_T('磷','Phosphorus'),a.n.p,b.n.p],
+    [a.n.energy?'能量':'',a.n.energy||'-',b.n.energy||'-'],
+    [_T('配料','Ingredients'),a.ings,b.ings],
+    [_T('贮存','Storage'),a.store,b.store],
+    [_T('标准','Standard'),a.sc||'-',b.sc||'-']
+  ].filter(r=>r[0]);
+  document.getElementById('cmpResult').innerHTML=`
+  <div class="table-scroll"><table class="cmp-table"><thead><tr><th>${_T('对比项','Item')}</th><th class="highlight">${a.name}</th><th class="highlight">${b.name}</th></tr></thead><tbody>
+  ${rows.map(r=>`<tr><td>${r[0]}</td><td class="highlight">${r[1]}</td><td class="highlight">${r[2]}</td></tr>`).join('')}
+  </tbody></table></div>`;
+}
 
 // ═══ 品牌 ═══
 function _pageBrand(){setTab(1);
@@ -901,6 +1409,64 @@ ${bgSection(BG.riceField,true,`
     <div class="value reveal"><div class="vi">👥</div><h4>${_T('双人群适配','Dual Population')}</h4><p>${_T('CKD 肾病 + PKU 一套产品线覆盖。','CKD + PKU covered with one product line.')}</p></div>
     <div class="value reveal"><div class="vi">💰</div><h4>${_T('价格最优','Best Value')}</h4><p>${_T('米饭 13.8 元/盒，低于其他同类型产品。','Rice ¥13.8/box, better value than competitors.')}</p></div>
   </div>
+`)}
+
+${bgSection(BG.riceField,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">Timeline · ${_T('时间线','Timeline')}</span><h2 class="h2">${_T('品牌发展历程','Brand Timeline')}<span class="en">Brand Timeline</span></h2></div>
+  <div class="timeline reveal" style="max-width:680px;margin:0 auto">
+    <div class="tl-item"><div class="tl-year">1995</div><h4>${_T('南京恒生制药建厂','Hencer Pharma Founded')}</h4><p>${_T('在南京溧水经济开发区建厂，开启制药历程。占地100余亩，建设GMP标准生产车间。','Founded in Nanjing Lishui Economic Development Zone. 100+ mu campus with GMP workshops.')}</p></div>
+    <div class="tl-item"><div class="tl-year">1999</div><h4>${_T('济民可信集团成立','Jemincare Group Established')}</h4><p>${_T('集团总部位于江西南昌，整合旗下制药资源，开始集团化运营。','Group HQ in Nanchang, Jiangxi. Integrated pharma resources, began group operations.')}</p></div>
+    <div class="tl-item"><div class="tl-year">2005</div><h4>${_T('肾科处方药上市','Renal Drugs Launched')}</h4><p>${_T('森铁能（蔗糖铁注射液）、森同（复方α-酮酸）等肾科处方药相继上市，积累临床资源。','Sentieneng and Sentong launched, building clinical resources in nephrology.')}</p></div>
+    <div class="tl-item"><div class="tl-year">2016</div><h4>${_T('布局特医食品赛道','Entered Medical Food')}</h4><p>${_T('将药品GMP标准引入特殊医学用途配方食品领域，开始研发低蛋白主食产品。','Brought pharma GMP standards to medical foods. Began low-protein staple R&D.')}</p></div>
+    <div class="tl-item"><div class="tl-year">2020</div><h4>${_T('核心专利获批','Core Patent Approved')}</h4><p>${_T('低蛋白米饭炊饭装置专利（ZL 202021188836.6）获授权，突破口感难题。','Low-protein rice cooking device patent approved, solving taste issues.')}</p></div>
+    <div class="tl-item"><div class="tl-year">2022</div><h4>${_T('9大品类上市','9 Categories Launched')}</h4><p>${_T('从即食米饭到面粉、曲奇、粽子，覆盖三餐加餐全场景产品线成型。','From instant rice to flour, cookies, zongzi — full product line covering all meal scenarios.')}</p></div>
+    <div class="tl-item"><div class="tl-year">2024</div><h4>${_T('服务数万家庭','Serving Tens of Thousands')}</h4><p>${_T('产品出口50+国家，服务数万CKD与PKU家庭，成为低蛋白主食领域领导品牌。','Exported to 50+ countries, serving tens of thousands of families. Leading brand in low-protein staples.')}</p></div>
+  </div>
+`)}
+
+${bgSection(BG.world,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">Global · ${_T('全球','Global')}</span><h2 class="h2">${_T('全球出口版图','Global Presence')}<span class="en">Global Presence</span></h2></div>
+  <div class="world-stats reveal">
+    <div class="world-stat"><div class="ws-val">50+</div><div class="ws-lbl">${_T('出口国家','Countries')}</div></div>
+    <div class="world-stat"><div class="ws-val">13</div><div class="ws-lbl">${_T('制药基地','Pharma Bases')}</div></div>
+    <div class="world-stat"><div class="ws-val">100亿+</div><div class="ws-lbl">${_T('年销售额(元)','Annual Sales')}</div></div>
+    <div class="world-stat"><div class="ws-val">500强</div><div class="ws-lbl">${_T('中国民企','Top 500')}</div></div>
+  </div>
+  <div class="region-grid reveal">
+    <div class="region-card"><div class="rg-name">🌍 ${_T('东南亚','Southeast Asia')}</div><div class="rg-countries">${_T('越南、泰国、印度尼西亚、马来西亚、菲律宾','Vietnam, Thailand, Indonesia, Malaysia, Philippines')}</div></div>
+    <div class="region-card"><div class="rg-name">🕌 ${_T('中东','Middle East')}</div><div class="rg-countries">${_T('阿联酋、沙特阿拉伯、土耳其、埃及','UAE, Saudi Arabia, Turkey, Egypt')}</div></div>
+    <div class="region-card"><div class="rg-name">🇪🇺 ${_T('欧洲','Europe')}</div><div class="rg-countries">${_T('德国、法国、英国、意大利、西班牙','Germany, France, UK, Italy, Spain')}</div></div>
+    <div class="region-card"><div class="rg-name">🌎 ${_T('美洲','Americas')}</div><div class="rg-countries">${_T('美国、加拿大、巴西、墨西哥','USA, Canada, Brazil, Mexico')}</div></div>
+    <div class="region-card"><div class="rg-name">🇦🇺 ${_T('大洋洲','Oceania')}</div><div class="rg-countries">${_T('澳大利亚、新西兰','Australia, New Zealand')}</div></div>
+    <div class="region-card"><div class="rg-name">🌍 ${_T('非洲','Africa')}</div><div class="rg-countries">${_T('南非、肯尼亚、尼日利亚','South Africa, Kenya, Nigeria')}</div></div>
+  </div>
+`)}
+
+${bgSection(BG.plant,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">Production · ${_T('生产','Production')}</span><h2 class="h2">${_T('生产线全流程图解','Production Process')}<span class="en">Production Process</span></h2><p class="sec-sub">${_T('从原料到成品，8道工序全程可追溯。','From raw material to finished product, 8 fully traceable steps.')}</p></div>
+  <div class="flow-steps reveal">
+    <div class="flow-step"><div class="fs-num">01</div><span class="fs-icon">🌾</span><h5>${_T('原料筛选','Raw Material')}</h5><p>${_T('精选优质大米，产地直采，原料入库检验。','Premium rice selection, direct sourcing, incoming inspection.')}</p></div>
+    <div class="flow-step"><div class="fs-num">02</div><span class="fs-icon">💦</span><h5>${_T('清洗浸泡','Washing')}</h5><p>${_T('多道清洗去除杂质，精确控制浸泡水温与时间。','Multi-stage washing, precise water temperature & time control.')}</p></div>
+    <div class="flow-step"><div class="fs-num">03</div><span class="fs-icon">🔬</span><h5>${_T('酶解脱蛋白','Enzymatic')}</h5><p>${_T('生物酶解技术，去除90%以上蛋白与苯丙氨酸。','Bio-enzymatic process, removes 90%+ protein & Phe.')}</p></div>
+    <div class="flow-step"><div class="fs-num">04</div><span class="fs-icon">⚗️</span><h5>${_T('X光质检','X-Ray QC')}</h5><p>${_T('X光异物检测，确保无金属、非金属杂质。','X-ray inspection for metal and non-metal contaminants.')}</p></div>
+    <div class="flow-step"><div class="fs-num">05</div><span class="fs-icon">🔥</span><h5>${_T('蒸饭炊饭','Cooking')}</h5><p>${_T('日式蒸饭工艺，精准温控，锁住米饭口感。','Japanese steam cooking, precise temperature control.')}</p></div>
+    <div class="flow-step"><div class="fs-num">06</div><span class="fs-icon">🌡️</span><h5>${_T('UHT灭菌','UHT Sterilization')}</h5><p>${_T('超高温瞬时灭菌，0防腐剂，常温保质8个月。','Ultra-high temperature sterilization, 0 preservatives.')}</p></div>
+    <div class="flow-step"><div class="fs-num">07</div><span class="fs-icon">📦</span><h5>${_T('氮气封装','N2 Packaging')}</h5><p>${_T('三层氮气高阻隔包装，隔绝氧气保鲜锁味。','3-layer nitrogen barrier packaging, oxygen-free.')}</p></div>
+    <div class="flow-step"><div class="fs-num">08</div><span class="fs-icon">✅</span><h5>${_T('成品出库','Finished Product')}</h5><p>${_T('HPLC液相色谱检测，批次留样，合格放行。','HPLC testing, batch sampling, certified release.')}</p></div>
+  </div>
+`)}
+
+${bgSection(BG.lab,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">Quality · ${_T('追溯','Traceability')}</span><h2 class="h2">${_T('品质追溯体系','Quality Traceability')}<span class="en">Quality Traceability</span></h2><p class="sec-sub">${_T('每一批次产品均可追溯，从原料到餐桌全程质控。','Every batch traceable from raw material to table.')}</p></div>
+  <div class="trace-grid reveal">
+    <div class="trace-step"><div class="ts-check">🔍</div><h5>${_T('原料溯源','Raw Material')}</h5><p>${_T('每批大米原料记录产地、批次、检测报告。','Each batch recorded: origin, batch, test report.')}</p></div>
+    <div class="trace-step"><div class="ts-check">🧪</div><h5>${_T('过程检测','In-Process QC')}</h5><p>${_T('酶解后蛋白含量、Phe含量实时监控。','Real-time monitoring of protein & Phe after enzymatic.')}</p></div>
+    <div class="trace-step"><div class="ts-check">📡</div><h5>${_T('X光检测','X-Ray')}</h5><p>${_T('金属与非金属异物双重检测。','Dual metal and non-metal contaminant detection.')}</p></div>
+    <div class="trace-step"><div class="ts-check">📊</div><h5>${_T('HPLC检测','HPLC Lab')}</h5><p>${_T('高效液相色谱仪，检测营养成分与残留。','HPLC for nutritional content and residue testing.')}</p></div>
+    <div class="trace-step"><div class="ts-check">🏷️</div><h5>${_T('批次留样','Batch Sample')}</h5><p>${_T('每批次留样保存3年，可追溯查询。','Each batch sampled and stored for 3 years.')}</p></div>
+    <div class="trace-step"><div class="ts-check">🚚</div><h5>${_T('物流追踪','Logistics')}</h5><p>${_T('冷链物流温度监控，配送全程可追踪。','Cold chain temperature monitoring, full delivery tracking.')}</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:32px;max-width:680px;margin-left:auto;margin-right:auto"><p><strong>${_T('质量承诺','Quality Promise')}：</strong>${_T('如发现产品质量问题，可拨打400-009-2535反馈，我们将在24小时内响应处理。','For quality issues, call 400-009-2535. We respond within 24 hours.')}</p></div>
 `)}`;
 document.getElementById('csSection').classList.remove('hidden')}
 
@@ -944,6 +1510,77 @@ ${bgSection(BG.wheat,false,`
     <div class="row clickable" onclick="navigate('scienceDetail','meaning')"><div class="rn">02</div><div><h4>${_T('少吃主食的陷阱','The Trap of Eating Less')}</h4><p>${_T('少吃主食控蛋白却导致肌肉分解和PEW。点击查看分析 →','Eating less rice causes muscle breakdown and PEW. Click →')}</p></div></div>
     <div class="row clickable" onclick="navigate('scienceDetail','meaning')"><div class="rn">03</div><div><h4>${_T('森无忧的方案','The Senwuyou Solution')}</h4><p>${_T('0蛋白主食既控蛋白又补能量，延缓肾病进展。点击查看详情 →','0g protein staples provide energy without burden. Click →')}</p></div></div>
   </div>
+`)}
+
+${bgSection(BG.kitchen,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">Meal Plan · ${_T('三餐','Meal Plan')}</span><h2 class="h2">${_T('一日三餐示范方案','Daily Meal Plans')}<span class="en">Daily Meal Plans</span></h2><p class="sec-sub">${_T('针对不同CKD分期，专业营养师设计的完整三餐方案。','Professional meal plans for different CKD stages.')}</p></div>
+  <div class="meal-grid">
+    <div class="meal-card reveal">
+      <span class="mc-stage">CKD 3期</span>
+      <h4>${_T('CKD 3期 · 蛋白0.6g/kg','Stage 3 · Protein 0.6g/kg')}</h4>
+      <div class="meal-row"><span class="mr-time">${_T('早餐','Breakfast')}</span><span class="mr-food">${_T('森无忧低蛋白馒头2个 + 鸡蛋1个 + 牛奶100ml','Senwuyou buns + 1 egg + 100ml milk')}</span><span class="mr-data">${_T('蛋白~9g','~9g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('午餐','Lunch')}</span><span class="mr-food">${_T('森无忧低蛋白米饭180g + 清炒时蔬 + 瘦肉30g','Senwuyou rice 180g + veggies + 30g lean meat')}</span><span class="mr-data">${_T('蛋白~12g','~12g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('晚餐','Dinner')}</span><span class="mr-food">${_T('森无忧低蛋白米粉 + 凉拌黄瓜 + 鱼肉30g','Senwuyou noodles + cucumber + 30g fish')}</span><span class="mr-data">${_T('蛋白~10g','~10g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('加餐','Snack')}</span><span class="mr-food">${_T('森无忧低蛋白曲奇2包 + 苹果半个','Senwuyou cookies 2 packs + half apple')}</span><span class="mr-data">${_T('蛋白~4g','~4g protein')}</span></div>
+    </div>
+    <div class="meal-card reveal">
+      <span class="mc-stage">CKD 4期</span>
+      <h4>${_T('CKD 4期 · 蛋白0.4g/kg','Stage 4 · Protein 0.4g/kg')}</h4>
+      <div class="meal-row"><span class="mr-time">${_T('早餐','Breakfast')}</span><span class="mr-food">${_T('森无忧低蛋白馒头1个 + 鸡蛋清2个 + 蔬菜汤','Senwuyou bun + 2 egg whites + veg soup')}</span><span class="mr-data">${_T('蛋白~6g','~6g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('午餐','Lunch')}</span><span class="mr-food">${_T('森无忧低蛋白米饭180g + 白灼菜心 + 瘦肉20g + 酮酸','Senwuyou rice 180g + veggies + 20g meat + ketoacid')}</span><span class="mr-data">${_T('蛋白~8g','~8g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('晚餐','Dinner')}</span><span class="mr-food">${_T('森无忧低蛋白面条 + 凉拌西芹 + 蛋清1个','Senwuyou noodles + celery + 1 egg white')}</span><span class="mr-data">${_T('蛋白~5g','~5g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('加餐','Snack')}</span><span class="mr-food">${_T('森无忧谷纤趣零食 + 梨半个','Senwuyou snacks + half pear')}</span><span class="mr-data">${_T('蛋白~2g','~2g protein')}</span></div>
+    </div>
+    <div class="meal-card reveal">
+      <span class="mc-stage">CKD 5期</span>
+      <h4>${_T('透析期 · 蛋白1.0g/kg','Dialysis · Protein 1.0g/kg')}</h4>
+      <div class="meal-row"><span class="mr-time">${_T('早餐','Breakfast')}</span><span class="mr-food">${_T('森无忧低蛋白馒头2个 + 鸡蛋1个 + 牛奶200ml','Senwuyou buns + 1 egg + 200ml milk')}</span><span class="mr-data">${_T('蛋白~14g','~14g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('午餐','Lunch')}</span><span class="mr-food">${_T('森无忧低蛋白米饭180g + 清蒸鱼50g + 炒时蔬','Senwuyou rice 180g + 50g fish + veggies')}</span><span class="mr-data">${_T('蛋白~15g','~15g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('晚餐','Dinner')}</span><span class="mr-food">${_T('森无忧低蛋白米粉 + 鸡胸肉40g + 凉拌菜','Senwuyou noodles + 40g chicken + salad')}</span><span class="mr-data">${_T('蛋白~12g','~12g protein')}</span></div>
+      <div class="meal-row"><span class="mr-time">${_T('加餐','Snack')}</span><span class="mr-food">${_T('森无忧低蛋白曲奇3包 + 酸奶100ml','Senwuyou cookies 3 packs + 100ml yogurt')}</span><span class="mr-data">${_T('蛋白~6g','~6g protein')}</span></div>
+    </div>
+  </div>
+  <div class="note reveal" style="margin-top:24px;max-width:680px;margin:24px auto 0"><p><strong>${_T('温馨提示','Note')}：</strong>${_T('以上方案为参考示例，具体摄入量请遵医嘱，根据个人体重和血检指标调整。','Reference plans only. Follow your doctor\u2019s advice and adjust based on body weight and blood tests.')}</p></div>
+`)}
+
+${bgSection(BG.data,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">Compare · ${_T('对比','Comparison')}</span><h2 class="h2">${_T('食材对比表','Food Comparison')}<span class="en">Food Comparison</span></h2><p class="sec-sub">${_T('普通大米 vs 森无忧 vs 其他低蛋白品牌，数据一目了然。','Regular rice vs Senwuyou vs other brands.')}</p></div>
+  <div class="table-scroll reveal">
+    <table class="cmp-table"><thead><tr><th>${_T('对比项','Item')}</th><th>${_T('普通大米','Regular Rice')}</th><th class="highlight">${_T('森无忧','Senwuyou')}</th><th>${_T('其他低蛋白品牌','Other Brands')}</th></tr></thead><tbody>
+    <tr><td>${_T('蛋白质','Protein')}</td><td>6-8g</td><td class="highlight">0g</td><td>0-0.5g</td></tr>
+    <tr><td>${_T('磷 (mg/100g)','Phosphorus')}</td><td>110</td><td class="highlight">34.8</td><td>40-60</td></tr>
+    <tr><td>${_T('钾 (mg/100g)','Potassium')}</td><td>112</td><td class="highlight">1.38</td><td>5-15</td></tr>
+    <tr><td>${_T('钠 (mg/100g)','Sodium')}</td><td>5</td><td class="highlight">19</td><td>20-50</td></tr>
+    <tr><td>${_T('Phe (mg/100g)','Phe')}</td><td>~300</td><td class="highlight">14</td><td>30-80</td></tr>
+    <tr><td>${_T('原料','Material')}</td><td>${_T('普通大米','Regular rice')}</td><td class="highlight">${_T('真米酶解','Real rice enzymatic')}</td><td>${_T('淀粉合成','Starch blend')}</td></tr>
+    <tr><td>${_T('口感','Taste')}</td><td>${_T('米饭香','Rice aroma')}</td><td class="highlight">${_T('接近普通米饭','Close to regular')}</td><td>${_T('淀粉味重','Starchy taste')}</td></tr>
+    <tr><td>${_T('价格/餐','Price/meal')}</td><td>~2元</td><td class="highlight">13.8元</td><td>15-25元</td></tr>
+    <tr><td>${_T('药企背景','Pharma-backed')}</td><td>${_T('无','No')}</td><td class="highlight">${_T('有（4款处方药）','Yes (4 Rx drugs)')}</td><td>${_T('无','No')}</td></tr>
+    </tbody></table>
+  </div>
+`)}
+
+${bgSection(BG.doctor,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">Myth · ${_T('误区','Myths')}</span><h2 class="h2">${_T('CKD 饮食误区辨析','Diet Myths')}<span class="en">Diet Myths Debunked</span></h2></div>
+  <div class="myth-grid">
+    <div class="myth-card reveal"><div class="myth-q">${_T('❌ 不吃肉就不伤肾','No meat = no kidney damage')}</div><div class="myth-a"><span class="ma-tag">${_T('科学纠正','Truth')}</span><p>${_T('肾脏负担主要来自蛋白质代谢废物，不仅肉类，米面中的植物蛋白同样加重肾脏负担。CKD患者需控制总蛋白摄入，而非仅戒肉。','Kidney burden comes from ALL protein metabolism, not just meat. Plant protein in rice/flour also burdens kidneys. CKD patients must control TOTAL protein, not just avoid meat.')}</p></div></div>
+    <div class="myth-card reveal"><div class="myth-q">${_T('❌ 低蛋白就是少吃主食','Low protein = eat less rice')}</div><div class="myth-a"><span class="ma-tag">${_T('科学纠正','Truth')}</span><p>${_T('少吃主食会导致热量不足，身体分解肌肉供能，引发蛋白质-能量消耗（PEW），加速肾功能恶化。正确做法是用0蛋白主食替代普通米面，吃饱不伤肾。','Eating less causes energy deficiency, triggering muscle breakdown (PEW), accelerating kidney damage. Correct: replace with 0-protein staples, eat full without harm.')}</p></div></div>
+    <div class="myth-card reveal"><div class="myth-q">${_T('❌ 透析后就不用控制饮食了','No diet control after dialysis')}</div><div class="myth-a"><span class="ma-tag">${_T('科学纠正','Truth')}</span><p>${_T('透析后蛋白需求反而增加至1.0-1.2g/kg/天，但磷钾钠仍需控制。森无忧0蛋白主食可提供安全碳水热量，配合优质蛋白摄入。','Post-dialysis protein needs INCREASE to 1.0-1.2g/kg, but P, K, Na still need control. Senwuyou provides safe carbs with quality protein.')}</p></div></div>
+    <div class="myth-card reveal"><div class="myth-q">${_T('❌ 低蛋白食品口感都很差','Low-protein foods taste bad')}</div><div class="myth-a"><span class="ma-tag">${_T('科学纠正','Truth')}</span><p>${_T('传统淀粉合成低蛋白食品口感确实差，但森无忧采用真米酶解脱蛋白技术，保留大米完整结构和米香，口感接近普通米饭，依从性大幅提升。','Traditional starch-blend foods taste bad, but Senwuyou uses real rice enzymatic technology, preserving rice structure and aroma. Taste close to regular rice.')}</p></div></div>
+    <div class="myth-card reveal"><div class="myth-q">${_T('❌ 肾病只能吃素','Kidney disease = vegetarian only')}</div><div class="myth-a"><span class="ma-tag">${_T('科学纠正','Truth')}</span><p>${_T('CKD患者需要适量优质蛋白（50%以上来自肉蛋奶等动物蛋白），纯素食容易导致营养不良。关键是控制总量+优选来源+用0蛋白主食腾出蛋白额度。','CKD patients need quality protein (50%+ from animal sources). Pure vegetarian diets risk malnutrition. Key: control total, choose quality, use 0-protein staples.')}</p></div></div>
+    <div class="myth-card reveal"><div class="myth-q">${_T('❌ 偶尔吃普通米饭没关系','Occasional regular rice is OK')}</div><div class="myth-a"><span class="ma-tag">${_T('科学纠正','Truth')}</span><p>${_T('一餐普通米饭含蛋白约15g，占CKD 4期患者全天蛋白限额的60%以上。偶尔一顿就会超标，长期累积加速肾功能恶化。建议坚持0蛋白主食替代。','One regular rice meal has ~15g protein, 60%+ of Stage 4 daily limit. Occasional lapses accumulate. Stick with 0-protein staples consistently.')}</p></div></div>
+  </div>
+`)}
+
+${bgSection(BG.family,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">Q&A · ${_T('肾友问答','Patient Q&A')}</span><h2 class="h2">${_T('肾友社区问答','Patient Community Q&A')}<span class="en">Patient Q&A</span></h2><p class="sec-sub">${_T('精选患者高频问题，营养师专业解答。','Top patient questions answered by nutritionists.')}</p></div>
+  <div class="qa-grid">
+    <div class="qa-card reveal"><div class="qa-q"><span class="qa-badge">Q1</span><h5>${_T('森无忧米饭加热后盒内有水珠，是质量问题吗？','Water droplets inside the box after heating — quality issue?')}</h5></div><div class="qa-a">${_T('不是质量问题。盒内水珠是米饭蒸煮过程中的冷凝水，属于正常物理现象。加热前请撕开小口防止烫伤，不影响食用安全。','Not a quality issue. Water droplets are condensation from the cooking process — a normal physical phenomenon. Tear a small opening before heating to prevent burns. Safe to eat.')}</div></div>
+    <div class="qa-card reveal"><div class="qa-q"><span class="qa-badge">Q2</span><h5>${_T('低蛋白大米煮饭需要淘洗吗？','Does low-protein rice need rinsing?')}</h5></div><div class="qa-a">${_T('不需要淘洗。森无忧低蛋白大米经过脱蛋白处理后已经非常洁净，直接加米水1:1.1~1:1.3煮制即可。淘洗反而会损失表面的营养层。','No rinsing needed. Senwuyou rice is already clean after deproteination. Just add water at 1:1.1 to 1:1.3 ratio and cook. Rinsing may remove the nutritional layer.')}</div></div>
+    <div class="qa-card reveal"><div class="qa-q"><span class="qa-badge">Q3</span><h5>${_T('低蛋白面粉做饺子皮容易破怎么办？','Low-protein dumpling wrappers keep breaking?')}</h5></div><div class="qa-a">${_T('关键在于用100°C开水烫面。将面粉倒入盆中，倒入刚烧开的水快速搅拌成絮状，降温至40°C后揉团。烫面后面团有筋性不易破裂。','Key: use 100\u00b0C boiling water. Pour boiling water into flour, stir quickly into flakes, cool to 40\u00b0C then knead. Hot-water dough is elastic and won\u2019t crack.')}</div></div>
+    <div class="qa-card reveal"><div class="qa-q"><span class="qa-badge">Q4</span><h5>${_T('长期吃低蛋白主食会不会营养不够？','Will long-term low-protein diet cause malnutrition?')}</h5></div><div class="qa-a">${_T('不会。低蛋白主食只是去除了蛋白质，保留了碳水化合物（提供热量）和微量元素。配合医生指导的优质蛋白摄入（肉蛋奶）和酮酸补充，营养均衡有保障。','No. Low-protein staples only remove protein, keeping carbs (energy) and minerals. With prescribed quality protein (meat, eggs, milk) and ketoacid supplementation, nutrition is balanced.')}</div></div>
+    <div class="qa-card reveal"><div class="qa-q"><span class="qa-badge">Q5</span><h5>${_T('PKU儿童可以吃森无忧曲奇吗？','Can PKU children eat Senwuyou cookies?')}</h5></div><div class="qa-a">${_T('可以。森无忧曲奇蛋白含量1.7-2.7g/100g，单包10g仅含0.17-0.27g蛋白，Phe含量极低。但需计入每日Phe总量，建议在营养师指导下食用。','Yes. Cookies contain 1.7-2.7g protein/100g. Each 10g pack has only 0.17-0.27g protein with very low Phe. But count toward daily Phe total and consult a nutritionist.')}</div></div>
+  </div>
 `)}`;
 document.getElementById('csSection').classList.remove('hidden')}
 
@@ -975,6 +1612,135 @@ ${bgSection(BG.plant,false,`
   <div class="sec-head reveal"><span class="eyebrow d">Monitor · 监测</span><h2 class="h2">${_T('血值监测规范','Blood Monitoring')}<span class="en">Blood Monitoring</span></h2></div>
   <div class="rows reveal">
     <div class="row"><div class="rn">📅</div><div><h4>${_T('监测频率','Frequency')}</h4><p>${_T('新生儿每周 1 次 · 1 岁内每周 1 次 · 1 岁以上每月 2~4 次 · 孕期每周 1~2 次。','Newborns weekly, under 1y weekly, over 1y 2-4 times/month, pregnancy 1-2/week.')}</p></div></div>
+  </div>
+`)}
+
+${bgSection(BG.family,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">Stories · ${_T('家庭故事','Family Stories')}</span><h2 class="h2">${_T('PKU 家庭真实故事','Family Stories')}<span class="en">Family Stories</span></h2></div>
+  <div class="story-grid">
+    <div class="story-card reveal">
+      <div class="sc-avatar">👶</div>
+      <div class="sc-name">${_T('小豆丁家庭','Little Bean Family')}</div>
+      <div class="sc-meta">${_T('孩子 3 岁 · 确诊 2 年','Child 3y · 2 years since diagnosis')}</div>
+      <div class="sc-before"><span class="sc-tag">${_T('确诊初期','Early Days')}</span><p class="sc-text">${_T('新生儿筛查确诊PKU，全家陷入恐慌。不知道该给孩子吃什么，普通奶粉不敢喝，米饭不敢喂，孩子天天哭饿。','Newborn screening confirmed PKU. Family panicked. Didn\u2019t know what to feed. Baby cried from hunger.')}</p></div>
+      <div class="sc-after"><span class="sc-tag">${_T('现在','Now')}</span><p class="sc-text">${_T('用森无忧大米煮粥做饭团，曲奇当零食。血Phe稳定在180μmol/L，孩子发育指标全部达标，活泼好动。','Using Senwuyou rice for porridge & onigiri, cookies as snacks. Blood Phe stable at 180, all development milestones met.')}</p></div>
+    </div>
+    <div class="story-card reveal">
+      <div class="sc-avatar">👧</div>
+      <div class="sc-name">${_T('小雨家庭','Xiao Yu Family')}</div>
+      <div class="sc-meta">${_T('孩子 8 岁 · 使用森无忧 5 年','Child 8y · 5 years')}</div>
+      <div class="sc-before"><span class="sc-tag">${_T('上学困扰','School Struggles')}</span><p class="sc-text">${_T('上学后学校午餐无法特殊准备，孩子经常只吃菜不吃饭，血值反复波动，家长每天焦虑。','School couldn\u2019t prepare special meals. Child ate only dishes, blood values fluctuated. Parents anxious daily.')}</p></div>
+      <div class="sc-after"><span class="sc-tag">${_T('现在','Now')}</span><p class="sc-text">${_T('每天带森无忧即食米饭便当去学校，微波2分钟就好。血值稳定在250μmol/L，孩子说"和同学的饭一样好吃"。','Daily Senwuyou instant rice bento to school, 2-min microwave. Phe stable at 250. Child says "tastes as good as classmates\u2019 rice."')}</p></div>
+    </div>
+    <div class="story-card reveal">
+      <div class="sc-avatar">🤰</div>
+      <div class="sc-name">${_T('小美 · PKU 孕妈','Xiao Mei · PKU Mom')}</div>
+      <div class="sc-meta">${_T('28岁 · 孕期 7 个月','28y · 7 months pregnant')}</div>
+      <div class="sc-before"><span class="sc-tag">${_T('备孕前','Before Pregnancy')}</span><p class="sc-text">${_T('成年后放松了饮食控制，血Phe高达900μmol/L。备孕时医生警告：高Phe会导致胎儿畸形和智力损伤。','Relaxed diet control as adult, Phe reached 900. Doctor warned: high Phe causes fetal malformation and brain damage.')}</p></div>
+      <div class="sc-after"><span class="sc-tag">${_T('孕期','During Pregnancy')}</span><p class="sc-text">${_T('严格低Phe饮食+森无忧主食全替代，孕7月血Phe降至120μmol/L，胎儿发育正常，期待健康宝宝。','Strict low-Phe diet + full Senwuyou staple replacement. At 7 months, Phe dropped to 120. Fetus developing normally.')}</p></div>
+    </div>
+  </div>
+`)}
+
+${bgSection(BG.kitchen,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">School · ${_T('学校','School')}</span><h2 class="h2">${_T('学校就餐指南','School Dining Guide')}<span class="en">School Dining Guide</span></h2><p class="sec-sub">${_T('PKU患儿家长实用指南，让孩子在学校也能安心吃饭。','Practical guide for PKU parents: safe school meals.')}</p></div>
+  <div class="guide-list">
+    <div class="guide-item reveal"><div class="gi-num">01</div><div><h4>${_T('与学校沟通','Communicate with School')}</h4><p>${_T('开学前主动与班主任和校医沟通，说明孩子的特殊饮食需求。提供医生诊断证明和饮食要求清单，让学校了解PKU的基本知识。','Before school starts, communicate with teacher and school nurse. Provide medical diagnosis and dietary requirements. Educate school about PKU basics.')}</p></div></div>
+    <div class="guide-item reveal"><div class="gi-num">02</div><div><h4>${_T('准备便当方案','Bento Plan')}</h4><p>${_T('用森无忧即食米饭/米粉制作便当，搭配低Phe蔬菜（黄瓜、西葫芦、白菜等）。如学校有微波炉，2分钟加热即可；无微波炉也可冷食。','Prepare bento with Senwuyou instant rice/noodles + low-Phe veggies (cucumber, zucchini, cabbage). Microwave 2 min if available, or eat cold.')}</p></div></div>
+    <div class="guide-item reveal"><div class="gi-num">03</div><div><h4>${_T('应急食物准备','Emergency Snacks')}</h4><p>${_T('书包常备森无忧曲奇和谷纤趣零食，以防学校活动延时或便当不够吃。独立小包装方便精确控量，10g/包精确计算Phe。','Keep Senwuyou cookies and snacks in backpack for delays. Individual 10g packs for precise Phe calculation.')}</p></div></div>
+    <div class="guide-item reveal"><div class="gi-num">04</div><div><h4>${_T('同学互动引导','Peer Interaction')}</h4><p>${_T('引导孩子正确认识自己的特殊饮食，不自卑。可以准备森无忧曲奇与同学分享，让孩子在社交中不被孤立。老师可帮忙引导同学理解和尊重。','Guide child to accept special diet without shame. Share Senwuyou cookies with classmates. Teacher can help peers understand and respect.')}</p></div></div>
+    <div class="guide-item reveal"><div class="gi-num">05</div><div><h4>${_T('血值监测安排','Blood Monitoring')}</h4><p>${_T('上学期间保持每月2-4次血值检测。如发现血Phe升高，回顾近期饮食记录，调整方案。假期可适当增加监测频率。','Maintain 2-4 blood tests per month during school. If Phe rises, review diet log and adjust. Increase frequency during holidays.')}</p></div></div>
+    <div class="guide-item reveal"><div class="gi-num">06</div><div><h4>${_T('学校活动应对','School Events')}</h4><p>${_T('春游、运动会等活动前，提前准备足够的低蛋白食物。与老师沟通活动餐食安排，必要时自带食物参加。','Prepare enough low-protein food before field trips and sports days. Coordinate with teacher about meals, bring your own if needed.')}</p></div></div>
+  </div>
+`)}
+
+${bgSection(BG.riceField,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">Recipe · ${_T('食谱','Recipes')}</span><h2 class="h2">${_T('PKU 创意食谱','PKU Recipes')}<span class="en">PKU Recipes</span></h2><p class="sec-sub">${_T('用森无忧产品制作的低蛋白创意料理，让孩子吃得开心。','Creative low-protein dishes with Senwuyou products.')}</p></div>
+  <div class="recipe-grid">
+    <div class="recipe-card reveal">
+      <div class="rc-head"><span class="rc-icon">🍙</span><h4>${_T('低蛋白饭团','Low-Protein Onigiri')}</h4><div class="rc-time">${_T('10分钟','10 min')}</div></div>
+      <div class="rc-body">
+        <div class="rc-ingredients">${_T('食材：森无忧低蛋白米饭180g、海苔、黄瓜丁、少许盐','Ingredients: Senwuyou rice 180g, nori, cucumber, salt')}</div>
+        <ol class="rc-steps">
+          <li>${_T('米饭加热后稍微晾凉','Heat rice and cool slightly')}</li>
+          <li>${_T('拌入黄瓜丁和少许盐','Mix in cucumber and salt')}</li>
+          <li>${_T('捏成三角形，裹上海苔','Shape into triangles, wrap with nori')}</li>
+        </ol>
+        <div class="rc-nutri"><span>Phe ~15mg</span><span>${_T('蛋白 0g','Protein 0g')}</span></div>
+      </div>
+    </div>
+    <div class="recipe-card reveal">
+      <div class="rc-head"><span class="rc-icon">🍳</span><h4>${_T('低蛋白蛋炒饭','Low-Protein Egg Fried Rice')}</h4><div class="rc-time">${_T('8分钟','8 min')}</div></div>
+      <div class="rc-body">
+        <div class="rc-ingredients">${_T('食材：森无忧低蛋白米饭180g、鸡蛋清2个、葱花、胡萝卜丁','Ingredients: Senwuyou rice, 2 egg whites, scallion, carrot')}</div>
+        <ol class="rc-steps">
+          <li>${_T('热锅冷油，炒香葱花胡萝卜','Sauté scallion and carrot')}</li>
+          <li>${_T('加入蛋清快速翻炒','Add egg whites, stir fast')}</li>
+          <li>${_T('倒入米饭翻炒调味','Add rice, season and stir')}</li>
+        </ol>
+        <div class="rc-nutri"><span>Phe ~120mg</span><span>${_T('蛋白 ~7g','Protein ~7g')}</span></div>
+      </div>
+    </div>
+    <div class="recipe-card reveal">
+      <div class="rc-head"><span class="rc-icon">🍰</span><h4>${_T('低蛋白米糕','Low-Protein Rice Cake')}</h4><div class="rc-time">${_T('30分钟','30 min')}</div></div>
+      <div class="rc-body">
+        <div class="rc-ingredients">${_T('食材：森无忧低蛋白大米粉100g、糖20g、水适量','Ingredients: Senwuyou rice flour 100g, sugar 20g, water')}</div>
+        <ol class="rc-steps">
+          <li>${_T('大米粉加糖和水调成糊','Mix flour, sugar, water into batter')}</li>
+          <li>${_T('倒入模具蒸20分钟','Steam in mold for 20 min')}</li>
+          <li>${_T('脱模晾凉即可','Demold and cool')}</li>
+        </ol>
+        <div class="rc-nutri"><span>Phe ~5mg</span><span>${_T('蛋白 0g','Protein 0g')}</span></div>
+      </div>
+    </div>
+    <div class="recipe-card reveal">
+      <div class="rc-head"><span class="rc-icon">🍜</span><h4>${_T('低蛋白凉拌米粉','Cold Rice Noodles')}</h4><div class="rc-time">${_T('15分钟','15 min')}</div></div>
+      <div class="rc-body">
+        <div class="rc-ingredients">${_T('食材：森无忧低蛋白米粉125g、黄瓜丝、醋、少许酱油','Ingredients: Senwuyou noodles 125g, cucumber, vinegar, soy sauce')}</div>
+        <ol class="rc-steps">
+          <li>${_T('米粉温水泡45分钟煮熟','Soak noodles 45 min, cook')}</li>
+          <li>${_T('过凉水沥干','Rinse cold, drain')}</li>
+          <li>${_T('拌入黄瓜丝和调料','Mix in cucumber and dressing')}</li>
+        </ol>
+        <div class="rc-nutri"><span>Phe ~10mg</span><span>${_T('蛋白 0g','Protein 0g')}</span></div>
+      </div>
+    </div>
+    <div class="recipe-card reveal">
+      <div class="rc-head"><span class="rc-icon">🥟</span><h4>${_T('低蛋白小笼包','Low-Protein Dumplings')}</h4><div class="rc-time">${_T('45分钟','45 min')}</div></div>
+      <div class="rc-body">
+        <div class="rc-ingredients">${_T('食材：森无忧低蛋白面粉100g、白菜馅、淀粉勾芡','Ingredients: Senwuyou flour 100g, cabbage filling, starch')}</div>
+        <ol class="rc-steps">
+          <li>${_T('开水烫面揉团静置','Hot water dough, rest')}</li>
+          <li>${_T('擀皮包入白菜馅','Roll wrappers, fill with cabbage')}</li>
+          <li>${_T('蒸10分钟即食','Steam 10 min')}</li>
+        </ol>
+        <div class="rc-nutri"><span>${_T('Phe ~30mg/个','Phe ~30mg each')}</span><span>${_T('蛋白 ~0.5g/个','Protein ~0.5g each')}</span></div>
+      </div>
+    </div>
+    <div class="recipe-card reveal">
+      <div class="rc-head"><span class="rc-icon">🥤</span><h4>${_T('低蛋白米糊','Low-Protein Rice Porridge')}</h4><div class="rc-time">${_T('20分钟','20 min')}</div></div>
+      <div class="rc-body">
+        <div class="rc-ingredients">${_T('食材：森无忧低蛋白大米50g、水500ml、少许盐','Ingredients: Senwuyou rice 50g, water 500ml, salt')}</div>
+        <ol class="rc-steps">
+          <li>${_T('大米加水大火煮沸','Rice + water, boil')}</li>
+          <li>${_T('转小火慢炖15分钟','Simmer 15 min')}</li>
+          <li>${_T('调味即食，适合早餐','Season and serve, great for breakfast')}</li>
+        </ol>
+        <div class="rc-nutri"><span>Phe ~7mg</span><span>${_T('蛋白 0g','Protein 0g')}</span></div>
+      </div>
+    </div>
+  </div>
+`)}
+
+${bgSection(BG.family,true,`
+  <div class="sec-head reveal"><span class="eyebrow d">Pregnancy · ${_T('孕期','Pregnancy')}</span><h2 class="h2">${_T('孕期 PKU 管理','Maternal PKU Management')}<span class="en">Maternal PKU</span></h2><p class="sec-sub">${_T('PKU女性备孕和孕期需要更严格的血值控制，保护胎儿健康。','PKU women need stricter blood control during pregnancy planning and pregnancy.')}</p></div>
+  <div class="preg-grid">
+    <div class="preg-card reveal"><span class="pc-icon">🔬</span><h4>${_T('备孕前3个月','3 Months Before')}</h4><p>${_T('备孕前至少3个月开始严格低Phe饮食，血Phe控制在120-360μmol/L。森无忧主食全替代普通米面，配合无Phe营养粉。','Start strict low-Phe diet at least 3 months before conception. Phe target: 120-360. Full Senwuyou staple replacement + Phe-free formula.')}</p></div>
+    <div class="preg-card reveal"><span class="pc-icon">🤰</span><h4>${_T('孕期血值目标','Pregnancy Targets')}</h4><p>${_T('孕期血Phe必须控制在120-360μmol/L，最好低于120。孕早期最关键，高Phe可导致胎儿心脏畸形、小头畸形和智力损伤。','Pregnancy Phe must be 120-360, ideally below 120. First trimester is critical. High Phe causes fetal heart defects, microcephaly, and brain damage.')}</p></div>
+    <div class="preg-card reveal"><span class="pc-icon">📊</span><h4>${_T('监测频率','Monitoring')}</h4><p>${_T('孕期每周检测1-2次血Phe。家中可配备便携式血Phe检测仪，配合医院定期复查。记录每日饮食Phe摄入量。','Weekly 1-2 blood Phe tests during pregnancy. Portable Phe meter for home use + hospital checkups. Log daily Phe intake.')}</p></div>
+    <div class="preg-card reveal"><span class="pc-icon">🥗</span><h4>${_T('饮食方案调整','Diet Adjustment')}</h4><p>${_T('孕期热量和蛋白需求增加。80%蛋白来自无Phe营养粉，20%来自天然食物。森无忧主食提供安全碳水热量，不增加Phe负担。','Pregnancy increases energy and protein needs. 80% protein from Phe-free formula, 20% from natural foods. Senwuyou provides safe carb calories.')}</p></div>
+    <div class="preg-card reveal"><span class="pc-icon">⚠️</span><h4>${_T('风险警示','Risk Warning')}</h4><p>${_T('未控制的母性PKU（Phe>600μmol/L）导致胎儿畸形率高达90%以上、智力损伤率超80%。孕期绝对不能放松饮食控制。','Uncontrolled maternal PKU (Phe>600) causes 90%+ fetal malformation and 80%+ brain damage. NEVER relax diet during pregnancy.')}</p></div>
+    <div class="preg-card reveal"><span class="pc-icon">👶</span><h4>${_T('产后管理','Postpartum')}</h4><p>${_T('产后如不哺乳，可适当放宽Phe控制。如哺乳，需继续保持严格低Phe饮食（母乳中Phe会传递给婴儿）。新生儿需进行PKU筛查。','If not breastfeeding, can relax Phe control. If breastfeeding, continue strict diet. Newborn needs PKU screening.')}</p></div>
   </div>
 `)}`;
 document.getElementById('csSection').classList.remove('hidden')}
@@ -1121,7 +1887,7 @@ window.addEventListener('scroll',()=>{
   if(heroBg) heroBg.style.transform=`translateY(${st*0.35}px)`;
 });
 
-window.navigate=navigate;window.goBack=goBack;window.prevProduct=prevProduct;window.nextProduct=nextProduct;
+window.navigate=navigate;window.goBack=goBack;window.prevProduct=prevProduct;window.nextProduct=nextProduct;window.updateCalc=updateCalc;window.submitContact=submitContact;window.updateCompare=updateCompare;
 navigate('home');
 </script>
 </body>
