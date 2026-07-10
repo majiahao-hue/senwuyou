@@ -12,75 +12,92 @@
 <meta property="og:description" content="药企出品低蛋白主食，CKD肾病与PKU患者专用。真米脱蛋白，0蛋白低磷低钾，9大品类全覆盖。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://senwuyou.com">
-<meta property="og:image" content="https://img01.yzcdn.cn/upload_files/2025/11/06/Fi7v33JKOiMPZ6cG3wEd3EiA3h_U.jpg">
-<meta name="baidu-site-verification" content="codeva-MfUwsVjNC1">
+<meta property="og:image" content="https://senwuyou.com/images/1-rice.jpg">
+<meta name="msvalidate.01" content="809B371F3355D7D44B835CA87E906EF2" />
+<meta name="baidu-site-verification" content="codeva-CteXUkaRXo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="森无忧 Senwuyou · 低蛋白主食专家">
+<meta name="twitter:description" content="药企出品低蛋白主食，CKD肾病与PKU患者专用。真米脱蛋白，0蛋白低磷低钾，9大品类全覆盖。">
+<meta name="twitter:image" content="https://senwuyou.com/images/1-rice.jpg">
 <title>森无忧 Senwuyou · 低蛋白主食专家 — CKD肾病/PKU患者专用低蛋白大米米饭</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
+/* ═══ DESIGN TOKENS ═══ Inspired by CJ/Hetbahn + Japanese Premium Aesthetic */
 :root{
   --ink:#0f1914;
-  --ink-d:#060e0a;
-  --paper:#f9f7f2;
-  --paper2:#ede8dc;
-  --green:#166a42;
-  --green-d:#0c301f;
-  --green-soft:#e2efe7;
-  --gold:#c59b4a;
-  --gold-light:#f5eddb;
-  --amber:#b8862d;
-  --muted:#7a7263;
-  --line:#ddd6c5;
-  --glass:rgba(255,255,255,.82);
-  --glass-d:rgba(15,25,20,.85);
-  --shadow:0 8px 32px rgba(0,0,0,.06);
-  --shadow-l:0 20px 60px rgba(0,0,0,.1);
-  --radius:12px;
-  --radius-l:20px;
+  --ink-d:#040a08;
+  --paper:#fbf9f5;
+  --paper-card:#f7f4ed;
+  --green:#0b5e3e;
+  --green-d:#073b27;
+  --green-soft:#e6f0eb;
+  --green-pale:#d4e6dd;
+  --gold:#c89b4c;
+  --gold-light:#f0e4cc;
+  --gold-pale:#faf3e6;
+  --amber:#a87a2e;
+  --muted:#8a8376;
+  --muted-l:#b5afa3;
+  --line:#e2dbce;
+  --line-l:#efe9df;
+  --glass:rgba(255,255,255,.78);
+  --glass-d:rgba(11,94,62,.85);
+  --shadow-sm:0 2px 8px rgba(15,25,20,.05);
+  --shadow:0 8px 32px rgba(15,25,20,.07);
+  --shadow-l:0 24px 64px rgba(15,25,20,.1);
+  --shadow-card:0 4px 24px rgba(15,25,20,.04);
+  --radius-sm:8px;
+  --radius:14px;
+  --radius-l:24px;
+  --radius-xl:32px;
+  --font-sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-serif:'Playfair Display','Noto Serif SC',serif;
+  --nav-h:72px;
+  --max-w:1200px;
+  --max-w-wide:1400px;
 }
+
+/* ═══ RESET & BASE ═══ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--font-sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;overflow-x:hidden;font-weight:400}
 img{max-width:100%;display:block}
-img[loading="lazy"]{background:var(--paper2)}
-/* 图片占位符：始终在图片下方显示，图片加载成功则盖住 */
-.fb-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
-.fb-wrap .fb-icon{font-size:clamp(48px,10vw,100px);opacity:.32;line-height:1}
-/* 图片上方覆盖，fb-wrap 在其下方 */
-.has-img{position:relative;overflow:hidden}
-.has-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
-.en{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.02em}
-.en-caps{font-family:'Inter',sans-serif;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+a{color:inherit;text-decoration:none}
+.en{font-family:var(--font-serif);font-weight:700;letter-spacing:-.02em}
+.en-caps{font-family:var(--font-sans);letter-spacing:.22em;text-transform:uppercase;font-weight:700;font-size:11px}
+::selection{background:var(--green);color:#fff}
 
-.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--green);z-index:3000;transition:width .12s linear}
+/* ═══ PROGRESS BAR ═══ */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--green),var(--gold));z-index:3000;transition:width .15s ease-out}
 
-/* 导航 */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:background .5s,box-shadow .5s}
-.nav.scrolled{background:rgba(248,246,240,.82);backdrop-filter:saturate(180%) blur(20px);box-shadow:0 1px 0 var(--line)}
-.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}
-.nav-logo .logo-img{height:40px;width:auto;display:block;opacity:.92}
-.nav-logo .brand-group{display:flex;flex-direction:column;line-height:1.25}
-.nav-logo .brand-group .brand-name{font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
-.nav-logo .brand-group .brand-name span{font-family:'Playfair Display',serif;font-weight:700;color:var(--green);margin-left:6px;font-size:17px;letter-spacing:.08em;font-style:italic}
-.nav-logo .brand-group .brand-sub{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em}
-.nav-tabs{display:flex;gap:4px}
-.nav-tabs button{padding:8px 16px;border:none;background:none;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:color .3s;position:relative;line-height:1.5}
-.nav-tabs button .tab-en{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:.7;margin-top:2px}
+/* ═══ NAVIGATION ═══ (Hetbahn-inspired: clean, premium, glass) */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);transition:background .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1),backdrop-filter .5s}
+.nav.scrolled{background:rgba(251,249,245,.82);backdrop-filter:saturate(160%) blur(24px);-webkit-backdrop-filter:saturate(160%) blur(24px);box-shadow:0 1px 0 var(--line-l)}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer;flex-shrink:0}
+.nav-logo .logo-img{height:36px;width:auto;display:block;opacity:.9;border-radius:4px}
+.nav-logo .brand-group{display:flex;flex-direction:column;line-height:1.2}
+.nav-logo .brand-group .brand-name{font-size:22px;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+.nav-logo .brand-group .brand-name span{font-family:var(--font-serif);font-weight:600;color:var(--green);margin-left:4px;font-size:15px;letter-spacing:.06em;font-style:italic}
+.nav-logo .brand-group .brand-sub{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.nav-tabs{display:flex;gap:2px;background:var(--paper-card);padding:3px;border-radius:100px}
+.nav-tabs button{padding:8px 18px;border:none;background:none;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;border-radius:100px;line-height:1.4;white-space:nowrap}
+.nav-tabs button .tab-en{display:block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;opacity:.6;margin-top:1px}
 .nav-tabs button:hover{color:var(--ink)}
-.nav-tabs button.on{color:var(--ink)}
-.nav-tabs button.on::after{content:"";position:absolute;left:18px;right:18px;bottom:2px;height:2px;background:var(--green);border-radius:2px}
+.nav-tabs button.on{color:#fff;background:var(--green);box-shadow:0 2px 8px rgba(11,94,62,.25)}
+.nav-tabs button.on .tab-en{opacity:.8;color:rgba(255,255,255,.8)}
 
-/* 浮动返回 */
-.fab{position:fixed;top:80px;left:24px;z-index:999;display:flex;align-items:center;gap:6px;padding:10px 18px;border-radius:100px;border:none;background:rgba(13,26,18,.78);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:.3s;backdrop-filter:blur(10px)}
-.fab:hover{background:var(--ink);transform:translateX(-3px)}
+/* ═══ FLOATING BACK BTN ═══ */
+.fab{position:fixed;top:84px;left:clamp(12px,2vw,24px);z-index:999;display:flex;align-items:center;gap:8px;padding:10px 20px;border-radius:100px;border:none;background:rgba(11,94,62,.85);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(11,94,62,.25)}
+.fab:hover{background:var(--green-d);transform:translateX(-4px);box-shadow:0 6px 28px rgba(11,94,62,.35)}
 .fab.hidden{display:none!important}
 
-/* 滚动揭示 */
-.reveal{opacity:0;transform:translateY(38px);transition:opacity 1.05s cubic-bezier(.16,1,.3,1),transform 1.05s cubic-bezier(.16,1,.3,1)}
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
-.ph{overflow:hidden}
-.ph img{transform:scale(1.14);transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
+.ph{overflow:hidden;border-radius:var(--radius)}
+.ph img{transform:scale(1.1);transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
 .reveal.in .ph img{transform:scale(1)}
 .clip-reveal{clip-path:inset(0 50% 0 50%);transition:clip-path 1.2s cubic-bezier(.16,1,.3,1)}
 .clip-reveal.in{clip-path:inset(0 0 0 0)}
@@ -90,312 +107,352 @@ img[loading="lazy"]{background:var(--paper2)}
 
 @media(prefers-reduced-motion:reduce){.reveal,.clip-reveal{opacity:1;transform:none;clip-path:inset(0)}.ph img{transform:none}}
 
-/* ═══ 背景图区块 ═══ */
+/* ═══ SECTION BACKGROUND ═══ */
 .sec-bg{position:relative;max-width:none;padding:0}
-.sec-bg .bg-img{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--paper2)}
-.sec-bg .bg-img .fb-wrap{opacity:.25}
-.sec-bg .bg-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s cubic-bezier(.16,1,.3,1);position:relative;z-index:1}
-.sec-bg.reveal.in .bg-img img{transform:scale(1.05)}
-.sec-bg .bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,var(--paper) 0%,rgba(248,246,240,.88) 25%,rgba(248,246,240,.92) 50%,rgba(248,246,240,.88) 75%,var(--paper) 100%)}
-.sec-bg.dark .bg-overlay{background:linear-gradient(180deg,rgba(9,19,13,.92) 0%,rgba(9,19,13,.82) 50%,rgba(9,19,13,.92) 100%)}
-.sec-bg .inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:130px 48px}
-.sec-bg.dark h2,.sec-bg.dark h3,.sec-bg.dark .h2{color:#fff}
-.sec-bg.dark p{color:rgba(255,255,255,.72)}
-.sec-bg.dark .eyebrow.d{color:#7fd6a8}
+.sec-bg .bg-img{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--paper-card)}
+.sec-bg .bg-img .fb-wrap{opacity:.2}
+.sec-bg .bg-img .bg-fb{opacity:.18}
+.sec-bg .bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(11,94,62,.85),rgba(7,59,39,.92))}
+.sec-bg .inner{position:relative;z-index:2;padding:clamp(60px,8vw,120px) clamp(20px,5vw,60px);max-width:var(--max-w);margin:0 auto}
+.sec-bg:not(.dark) .bg-overlay{display:none}
+.sec-bg:not(.dark) .inner{padding:clamp(50px,6vw,100px) clamp(20px,5vw,60px)}
+.sec-bg.dark{color:#fff}
+.sec-bg.dark .bg-img{filter:saturate(.7) brightness(.5)}
+.sec-bg.dark .eyebrow.d{color:rgba(255,255,255,.5)}
+.sec-bg.dark .h2 .en{color:rgba(255,255,255,.35)}
+.sec-bg.dark .sec-sub{color:rgba(255,255,255,.6)}
+.sec-bg.dark .note{background:rgba(255,255,255,.08);border-left:3px solid var(--gold)}
 
-/* ═══ Hero ═══ */
+/* ═══ GLOBAL BAR (CERTIFICATION STRIP) ═══ */
+.global-bar{display:flex;justify-content:center;flex-wrap:wrap;gap:0;padding:16px clamp(20px,4vw,48px);background:var(--green-d);color:rgba(255,255,255,.7);font-size:11px;font-weight:500;letter-spacing:.04em}
+.global-item{padding:4px 20px;border-right:1px solid rgba(255,255,255,.1)}
+.global-item:last-child{border-right:none}
+.global-item b{color:#fff;font-weight:700}
+
+/* ═══ SECTION HEADERS ═══ */
+.sec-head{text-align:center;margin-bottom:clamp(32px,4vw,56px)}
+.eyebrow,.eyebrow.d{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:14px;font-family:var(--font-sans)}
+.h2{font-size:clamp(28px,3.6vw,44px);font-weight:700;line-height:1.2;letter-spacing:-.025em;margin-bottom:12px}
+.h2 .en{display:block;font-size:clamp(14px,1.8vw,22px);color:var(--muted-l);margin-top:6px;letter-spacing:-.01em}
+.sec-sub{font-size:clamp(14px,1.4vw,17px);color:var(--muted);max-width:620px;margin:0 auto;line-height:1.6}
+
+/* ═══ HERO SECTION ═══ (CJ-style: full-bleed, immersive) */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;will-change:transform;background:var(--ink-d);overflow:hidden}
-.hero-bg .fb-wrap{opacity:.15}
-.hero-bg img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,18,12,.92) 0%,rgba(7,18,12,.68) 40%,rgba(7,18,12,.35) 70%,rgba(7,18,12,.15) 100%)}
-.hero-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 48px;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#7fd6a8;margin-bottom:22px}
-.hero-eyebrow::before{content:"";width:24px;height:1px;background:#7fd6a8}
-.hero-eyebrow .en{font-size:12px;color:#5fd49a;opacity:.9;margin-left:8px}
-.hero h1{font-size:clamp(42px,7.5vw,108px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.15)}
-.hero h1 em{font-style:italic;color:#5fd49a}
-.hero-sub{font-size:clamp(15px,1.5vw,19px);color:rgba(255,255,255,.78);margin:30px 0 42px;line-height:1.85;max-width:540px}
-.hero-sub .en{display:block;margin-top:8px;font-size:13px;letter-spacing:.04em;opacity:.85;font-style:italic}
-.hero-cta{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-.btn-solid{display:inline-flex;align-items:center;gap:10px;padding:17px 40px;border-radius:100px;border:none;background:#fff;color:var(--ink);font-size:15px;font-weight:700;cursor:pointer;transition:.35s;position:relative;overflow:hidden}
-.btn-solid::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55),transparent 70%);transform:translateX(-100%);transition:transform .7s}
-.btn-solid:hover{transform:translateY(-3px);box-shadow:0 18px 46px rgba(0,0,0,.32)}
-.btn-solid:hover::after{transform:translateX(100%)}
-.link-arrow{font-size:14.5px;font-weight:700;color:#fff;cursor:pointer;position:relative;transition:.3s}
-.link-arrow::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:rgba(255,255,255,.5);transform:scaleX(0);transform-origin:left;transition:transform .35s}
-.link-arrow:hover::after{transform:scaleX(1)}
-.hero-floats{position:relative;z-index:1;display:flex;flex-direction:column;gap:18px;align-items:flex-end}
-.hero-float{position:relative;background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:22px 28px;color:#fff;min-width:190px}
-.hero-float .fl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:700;margin-bottom:6px}
-.hero-float .fl .en{font-size:10px;opacity:.7}
-.hero-float .fv{font-size:clamp(32px,3.5vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1;font-family:'Playfair Display',serif}
-.hero-float .fd{font-size:11px;color:rgba(255,255,255,.6);margin-top:6px}
-.scroll-hint{position:absolute;bottom:34px;left:48px;z-index:1;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:10px}
-.scroll-hint .line{width:36px;height:1px;background:rgba(255,255,255,.4);animation:pulse 2.2s infinite}
-@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg .fb-wrap .fb-icon{font-size:clamp(80px,15vw,160px);opacity:.25}
+.hero-bg .fb-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero .bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(11,94,62,.88) 0%,rgba(7,59,39,.75) 40%,rgba(4,10,8,.5) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:var(--max-w-wide);margin:0 auto;padding:clamp(100px,10vw,140px) clamp(24px,5vw,60px);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;width:100%}
+.hero-txt{color:#fff}
+.hero-eyebrow{display:inline-block;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:20px;border:1px solid rgba(255,255,255,.15);padding:6px 16px;border-radius:100px;backdrop-filter:blur(8px)}
+.hero-txt h1{font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.hero-txt h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold),#e0b860);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(14px,1.3vw,17px);color:rgba(255,255,255,.7);line-height:1.7;max-width:520px;margin-bottom:32px}
+.hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.btn-solid{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border:none;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);font-family:var(--font-sans);background:var(--gold);color:var(--ink-d);box-shadow:0 4px 16px rgba(200,155,76,.3)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,155,76,.4)}
+.link-arrow{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:6px}
+.link-arrow:hover{color:var(--gold);gap:10px}
+.hero-floats{display:flex;flex-direction:column;gap:16px;padding:clamp(20px,3vw,40px);justify-self:end;width:100%;max-width:360px}
+.hero-float{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:16px 24px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 16px;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.hero-float:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.hero-float .fl{font-size:11px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase}
+.hero-float .fv{font-size:clamp(22px,2.4vw,32px);font-weight:700;color:#fff;letter-spacing:-.02em;grid-column:2;grid-row:1/3}
+.hero-float .fd{font-size:12px;color:rgba(255,255,255,.45);grid-column:1}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.2em}
+.scroll-hint .line{width:1px;height:32px;background:rgba(255,255,255,.3);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:.8;transform:scaleY(1.4)}}
 
-/* 信任数字条 */
-.trust{max-width:1280px;margin:-1px auto 0;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2;background:var(--paper)}
-.trust-item{padding:54px 0;border-right:1px solid var(--line);text-align:center;transition:background .3s}
-.trust-item:hover{background:var(--paper2)}
-.trust-item:last-child{border:0}
-.trust-item b{display:block;font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1;font-family:'Playfair Display',serif}
-.trust-item span{font-size:12px;color:var(--muted);margin-top:10px;display:block;letter-spacing:.05em}
-.trust-item .en{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+/* ═══ TRUST STRIP ═══ (Hetbahn metric bar) */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:var(--max-w);margin:-40px auto 0;padding:0 clamp(20px,4vw,48px);position:relative;z-index:10}
+.trust-item{background:#fff;padding:clamp(20px,2.5vw,36px) clamp(16px,2vw,28px);text-align:center;border-right:1px solid var(--line-l);border-bottom:1px solid var(--line-l);box-shadow:var(--shadow-card)}
+.trust-item:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.trust-item:last-child{border-right:none;border-radius:0 var(--radius) var(--radius) 0}
+.trust-item b{display:block;font-size:clamp(28px,3.2vw,42px);font-weight:700;color:var(--green);line-height:1;margin-bottom:6px;font-family:var(--font-serif)}
+.trust-item span{font-size:12px;color:var(--muted);line-height:1.5}
+.trust-item span .en{font-size:10px;color:var(--muted-l);display:block;margin-top:2px}
 
-/* 通用区块 */
-.sec{max-width:1280px;margin:0 auto;padding:130px 48px;position:relative}
-.sec-head{margin-bottom:14px}
-.eyebrow.d{color:var(--green);letter-spacing:.32em;text-transform:uppercase;font-size:11px;font-weight:800;display:block;margin-bottom:16px}
-.h2{font-size:clamp(32px,4.6vw,62px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.03em;line-height:1.06;color:var(--ink)}
-.h2 .en{display:block;font-size:.38em;letter-spacing:.22em;text-transform:uppercase;margin-top:12px;color:var(--green);opacity:.8;font-weight:700}
-.sec-sub{font-size:17px;color:var(--muted);margin-top:20px;max-width:620px;line-height:1.8}
-
-/* 精选产品 大图交替 */
-.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:90px;align-items:center;margin-top:120px}
-.feature.rev{grid-template-columns:.9fr 1.1fr}
-.feature.rev .feature-img{order:2}
-.feature-img{border-radius:6px;overflow:hidden;aspect-ratio:1.15;background:var(--paper2);min-height:320px;position:relative}
+/* ═══ FEATURE (ALTERNATING) ═══ */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-bottom:clamp(40px,5vw,72px)}.feature.rev{direction:rtl}.feature.rev>*{direction:ltr}
+.feature-img{aspect-ratio:4/3;border-radius:var(--radius-l);overflow:hidden;position:relative;background:var(--paper-card);box-shadow:var(--shadow)}
+.feature-img .fb-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
+.feature-img .fb-wrap .fb-icon{font-size:clamp(60px,10vw,100px);opacity:.28}
 .feature-img img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
-.feature-txt .eyebrow-en{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:700;display:block;margin-bottom:14px}
-.feature-txt h3{font-size:clamp(28px,3.4vw,44px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink);margin-bottom:18px}
-.feature-txt h3 .en{display:block;font-size:16px;letter-spacing:.05em;text-transform:uppercase;margin-top:8px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:700}
-.feature-txt p{font-size:16px;color:var(--muted);line-height:1.9;max-width:440px;margin-bottom:26px}
-.feature-txt .link-arrow{color:var(--green)}
-.feature-txt .link-arrow::after{background:var(--green)}
+.feature-txt{max-width:480px}
+.feature-txt .eyebrow-en{display:inline-block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:12px;font-family:var(--font-sans)}
+.feature-txt h3{font-size:clamp(20px,2.4vw,28px);font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
+.feature-txt h3 .en{display:block;font-size:clamp(14px,1.6vw,18px);color:var(--muted-l);margin-top:4px}
+.feature-txt p{font-size:clamp(14px,1.2vw,16px);color:var(--muted);line-height:1.7;margin-bottom:20px}
+.feature-txt .link-arrow{color:var(--green);font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:6px}
+.feature-txt .link-arrow:hover{gap:10px;color:var(--green-d)}
 
-/* 胶片产品条 */
-.film-wrap{position:relative;margin-top:64px}
-.film{overflow-x:auto;overflow-y:hidden;display:flex;gap:24px;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-bottom:24px;-webkit-overflow-scrolling:touch}
-.film::-webkit-scrollbar{height:4px}
-.film::-webkit-scrollbar-thumb{background:var(--green);border-radius:4px}
-.film-item{flex:0 0 300px;scroll-snap-align:start;cursor:pointer;transition:transform .4s}
-.film-item:hover{transform:translateY(-8px)}
-.film-item .fi-pic{aspect-ratio:1;background:linear-gradient(135deg,var(--green-soft),var(--paper2));border-radius:6px;overflow:hidden;margin-bottom:20px;position:relative}
-.film-item .fi-pic .fb-wrap{background:linear-gradient(135deg,var(--green-soft),var(--paper2))}
-.film-item .fi-pic img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1);position:relative;z-index:1}
-.film-item:hover .fi-pic img{transform:scale(1.08)}
-.film-item .fi-name{font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--ink);margin-bottom:4px;transition:color .3s}
-.film-item .fi-name .en{display:block;font-size:11px;letter-spacing:.08em;color:var(--muted);font-weight:600;margin-top:2px}
-.film-item .fi-spec{font-size:12px;color:var(--muted);letter-spacing:.03em}
-.film-fade{position:absolute;top:0;right:0;bottom:24px;width:80px;background:linear-gradient(90deg,transparent,var(--paper));pointer-events:none}
+/* ═══ PRODUCT FILM STRIP ═══ */
+.film-wrap{position:relative}
+.film{display:flex;gap:20px;overflow-x:auto;padding:8px 4px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.film::-webkit-scrollbar{display:none}
+.film-item{flex:0 0 clamp(200px,28vw,300px);scroll-snap-align:start;background:#fff;border-radius:var(--radius-l);overflow:hidden;cursor:pointer;transition:all .5s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-card);border:1px solid var(--line-l)}
+.film-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-l)}
+.film-item .fi-pic{aspect-ratio:1;overflow:hidden;position:relative;background:var(--paper-card)}
+.film-item .fi-pic .fb-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
+.film-item .fi-pic .fb-wrap .fb-icon{font-size:clamp(48px,8vw,80px);opacity:.28}
+.film-item .fi-pic img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.film-item:hover .fi-pic img{transform:scale(1.05)}
+.fi-name{padding:14px 16px 4px;font-size:14px;font-weight:700;line-height:1.3}
+.fi-name .en{display:block;font-size:12px;color:var(--muted);font-weight:600;font-family:var(--font-sans);margin-top:2px}
+.fi-spec{padding:0 16px 16px;font-size:11px;color:var(--muted-l)}
+.film-fade{position:absolute;top:0;right:0;bottom:16px;width:60px;background:linear-gradient(90deg,transparent,var(--paper));pointer-events:none}
 
-/* 价值主张 */
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px}
-.value{padding:0 44px;border-left:1px solid rgba(255,255,255,.14);transition:transform .4s}
-.value:hover{transform:translateY(-6px)}
-.value:first-child{padding-left:0;border:0}
-.value .vi{font-size:34px;margin-bottom:24px}
-.value h4{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.01em;margin-bottom:14px;color:#fff}
-.value p{font-size:15px;color:rgba(255,255,255,.72);line-height:1.85}
+/* ═══ VALUES GRID ═══ */
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2vw,28px)}
+.value{background:rgba(255,255,255,.06);border-radius:var(--radius-l);padding:clamp(24px,2.5vw,36px);border:1px solid rgba(255,255,255,.08);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.sec-bg:not(.dark) .value{background:#fff;border-color:var(--line-l);box-shadow:var(--shadow-card)}
+.sec-bg:not(.dark) .value:hover{box-shadow:var(--shadow);border-color:var(--green-pale);transform:translateY(-3px)}
+.value .vi{font-size:clamp(32px,3.5vw,48px);margin-bottom:16px;line-height:1}
+.value h4{font-size:clamp(16px,1.6vw,19px);font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.value p{font-size:clamp(13px,1.1vw,15px);line-height:1.6;color:var(--muted)}
+.sec-bg.dark .value p{color:rgba(255,255,255,.65)}
 
-/* 技术 */
-.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:80px;align-items:start}
-.tech-block{margin-bottom:70px;transition:transform .4s}
-.tech-block:hover{transform:translateY(-4px)}
-.tech-block .tb-num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--green);display:block;margin-bottom:14px}
-.tech-block h4{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px}
-.tech-block p{font-size:15px;color:var(--muted);line-height:1.9}
+/* ═══ TECH GRID ═══ */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(16px,2vw,24px)}
+.tech-block{background:#fff;border-radius:var(--radius-l);padding:clamp(24px,2.5vw,32px);border:1px solid var(--line-l);transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-card)}
+.tech-block:hover{box-shadow:var(--shadow);border-color:var(--green-pale);transform:translateY(-3px)}
+.tech-block .tb-num{display:inline-block;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:12px;font-family:var(--font-sans)}
+.tech-block h4{font-size:clamp(15px,1.4vw,18px);font-weight:700;margin-bottom:10px}
+.tech-block p{font-size:clamp(13px,1.1vw,14px);color:var(--muted);line-height:1.6}
 
-/* 引用 */
-.quote{max-width:1080px;margin:0 auto;padding:120px 48px;text-align:center}
-.quote .q-mark{font-size:60px;color:var(--green);opacity:.3;font-family:Georgia,serif;line-height:0;display:block;margin-bottom:20px}
-.quote p{font-size:clamp(24px,3.4vw,42px);font-weight:700;letter-spacing:-.02em;line-height:1.4;color:var(--ink);font-family:'Playfair Display','Noto Serif SC',serif}
-.quote .q-by{font-size:14px;color:var(--muted);margin-top:28px;letter-spacing:.05em}
+/* ═══ QUOTE ═══ */
+.quote{max-width:var(--max-w);margin:0 auto;padding:clamp(40px,5vw,80px) clamp(24px,4vw,60px);text-align:center}
+.quote .q-mark{font-size:clamp(60px,8vw,100px);font-family:var(--font-serif);color:var(--gold);line-height:.5;display:block;opacity:.5;margin-bottom:16px}
+.quote p{font-size:clamp(16px,1.6vw,22px);font-weight:600;line-height:1.5;max-width:720px;margin:0 auto 16px;color:var(--ink)}
+.quote .q-by{font-size:13px;color:var(--muted)}
 
-/* ═══ 详情页 ═══ */
-.page-bg{position:fixed;inset:0;z-index:-1;opacity:.16;pointer-events:none}
-.page-bg .fb-wrap{opacity:.4}
-.page-bg img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
-.page-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--paper) 0%,rgba(248,246,240,.85) 50%,var(--paper) 100%)}
-.detail{max-width:1320px;margin:0 auto;padding:120px 48px 90px}
-.detail-hero{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.detail-img{border-radius:8px;overflow:hidden;aspect-ratio:.95;background:var(--paper2);position:sticky;top:96px;box-shadow:0 30px 80px rgba(0,0,0,.12)}
+/* ═══ ROWS (simple list) ═══ */
+.rows{display:flex;flex-direction:column;gap:16px}
+.row{display:grid;grid-template-columns:auto 1fr;gap:16px 20px;align-items:start;padding:20px 24px;background:rgba(255,255,255,.05);border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.sec-bg:not(.dark) .row{background:#fff;border-color:var(--line-l)}
+.row .rn{font-size:clamp(28px,3vw,36px);font-weight:700;font-family:var(--font-serif);color:var(--green);line-height:1;grid-row:1/3}
+.sec-bg.dark .row .rn{color:var(--gold)}
+.row h4{font-size:clamp(15px,1.3vw,17px);font-weight:700;margin-bottom:4px}
+.row p{font-size:clamp(13px,1.1vw,14px);color:var(--muted);line-height:1.6}
+.sec-bg.dark .row p{color:rgba(255,255,255,.65)}
+
+/* ═══ BIGROWS (Brand page) ═══ */
+.bigrows{display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
+.bigrow{display:grid;grid-template-columns:1fr;gap:12px;padding:clamp(24px,3vw,36px);background:rgba(255,255,255,.05);border-radius:var(--radius-l);border:1px solid rgba(255,255,255,.08)}
+.sec-bg:not(.dark) .bigrow{background:#fff;border-color:var(--line-l)}
+.bigrow .bk{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.bigrow .bv{font-size:clamp(22px,2.4vw,32px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.bigrow .bd{font-size:clamp(13px,1.1vw,15px);line-height:1.6;color:var(--muted)}
+.sec-bg.dark .bigrow .bd{color:rgba(255,255,255,.65)}
+
+/* ═══ NOTE BOX ═══ */
+.note{padding:16px 20px;border-radius:var(--radius-sm);font-size:13px;line-height:1.6;color:var(--muted);background:rgba(11,94,62,.04);border-left:3px solid var(--green)}
+.note.gold{background:var(--gold-pale);border-left-color:var(--gold)}
+.note p strong{color:var(--ink);font-weight:700}
+
+/* ═══ TABLE ═══ */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius)}
+.table-wrap{min-width:600px}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card)}
+table thead th{background:var(--green);color:#fff;padding:14px 18px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.04em;white-space:nowrap}
+table tbody td{padding:12px 18px;border-bottom:1px solid var(--line-l);color:var(--ink)}
+table tbody tr:last-child td{border-bottom:none}
+table tbody tr:hover{background:var(--green-soft)}
+.sec-bg.dark table{background:rgba(255,255,255,.06)}
+.sec-bg.dark table thead th{background:rgba(255,255,255,.12);color:#fff}
+.sec-bg.dark table tbody td{border-bottom-color:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
+.sec-bg.dark table tbody tr:hover{background:rgba(255,255,255,.08)}
+
+/* ═══ CLOSING ═══ */
+.closing{text-align:center;padding:clamp(60px,8vw,100px) clamp(24px,4vw,60px);max-width:var(--max-w);margin:0 auto}
+.closing h2{font-size:clamp(28px,3.2vw,40px);font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
+.closing p{font-size:15px;color:var(--muted);margin-bottom:28px}
+
+/* ═══ DETAIL PAGE ═══ */
+.page-bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.page-bg .fb-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
+.page-bg .fb-wrap .fb-icon{font-size:clamp(60px,12vw,140px);opacity:.1}
+.page-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.4) brightness(.8);opacity:.08}
+.detail{max-width:var(--max-w);margin:calc(var(--nav-h) + 20px) auto 0;padding:clamp(20px,4vw,48px) clamp(20px,3vw,48px) 60px}
+.detail-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start;margin-bottom:40px}
+.detail-img{aspect-ratio:1;border-radius:var(--radius-xl);overflow:hidden;position:relative;background:var(--paper-card);box-shadow:var(--shadow-l)}
+.detail-img .fb-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
+.detail-img .fb-wrap .fb-icon{font-size:clamp(80px,12vw,140px);opacity:.2}
 .detail-img img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
-.detail-img .df{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:140px;opacity:.18}
-.detail-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.5);border-radius:var(--radius-l);padding:42px;box-shadow:var(--shadow-l)}
-.detail-info .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
-.detail-info .tags span{padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;background:var(--green-soft);color:var(--green)}
-.detail-info h1{font-size:clamp(30px,4vw,52px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.03em;line-height:1.08;color:var(--ink)}
-.detail-info h1 .en{display:block;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;font-weight:700;margin-top:8px}
-.fields{margin:38px 0}
-.field{display:flex;justify-content:space-between;gap:30px;padding:18px 0;border-bottom:1px solid var(--line)}
-.field:first-child{border-top:1px solid var(--line)}
-.field .fl{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;flex-shrink:0;width:90px}
-.field .fl .en{display:block;font-size:9px;opacity:.7}
-.field .fv{font-size:16px;color:var(--ink);line-height:1.7;text-align:right}
-.section-t{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin:36px 0 14px}
-.section-c{font-size:15.5px;color:#3a362f;line-height:1.9}
-.section-c ol{padding-left:22px}
-.section-c li{margin-bottom:7px}
-.note{margin-top:28px;padding:22px 26px;border-left:3px solid var(--green);background:var(--green-soft);border-radius:0 8px 8px 0}
-.note p{font-size:15px;color:#2c4034;line-height:1.85}
-.note.gold{border-color:var(--gold);background:#fdf8ec}
-.note.gold p{color:#4a3f23}
-.note strong{color:var(--ink)}
-.nutri-cta{display:inline-flex;align-items:center;gap:11px;margin-top:44px;padding:18px 44px;border-radius:100px;border:none;background:var(--ink);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:.35s}
-.nutri-cta:hover{background:var(--green);transform:translateY(-3px)}
-.detail-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:64px;padding-top:32px;border-top:1px solid var(--line)}
-.detail-nav button{display:flex;align-items:center;gap:12px;padding:20px 24px;border-radius:8px;border:1px solid var(--line);background:var(--glass);cursor:pointer;transition:.35s;text-align:left;backdrop-filter:blur(10px)}
-.detail-nav button:hover{border-color:var(--green);background:var(--green-soft)}
-.detail-nav button.next{justify-content:flex-end;flex-direction:row-reverse}
-.detail-nav .dn-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.detail-nav .dn-name{font-size:14px;font-weight:700;color:var(--ink);margin-top:4px}
-.detail-nav button:disabled{opacity:.35;cursor:not-allowed}
+.detail-info{position:sticky;top:calc(var(--nav-h) + 24px)}
+.detail-card{background:#fff;border-radius:var(--radius-xl);padding:clamp(24px,3vw,40px);box-shadow:var(--shadow);border:1px solid var(--line-l)}
+.detail-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.detail-card .tags span{padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;background:var(--green-soft);color:var(--green)}
+.detail-card h1{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;margin-bottom:20px;line-height:1.2}
+.detail-card h1 .en{display:block;font-size:clamp(14px,1.4vw,18px);color:var(--muted-l);margin-top:4px;font-weight:600}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.field{display:flex;flex-direction:column;padding:10px 14px;background:var(--paper);border-radius:var(--radius-sm)}
+.field .fl{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.field .fl .en{font-family:var(--font-sans);font-weight:500;font-size:9px;color:var(--muted-l)}
+.field .fv{font-size:13px;font-weight:600;color:var(--ink)}
+.section-t{font-size:13px;font-weight:700;color:var(--green);margin:16px 0 8px;letter-spacing:.02em}
+.section-c{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.section-c ol{padding-left:20px}
+.section-c ol li{margin-bottom:4px}
+.nutri-cta{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 24px;border:none;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);font-family:var(--font-sans);background:var(--green);color:#fff;box-shadow:0 4px 16px rgba(11,94,62,.2);width:100%;justify-content:center}
+.nutri-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,94,62,.3)}
+.nutri-cta svg{transition:transform .3s}
+.nutri-cta:hover svg{transform:translateX(4px)}
+.detail-extra{display:grid;gap:24px;margin-bottom:40px}
+.extra-section{background:#fff;border-radius:var(--radius-l);padding:24px 28px;box-shadow:var(--shadow-card);border:1px solid var(--line-l)}
+.extra-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px}
+.extra-taste{font-size:clamp(16px,1.6vw,20px);font-weight:600;color:var(--ink);font-style:italic;line-height:1.4}
+.extra-scenes{display:flex;flex-wrap:wrap;gap:8px}
+.scene-tag{padding:8px 16px;border-radius:100px;font-size:13px;background:var(--green-soft);color:var(--green);font-weight:500}
+.extra-revs{display:grid;gap:12px}
+.rev-card{padding:14px 18px;background:var(--paper);border-radius:var(--radius-sm)}
+.rev-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.rev-user{font-size:12px;font-weight:600;color:var(--muted)}
+.rev-stars{font-size:12px;color:var(--gold);letter-spacing:2px}
+.rev-text{font-size:14px;color:var(--ink);line-height:1.5}
+.extra-price{font-size:16px;font-weight:700;color:var(--green)}
+.detail-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.detail-nav button{padding:20px 24px;border:1px solid var(--line-l);border-radius:var(--radius);background:#fff;text-align:left;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);font-family:var(--font-sans)}
+.detail-nav button:hover{border-color:var(--green);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.detail-nav button:disabled{opacity:.4;cursor:default;transform:none!important}
+.detail-nav button .dn-label{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:4px}
+.detail-nav button .dn-name{font-size:14px;font-weight:700;color:var(--ink)}
 
-/* ═══ 详情页丰富内容 ═══ */
-.detail-extra{max-width:1320px;margin:64px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.extra-section{background:var(--glass);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);border-radius:12px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,.04);transition:.3s}
-.extra-section:hover{box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.extra-label{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.extra-taste{font-size:17px;font-weight:600;color:var(--ink);line-height:1.7;font-family:'Playfair Display','Noto Serif SC',serif;font-style:italic}
-.extra-scenes{display:flex;flex-wrap:wrap;gap:10px}
-.scene-tag{padding:8px 18px;border-radius:100px;background:var(--green-soft);color:var(--green);font-size:13px;font-weight:600;line-height:1.4;letter-spacing:.02em}
-.extra-revs{display:flex;flex-direction:column;gap:14px}
-.rev-card{padding:16px 18px;background:#fff;border-radius:10px;border:1px solid var(--line);transition:.2s}
-.rev-card:hover{border-color:var(--green)}
-.rev-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.rev-user{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.04em}
-.rev-stars{font-size:14px;letter-spacing:2px;color:#f0b429}
-.rev-text{font-size:14px;color:#4a463c;line-height:1.7;font-style:italic}
-.extra-price{font-size:18px;font-weight:800;color:var(--green);letter-spacing:-.01em}
-@media(max-width:900px){
-  .detail-extra{grid-template-columns:1fr}
-  .extra-section{padding:22px}
-  .scene-tag{font-size:12px;padding:6px 14px}
-}
-
-/* ═══ 营养页 ═══ */
-.nutri{max-width:1200px;margin:0 auto;padding:120px 48px 90px}
-.nutri-banner{text-align:center;padding:20px 0 50px}
-.nutri-banner h2{font-size:clamp(32px,3.8vw,50px);font-family:'Playfair Display','Noto Serif SC',serif;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
-.nutri-banner h2 .en{display:block;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-family:'Inter',sans-serif;font-weight:700;margin-top:10px}
-.nutri-banner p{color:var(--muted);margin-top:14px;font-size:15px;letter-spacing:.06em}
-.nutri-card-wrap{background:var(--glass);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.6);border-radius:16px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.08);margin:30px 0 60px}
-.nutri-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-radius:10px;overflow:hidden}
-.nutri-cell{padding:44px 18px;text-align:center;border-right:1px solid var(--line);background:#fff}
-.nutri-cell:last-child{border:0}
-.nutri-cell .ni{font-size:28px;margin-bottom:12px}
-.nutri-cell .nl{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:14px}
-.nutri-cell .nl .en{display:block;font-size:9px;opacity:.7}
-.nutri-cell .nv{font-size:clamp(32px,3.2vw,44px);font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1;font-family:'Playfair Display',serif}
-.nutri-cell .nu{font-size:11px;color:var(--muted);margin-top:8px}
-.nutri-cell.zero{background:var(--green-soft)}
+/* ═══ NUTRITION PAGE ═══ */
+.nutri{max-width:var(--max-w);margin:calc(var(--nav-h) + 20px) auto 0;padding:clamp(20px,4vw,48px) clamp(20px,3vw,48px) 60px}
+.nutri-banner{text-align:center;margin-bottom:32px}
+.nutri-banner h2{font-size:clamp(24px,2.8vw,36px);font-weight:700;margin-bottom:8px}
+.nutri-banner h2 .en{display:block;font-size:clamp(14px,1.4vw,18px);color:var(--muted-l);margin-top:4px}
+.nutri-banner p{font-size:14px;color:var(--muted)}
+.nutri-card-wrap{background:#fff;border-radius:var(--radius-xl);padding:clamp(20px,3vw,32px);box-shadow:var(--shadow);border:1px solid var(--line-l);margin-bottom:24px}
+.nutri-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:12px}
+.nutri-cell{text-align:center;padding:16px 8px;border-radius:var(--radius);background:var(--paper);transition:all .3s}
+.nutri-cell:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.nutri-cell.zero{background:var(--green-soft);border:1px solid var(--green-pale)}
+.nutri-cell .ni{font-size:28px;margin-bottom:6px;line-height:1}
+.nutri-cell .nl{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:4px}
+.nutri-cell .nv{font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--ink);line-height:1}
 .nutri-cell.zero .nv{color:var(--green)}
+.nutri-cell .nu{font-size:10px;color:var(--muted-l);margin-top:4px}
 
-/* 表格 */
-.table-wrap{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.04)}
-.table-wrap table{width:100%;border-collapse:collapse}
-.table-wrap th{background:var(--paper2);font-size:11.5px;font-weight:800;letter-spacing:.1em;padding:16px 24px;text-align:left;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--line)}
-.table-wrap td{padding:15px 24px;font-size:14.5px;border-bottom:1px solid var(--line);color:#3a362f}
-.table-wrap tr:last-child td{border:0}
-.table-wrap tr:hover td{background:var(--paper2)}
-.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* ═══ BOTTOM SECTION ═══ */
+.btm{max-width:var(--max-w);margin:0 auto;padding:clamp(40px,5vw,80px) clamp(24px,4vw,60px)}
+.btm.hidden{display:none}
+.btm-bar{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,4vw,48px);align-items:start;background:#fff;border-radius:var(--radius-xl);padding:clamp(28px,3.5vw,48px);box-shadow:var(--shadow);border:1px solid var(--line-l)}
+.btm-bar h3{font-size:clamp(20px,2.2vw,28px);font-weight:700;line-height:1.3;letter-spacing:-.02em;margin-bottom:20px}
+.btm-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btm-btns button{padding:12px 24px;border:none;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all .4s;font-family:var(--font-sans)}
+.btm-btns button:first-child{background:var(--green);color:#fff;box-shadow:0 4px 16px rgba(11,94,62,.2)}
+.btm-btns button:first-child:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,94,62,.3)}
+.btm-btns button:last-child{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.btm-btns button:last-child:hover{background:var(--line-l)}
+.btm-info{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btm-info div{padding:8px 12px;border-radius:var(--radius-sm);background:var(--paper)}
+.btm-info strong{display:block;font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+.btm-info span{font-size:12px;color:var(--ink)}
 
-/* 编辑式行 */
-.rows{margin-top:56px}
-.row{display:grid;grid-template-columns:64px 1fr;gap:32px;padding:34px 0;border-top:1px solid var(--line);align-items:start}
-.row:last-child{border-bottom:1px solid var(--line)}
-.row .rn{font-size:22px;font-weight:800;color:var(--green);letter-spacing:-.02em}
-.row h4{font-size:clamp(20px,2.2vw,26px);font-weight:800;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
-.row p{font-size:15px;color:var(--muted);line-height:1.85;max-width:640px}
+/* ═══ FOOTER ═══ */
+.end{padding:20px clamp(24px,4vw,48px);text-align:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line-l)}
 
-/* 品牌大数字行 */
-.bigrows{margin-top:56px}
-.bigrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;padding:44px 0;border-top:1px solid var(--line)}
-.bigrow:last-child{border-bottom:1px solid var(--line)}
-.bigrow .bk{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--green);text-transform:uppercase}
-.bigrow .bv{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-top:12px}
-.bigrow .bd{font-size:14.5px;color:var(--muted);line-height:1.8;margin-top:12px}
+/* ═══ LANG SWITCH ═══ */
+.lang-switch{position:fixed;bottom:20px;right:20px;z-index:999;display:flex;gap:2px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:3px;border-radius:100px;box-shadow:var(--shadow);border:1px solid var(--line-l)}
+.lang-switch button{padding:6px 14px;border:none;border-radius:100px;font-size:11px;font-weight:600;cursor:pointer;transition:all .3s;font-family:var(--font-sans);background:none;color:var(--muted)}
+.lang-switch button.active{background:var(--green);color:#fff;box-shadow:0 2px 8px rgba(11,94,62,.2)}
 
-.col-us td:first-child{font-weight:700;color:var(--green)}
-
-/* 收尾 */
-.closing{text-align:center;padding:100px 48px 120px;max-width:900px;margin:0 auto;position:relative}
-.closing::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--green);opacity:.3;border-radius:2px}
-.closing h2{font-size:clamp(30px,4vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:var(--ink);margin-bottom:22px;font-family:'Playfair Display','Noto Serif SC',serif}
-.closing p{color:var(--muted);font-size:16px;margin-bottom:36px}
-
-/* 全球出口条 */
-.global-bar{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;padding:48px 24px;background:linear-gradient(135deg,var(--green-d),var(--green));border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-.global-item{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.7);font-size:14px}
-.global-item b{font-size:24px;font-weight:800;color:#fff;font-family:'Playfair Display',serif;text-shadow:0 2px 8px rgba(0,0,0,.2)}
-
-/* 底部 */
-.btm{max-width:1200px;margin:0 auto;padding:0 48px 90px}
-.btm-bar{background:linear-gradient(135deg,var(--paper2),var(--paper));border-radius:var(--radius-l);padding:56px 56px;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 4px 24px rgba(0,0,0,.04)}
-.btm-bar h3{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.25;font-family:'Playfair Display','Noto Serif SC',serif}
-.btm-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
-.btm-btns button{padding:14px 30px;border-radius:100px;border:1px solid var(--ink);background:none;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;transition:.3s}
-.btm-btns button:hover{background:var(--ink);color:#fff}
-.btm-info{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.btm-info div{background:var(--paper);padding:18px 22px}
-.btm-info strong{display:block;font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
-.btm-info span{font-size:14px;color:var(--ink)}
-.end{text-align:center;padding:50px 24px 60px;color:#b3ada0;font-size:12px;letter-spacing:.06em}
-
-/* 语言切换 */
-.lang-switch{position:fixed;bottom:24px;right:24px;z-index:1001;display:flex;gap:6px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:6px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.lang-switch button{padding:8px 14px;border:none;background:none;border-radius:100px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;transition:.3s}
-.lang-switch button.active{background:var(--ink);color:#fff}
-
-@media(max-width:900px){
-  .nav{padding:0 14px;height:60px}
-  .nav-logo .brand-name{font-size:18px}
-  .nav-logo .brand-name span{font-size:13px}
-  .nav-logo .brand-sub{font-size:9px}
+/* ═══ MOBILE ═══ */
+@media(max-width:860px){
+  .nav{height:64px;padding:0 16px}
   .nav-logo .logo-img{height:28px}
-  .nav-tabs button{padding:5px 8px;font-size:10px;gap:0}
+  .nav-logo .brand-group .brand-name{font-size:17px}
+  .nav-logo .brand-group .brand-name span{font-size:12px}
+  .nav-logo .brand-group .brand-sub{display:none}
+  .nav-tabs{background:none;padding:0;gap:0}
+  .nav-tabs button{padding:6px 10px;font-size:10px}
   .nav-tabs button .tab-en{display:none}
-  .hero-inner{grid-template-columns:1fr;gap:48px;padding:0 22px}
-  .hero h1{font-size:clamp(36px,8vw,56px)}
-  .hero-floats{display:none}
-  .scroll-hint{left:22px}
-  .trust{grid-template-columns:1fr 1fr;padding:0 22px}
-  .trust-item{padding:36px 0}
-  .trust-item:nth-child(2){border-right:0}
-  .trust-item:nth-child(1),.trust-item:nth-child(2){border-bottom:1px solid var(--line)}
-  .sec{padding:74px 22px}
-  .sec-bg .inner{padding:74px 22px}
-  .feature,.feature.rev{grid-template-columns:1fr;gap:36px;margin-top:64px}
-  .feature.rev .feature-img{order:0}
-  .feature-img{aspect-ratio:1.4}
-  .film-item{flex:0 0 240px}
-  .values{grid-template-columns:1fr;gap:40px}
-  .value{padding:0;border-left:0;border-top:1px solid rgba(255,255,255,.14);padding-top:40px}
-  .value:first-child{border:0;padding-top:0}
-  .tech-grid{grid-template-columns:1fr;gap:0}
-  .tech-block{margin-bottom:48px}
-  .detail{padding:96px 18px 50px}
-  .detail-hero{grid-template-columns:1fr;gap:24px}
-  .detail-img{position:static;aspect-ratio:1.35;border-radius:6px}
-  .detail-card{padding:24px;border-radius:12px}
-  .field .fl{width:64px}
-  .field .fv{font-size:14px}
-  .nutri{padding:96px 18px 50px}
-  .nutri-row{grid-template-columns:repeat(2,1fr)}
-  .nutri-cell{padding:30px 12px}
-  .nutri-cell:nth-child(2n){border-right:0}
-  .nutri-cell:nth-child(1),.nutri-cell:nth-child(2){border-bottom:1px solid var(--line)}
-  .nutri-card-wrap{padding:6px;border-radius:12px}
-  .sec.dark{padding:74px 22px}
-  .rows .row{grid-template-columns:36px 1fr;gap:16px;padding:24px 0}
-  .bigrow{grid-template-columns:1fr;gap:10px;padding:28px 0}
-  .btm-bar{grid-template-columns:1fr;padding:36px 22px;gap:32px}
-  .table-scroll{margin:0 -22px}
-  .fab{top:70px;left:12px;padding:8px 14px;font-size:12px}
+  .hero-inner{grid-template-columns:1fr;gap:24px;padding:100px 20px 60px}
+  .hero-floats{justify-self:center;max-width:320px;padding:0}
+  .hero-float{padding:12px 16px}
+  .hero-float .fv{font-size:clamp(18px,5vw,24px)}
+  .trust{grid-template-columns:1fr 1fr;margin:-24px 12px 0;gap:0}
+  .trust-item:first-child{border-radius:var(--radius) 0 0 0}
+  .trust-item:nth-child(2){border-radius:0 var(--radius) 0 0;border-right:none}
+  .trust-item:nth-child(3){border-radius:0 0 0 var(--radius)}
+  .trust-item:last-child{border-radius:0 0 var(--radius) 0}
+  .feature{grid-template-columns:1fr;gap:20px;margin-bottom:48px}.feature.rev{direction:ltr}.feature.rev>*{direction:ltr}
+  .feature-img{aspect-ratio:4/3;border-radius:var(--radius)}
+  .feature-txt{max-width:none}
+  .detail-hero{grid-template-columns:1fr;gap:20px}
+  .detail-img{aspect-ratio:4/3}
+  .detail-info{position:static}
   .detail-nav{grid-template-columns:1fr}
-  .detail-nav button.next{flex-direction:row}
-  .detail-nav button{padding:16px 20px}
-  .global-bar{gap:16px;padding:28px 16px}
-  .global-item{font-size:12px}
-  .global-item b{font-size:20px}
+  .btm-bar{grid-template-columns:1fr;gap:24px}
+  .btm-info{grid-template-columns:1fr}
+  .nutri-row{grid-template-columns:repeat(3,1fr)}
+  .film-item{flex:0 0 clamp(160px,45vw,220px)}
+  .global-bar{gap:4px;padding:12px 16px}
+  .global-item{padding:4px 10px;font-size:10px}
+  .values{grid-template-columns:1fr}
+  .tech-grid{grid-template-columns:1fr 1fr}
+  .bigrow{padding:20px}
+  .fab{top:72px;left:12px;padding:8px 14px;font-size:12px}
   .lang-switch{bottom:16px;right:16px}
-  .closing{padding:40px 22px 100px}
-  .quote{padding:80px 22px}
 }
+
+@media(max-width:480px){
+  .tech-grid{grid-template-columns:1fr}
+  .nutri-row{grid-template-columns:repeat(2,1fr)}
+  .hero-txt h1{font-size:clamp(28px,10vw,36px)}
+  .hero-eyebrow{font-size:9px;padding:4px 12px}
+  .detail-card{padding:20px}
+  .fields{grid-template-columns:1fr}
+}
+
+/* ═══ IMAGE FALLBACK SHARED ═══ */
+.fb-wrap.pf,.fb-wrap.df,.fb-wrap.bg-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
+.fb-wrap.pf .fb-icon,.fb-wrap.df .fb-icon,.fb-wrap.bg-fb .fb-icon{font-size:clamp(48px,10vw,100px);opacity:.25;line-height:1}
+.has-img{position:relative;overflow:hidden}
+.has-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+
+/* ═══ FADE OVERLAY INSET ═══ for sections using bgSection without dark */
+.sec-bg:not(.dark) .inner{padding-top:clamp(50px,6vw,100px);padding-bottom:clamp(50px,6vw,100px)}
+
+.bigrow.clickable,.row.clickable,.value.clickable{cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative}
+.bigrow.clickable:hover,.row.clickable:hover,.value.clickable:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.bigrow.clickable::after,.row.clickable::after,.value.clickable::after{content:"→";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--green);opacity:0;transition:opacity .3s}
+.bigrow.clickable:hover::after,.row.clickable:hover::after,.value.clickable:hover::after{opacity:.6}
+.brand-sec{padding:20px 0;border-bottom:1px solid var(--line-l)}
+.brand-sec:last-child{border-bottom:none}
+
+/* ═══ DETAIL VISUAL CARDS ═══ */
+.dtl-hero{position:relative;overflow:hidden}
+.dtl-hero .hero-deco{position:absolute;right:-20px;top:-20px;font-size:120px;opacity:.06;line-height:1;pointer-events:none}
+.dtl-grid{display:flex;flex-direction:column;gap:16px}
+.dtl-card{background:#fff;border-radius:var(--radius-l);padding:28px;box-shadow:var(--shadow-card);border:1px solid var(--line-l);transition:all .35s cubic-bezier(.16,1,.3,1)}
+.dtl-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)!important}
+.dtl-card .card-num{width:40px;height:40px;border-radius:10px;background:var(--green-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dtl-card .card-num span{font-size:16px;font-weight:700;color:var(--green)}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.stat-card{background:#fff;border-radius:var(--radius-l);padding:28px;box-shadow:var(--shadow-card);border:1px solid var(--line-l);text-align:center}
+.stat-card .stat-val{font-size:48px;font-weight:700;display:block;line-height:1;margin-bottom:8px}
+.stat-card .stat-lbl{font-size:13px;color:var(--muted)}
+.highlight-box{background:var(--green-soft);border-radius:var(--radius-l);padding:20px 24px;margin-bottom:24px;border-left:4px solid var(--green)}
+.highlight-box p{font-size:14px;color:var(--green);font-weight:600;line-height:1.6}
+.drug-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.drug-card{background:#fff;border-radius:var(--radius-l);padding:24px;box-shadow:var(--shadow-card);border:1px solid var(--line-l);text-align:center;transition:all .35s}
+.drug-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)!important}
+.drug-card .drug-icon{font-size:36px;line-height:1;margin-bottom:10px;display:block}
+.drug-card h4{font-size:16px;font-weight:700;margin-bottom:4px}
+.drug-card .drug-type{font-size:12px;color:var(--muted-l);margin-bottom:10px}
+.drug-card .drug-usage{font-size:13px;color:var(--muted);line-height:1.6}
+.age-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.age-card{background:#fff;border-radius:var(--radius-l);padding:24px;box-shadow:var(--shadow-card);border:1px solid var(--line-l)}
+.age-card .age-emoji{font-size:28px;display:block;margin-bottom:8px}
+.age-card h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--green)}
+.age-card p{font-size:13px;color:var(--muted);line-height:1.7}
+@media(max-width:600px){.stat-grid,.drug-grid,.age-grid{grid-template-columns:1fr}}
 </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -404,7 +461,7 @@ img[loading="lazy"]{background:var(--paper2)}
   "alternateName": "Senwuyou",
   "description": "低蛋白特医食品品牌，专为CKD肾病与PKU苯丙酮尿症患者设计",
   "url": "https://senwuyou.com",
-  "logo": "https://img30.360buyimg.com/popshop/jfs/t1/23816/9/17957/3769/62be5dd7E943ad000/555370770519dfee.jpg",
+  "logo": "https://senwuyou.com/images/1-rice.jpg",
   "manufacturer": {
     "@type": "Organization",
     "name": "南京恒生制药有限公司",
@@ -432,52 +489,68 @@ img[loading="lazy"]{background:var(--paper2)}
 
 <div class="progress" id="prog"></div>
 
-<nav class="nav" id="nav"><div class="nav-logo" onclick="navigate('home')">
+<nav class="nav" id="nav">
+<div class="nav-logo" onclick="navigate('home')">
 <img class="logo-img" src="https://www.hencer.com/images/logo_title.png" alt="恒生制药" onerror="this.style.display='none'">
-<div class="brand-group"><span class="brand-name">森无忧<span>Senwuyou</span></span><span class="brand-sub">南京恒生制药 · 济民可信集团</span></div></div>
+<div class="brand-group"><span class="brand-name">森无忧<span>Senwuyou</span></span><span class="brand-sub">南京恒生制药 · 济民可信集团</span></div>
+</div>
 <div class="nav-tabs">
   <button class="on" onclick="navigate('home')">产品<span class="tab-en">Products</span></button>
   <button onclick="navigate('pageBrand')">品牌<span class="tab-en">Brand</span></button>
   <button onclick="navigate('pageScience')">CKD<span class="tab-en">Science</span></button>
   <button onclick="navigate('pagePKU')">PKU<span class="tab-en">PKU</span></button>
-</div></nav>
+</div>
+</nav>
 
 <button class="fab hidden" id="fabBack" onclick="goBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回</button>
 
 <main id="app"></main>
 
 <div class="global-bar">
-  <div class="global-item"><b>50+</b> 国家出口 / Exported to 50+ countries</div>
-  <div class="global-item"><b>13</b> 大制药基地 / Pharmaceutical bases</div>
-  <div class="global-item"><b>GMP</b> 药品级标准 / GMP standard</div>
-  <div class="global-item"><b>ISO9001</b> 国际认证 / ISO9001 certified</div>
+  <div class="global-item"><b>50+</b> 国家出口</div>
+  <div class="global-item"><b>13</b> 大制药基地</div>
+  <div class="global-item"><b>GMP</b> 药品级标准</div>
+  <div class="global-item"><b>ISO9001</b> 国际认证</div>
 </div>
 
-<div class="btm" id="csSection"><div class="btm-bar">
-<div><h3>为特殊人群，做一顿不用将就的饭。<br><span style="font-size:18px;color:var(--muted);font-family:'Inter',sans-serif">A meal without compromise for those with special dietary needs.</span></h3><div class="btm-btns"><button onclick="document.querySelector('.film')?.scrollIntoView({behavior:'smooth'})">浏览全部产品</button><button onclick="navigate('pageBrand')">了解品牌实力</button></div></div>
+<div class="btm" id="csSection">
+<div class="btm-bar">
+<div>
+<h3>为特殊人群，做一顿不用将就的饭。<br><span style="font-size:15px;color:var(--muted);font-weight:400">A meal without compromise for those with special dietary needs.</span></h3>
+<div class="btm-btns">
+  <button onclick="document.querySelector('.film')?.scrollIntoView({behavior:'smooth'})">浏览全部产品</button>
+  <button onclick="navigate('pageBrand')">了解品牌实力</button>
+</div>
+</div>
 <div class="btm-info">
-<div><strong>生产厂家 / Manufacturer</strong><span>南京恒生制药有限公司</span></div>
-<div><strong>生产地址 / Address</strong><span>南京市溧水经济开发区机场路18号</span></div>
-<div><strong>全国热线 / Hotline</strong><span>400-009-2535</span></div>
-<div><strong>厂区电话 / Tel</strong><span>025-57212809</span></div>
-<div><strong>包装提示 / Note</strong><span>盒内水珠为冷凝水，非质量问题</span></div>
-<div><strong>加热提示 / Caution</strong><span>加热需撕开小口防烫</span></div>
-</div></div></div>
+<div><strong>生产厂家</strong><span>南京恒生制药有限公司</span></div>
+<div><strong>生产地址</strong><span>南京市溧水经济开发区机场路18号</span></div>
+<div><strong>全国热线</strong><span>400-009-2535</span></div>
+<div><strong>厂区电话</strong><span>025-57212809</span></div>
+<div><strong>包装提示</strong><span>盒内水珠为冷凝水，非质量问题</span></div>
+<div><strong>加热提示</strong><span>加热需撕开小口防烫</span></div>
+</div>
+</div>
+</div>
+
 <div class="end">森无忧 Senwuyou · 南京恒生制药（济民可信集团） · 专为 CKD 肾病及 PKU 患者设计</div>
 
-<div class="lang-switch" id="lang"><button class="active" onclick="switchLang('zh')">中文</button><button onclick="switchLang('en')">EN</button></div>
+<div class="lang-switch" id="lang">
+<button class="active" onclick="switchLang('zh')">中文</button>
+<button onclick="switchLang('en')">EN</button>
+</div>
 
 <script>
 const IMG={
-  rice:'/images/1-rice.jpg',
-  grain:'/images/2-grain.jpg',
-  granule:'/images/3-granule.png',
-  flour:'/images/4-flour.jpg',
-  bun:'/images/5-bun.jpg',
-  noodle:'/images/6-noodle.jpg',
-  cookie:'/images/7-cookie.jpg',
-  snack:'/images/8-snack.png',
-  zongzi:'/images/9-zongzi.jpg',
+  rice:'images/1-rice.jpg',
+  grain:'images/2-grain.jpg',
+  granule:'images/3-granule.png',
+  flour:'images/4-flour.jpg',
+  bun:'images/5-bun.jpg',
+  noodle:'images/6-noodle.jpg',
+  cookie:'images/7-cookie.jpg',
+  snack:'images/8-snack.png',
+  zongzi:'images/9-zongzi.jpg',
 };
 const BG={
   riceField:'https://images.unsplash.com/photo-1536617621572-1d5f1f626810?w=1920&q=80&auto=format&fit=crop',
@@ -519,7 +592,7 @@ function switchLang(l){
   setTimeout(setupReveal,30);
 }
 
-// ═══ 产品详情丰富信息（用户评价/使用场景/口感） ═══
+// ═══ 产品详情丰富信息 ═══
 const D={
 1:{
   taste:_T('晶莹剔透，有嚼劲Q弹，大米香自然，口感软糯不渣','Glossy, chewy & springy with natural rice aroma'),
@@ -619,11 +692,12 @@ function _home(){setTab(0);
 document.getElementById('app').innerHTML=`
 <div class="hero">
   <div class="hero-bg">${imgOrFallback(BG.riceField,'🌾','fb')}</div>
+  <div class="bg-overlay"></div>
   <div class="hero-inner">
     <div class="hero-txt">
-      <span class="hero-eyebrow">${_T('森无忧 · 药企出品','Senwuyou · Pharmaceutical Grade')}</span>
-      <h1><span class="mask"><span>${_T('不是少吃饭，','Not eating less,')}</span></span><span class="mask"><span>${_T('是<em>吃对饭</em>。','<em>eating right</em>.')}</span></span></h1>
-      <p class="hero-sub">${_T('专为 CKD 肾病与 PKU 患者研发的低蛋白主食。0 蛋白、低磷低钾低钠，真米口感，三餐加餐一站式解决。','Low-protein staples for CKD & PKU patients. 0g protein, low phosphorus, potassium & sodium, real rice taste.')}<br><span class="en">${_T('','Low-protein staple foods for CKD and PKU patients. 0g protein, low phosphorus, low potassium, low sodium.')}</span></p>
+      <span class="hero-eyebrow">${_T('药企出品 · 低蛋白专家','Pharmaceutical Grade')}</span>
+      <h1><span class="mask"><span>${_T('不是少吃饭，','Not eating less,')}</span></span><br><span class="mask"><span>${_T('是<em>吃对饭</em>。','<em>eating right</em>.')}</span></span></h1>
+      <p class="hero-sub">${_T('专为 CKD 肾病与 PKU 患者研发的低蛋白主食。0 蛋白、低磷低钾低钠，真米口感，三餐加餐一站式解决。','Low-protein staples for CKD & PKU patients. 0g protein, low phosphorus, potassium & sodium, real rice taste.')}</p>
       <div class="hero-cta">
         <button class="btn-solid" onclick="document.querySelector('.film').scrollIntoView({behavior:'smooth'})">${_T('浏览全部产品','Browse All Products')}</button>
         <span class="link-arrow" onclick="navigate('pageBrand')">${_T('了解品牌实力','Brand Story')} →</span>
@@ -639,21 +713,21 @@ document.getElementById('app').innerHTML=`
 </div>
 
 <div class="trust">
-  <div class="trust-item reveal" data-count="0"><b>0</b><span>${_T('g 蛋白质','g Protein')}<br><span class="en">Protein</span></span></div>
-  <div class="trust-item reveal" data-count="9"><b>9</b><span>${_T('全品类覆盖','Categories')}<br><span class="en">Categories</span></span></div>
-  <div class="trust-item reveal" data-count="2+"><b>2+</b><span>${_T('适配人群','Populations')}<br><span class="en">Populations</span></span></div>
-  <div class="trust-item reveal" data-count="30"><b>30</b><span>${_T('年药企底蕴','Years Pharma')}<br><span class="en">Years Pharma</span></span></div>
+  <div class="trust-item reveal" data-count="0"><b>0</b><span>${_T('g 蛋白质','g Protein')}</span></div>
+  <div class="trust-item reveal" data-count="9"><b>9</b><span>${_T('全品类覆盖','Categories')}</span></div>
+  <div class="trust-item reveal" data-count="2+"><b>2+</b><span>${_T('适配人群','Populations')}</span></div>
+  <div class="trust-item reveal" data-count="30"><b>30</b><span>${_T('年药企底蕴','Years Pharma')}</span></div>
 </div>
 
 ${bgSection(BG.wheat,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">${_T('精选','Selected')}</span><h2 class="h2">${_T('为不同场景，<br>准备好每一餐','Prepared for<br>Every Meal')}<span class="en">Prepared for Every Meal</span></h2><p class="sec-sub">${_T('从即食到家常，从主食到加餐，森无忧覆盖 CKD 与 PKU 全场景饮食需求。','From instant to home cooking, Senwuyou covers all CKD & PKU dietary needs.')}</p></div>
+  <div class="sec-head reveal"><span class="eyebrow d">${_T('精选','Selected')}</span><h2 class="h2">${_T('为不同场景，准备好每一餐','Prepared for Every Meal')}<span class="en">Prepared for Every Meal</span></h2><p class="sec-sub">${_T('从即食到家常，从主食到加餐，森无忧覆盖 CKD 与 PKU 全场景饮食需求。','From instant to home cooking, Senwuyou covers all CKD & PKU dietary needs.')}</p></div>
   <div class="feature">
     <div class="feature-img ph clip-reveal">${imgOrFallback(IMG.rice,IC[0],'fb')}</div>
-    <div class="feature-txt reveal"><span class="eyebrow-en">01 / Instant</span><h3>${_T('低蛋白米饭','Low Protein Rice')}<span class="en">Low Protein Rice</span></h3><p>${_T('真米生物脱蛋白，日式 UHT 高温灭菌，三层氮气高阻隔包装。微波 2 分钟即食，外出、住院、上班都能随时吃上一口安心的饭。','Real rice bio-enzymatic, UHT sterilized, 3-layer nitrogen packaging. Microwave 2 min ready.')}</p><span class="link-arrow" onclick="navigate('detail',1)">${_T('查看详情','Details')} →</span></div>
+    <div class="feature-txt reveal"><span class="eyebrow-en">01 / Instant</span><h3>${_T('低蛋白米饭','Low Protein Rice')}<span class="en">Low Protein Ready Rice</span></h3><p>${_T('真米生物脱蛋白，日式 UHT 高温灭菌，三层氮气高阻隔包装。微波 2 分钟即食，外出、住院、上班都能随时吃上一口安心的饭。','Real rice bio-enzymatic, UHT sterilized, 3-layer nitrogen packaging. Microwave 2 min ready.')}</p><span class="link-arrow" onclick="navigate('detail',1)">${_T('查看详情','Details')} →</span></div>
   </div>
   <div class="feature rev">
     <div class="feature-img ph clip-reveal">${imgOrFallback(IMG.grain,IC[1],'fb')}</div>
-    <div class="feature-txt reveal"><span class="eyebrow-en">02 / Staple</span><h3>${_T('低蛋白大米','Low Protein Grain')}<span class="en">Low Protein Grain</span></h3><p>${_T('完整大米酶解脱蛋白，Phe 仅 0.014%，为普通大米的 1/20。无需淘洗，米水 1:1.1 即煮，药品级生产线，家庭三餐的安心基底。','Whole rice enzymatic, Phe only 0.014%. No rinsing needed, pharmaceutical-grade.')}</p><span class="link-arrow" onclick="navigate('detail',2)">${_T('查看详情','Details')} →</span></div>
+    <div class="feature-txt reveal"><span class="eyebrow-en">02 / Staple</span><h3>${_T('低蛋白大米','Low Protein Rice Grain')}<span class="en">Low Protein Rice Grain</span></h3><p>${_T('完整大米酶解脱蛋白，Phe 仅 0.014%，为普通大米的 1/20。无需淘洗，米水 1:1.1 即煮，药品级生产线。','Whole rice enzymatic, Phe only 0.014%. No rinsing needed, pharmaceutical-grade.')}</p><span class="link-arrow" onclick="navigate('detail',2)">${_T('查看详情','Details')} →</span></div>
   </div>
   <div class="feature">
     <div class="feature-img ph clip-reveal">${imgOrFallback(IMG.cookie,IC[6],'fb')}</div>
@@ -681,10 +755,10 @@ ${bgSection(BG.lab,true,`
 ${bgSection(BG.plant,false,`
   <div class="sec-head reveal"><span class="eyebrow d">${_T('科技','Technology')}</span><h2 class="h2">${_T('从原料到成品的硬科技','From Farm to Package')}<span class="en">From Farm to Package</span></h2></div>
   <div class="tech-grid">
-    <div class="tech-block reveal"><span class="tb-num">01</span><h4>${_T('真米脱蛋白技术','Real Rice Deproteination')}</h4><p>${_T('完整大米生物酶解，去除 90% 以上蛋白与苯丙氨酸，蛋白含量 ≤0.5g/100g，符合国标"0 蛋白"标注，口感接近普通米饭。','Whole rice enzymatic, removes 90%+ protein, ≤0.5g/100g protein, "0 protein" labeled.')}</p></div>
-    <div class="tech-block reveal"><span class="tb-num">02</span><h4>${_T('UHT 高温灭菌','UHT Sterilization')}</h4><p>${_T('日式蒸饭一体化灭菌，三层氮气高阻隔包装，0 防腐剂，常温保质 8 个月，支持微波与沸水双加热。','Japanese steam sterilization, 3-layer N2 packaging, 0 preservatives, 8 months shelf life.')}</p></div>
-    <div class="tech-block reveal"><span class="tb-num">03</span><h4>${_T('瑞士布勒热挤压','Buhler Extrusion')}</h4><p>${_T('淀粉充分熟化无异味，蒸煮不易软烂，单餐成本仅 2-3 元，高性价比适合长期家庭使用。','Swiss Buhler equipment, fully cooked no off-flavor, only 2-3 yuan per meal.')}</p></div>
-    <div class="tech-block reveal"><span class="tb-num">04</span><h4>${_T('复配无胶配方','Gum-Free Formula')}</h4><p>${_T('不添加工业食用胶，添加膳食纤维改善便秘，解决市面淀粉粉易断、难成型的痛点。','No industrial gums, added dietary fiber for gut health, solves shaping problems.')}</p></div>
+    <div class="tech-block reveal"><span class="tb-num">01</span><h4>${_T('真米脱蛋白技术','Real Rice Deproteination')}</h4><p>${_T('完整大米生物酶解，去除 90% 以上蛋白与苯丙氨酸，蛋白含量 ≤0.5g/100g，符合国标"0 蛋白"标注，口感接近普通米饭。','Whole rice enzymatic, removes 90%+ protein, ≤0.5g/100g, "0 protein" labeled.')}</p></div>
+    <div class="tech-block reveal"><span class="tb-num">02</span><h4>${_T('UHT 高温灭菌','UHT Sterilization')}</h4><p>${_T('日式蒸饭一体化灭菌，三层氮气高阻隔包装，0 防腐剂，常温保质 8 个月，支持微波与沸水双加热。','Japanese steam sterilization, 3-layer N2 packaging, 0 preservatives.')}</p></div>
+    <div class="tech-block reveal"><span class="tb-num">03</span><h4>${_T('瑞士布勒热挤压','Buhler Extrusion')}</h4><p>${_T('淀粉充分熟化无异味，蒸煮不易软烂，单餐成本仅 2-3 元，高性价比适合长期家庭使用。','Swiss Buhler equipment, fully cooked, only 2-3 yuan per meal.')}</p></div>
+    <div class="tech-block reveal"><span class="tb-num">04</span><h4>${_T('复配无胶配方','Gum-Free Formula')}</h4><p>${_T('不添加工业食用胶，添加膳食纤维改善便秘，解决市面淀粉粉易断、难成型的痛点。','No industrial gums, added dietary fiber for gut health.')}</p></div>
   </div>
 `)}
 
@@ -698,7 +772,7 @@ ${bgSection(BG.doctor,true,`
   </div>
 `)}
 
-<div class="closing reveal"><h2>${_T('为特殊人群，<br>做一顿不用将就的饭。','A meal without compromise<br>for those with special needs.')}<br><span class="en" style="font-size:22px;color:var(--muted);font-weight:700">A Meal Without Compromise.</span></h2><p>${_T('点击下方任意产品，查看配料、吃法与完整营养数据。','Tap any product to see ingredients, instructions & nutrition facts.')}</p><button class="btn-solid" style="background:var(--ink);color:#fff" onclick="document.querySelector('.film').scrollIntoView({behavior:'smooth'})">${_T('浏览全部产品','Browse All Products')}</button></div>`;
+<div class="closing reveal"><h2>${_T('为特殊人群，做一顿不用将就的饭。','A meal without compromise for those with special needs.')}<br><span class="en" style="font-size:18px;color:var(--muted);font-weight:500">A Meal Without Compromise.</span></h2><p>${_T('点击下方任意产品，查看配料、吃法与完整营养数据。','Tap any product to see ingredients, instructions & nutrition facts.')}</p><button class="btn-solid" style="background:var(--green);color:#fff" onclick="document.querySelector('.film').scrollIntoView({behavior:'smooth'})">${_T('浏览全部产品','Browse All Products')}</button></div>`;
 document.getElementById('csSection').classList.remove('hidden')}
 
 // ═══ 详情 ═══
@@ -714,18 +788,18 @@ document.getElementById('app').innerHTML=`
         <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
         <h1>${p.name}<span class="en">${p.en}</span></h1>
         <div class="fields">
-          <div class="field"><span class="fl">${_T('净含量','Net Weight')}<br><span class="en">Net</span></span><span class="fv">${p.w}</span></div>
-          <div class="field"><span class="fl">${_T('保质期','Shelf Life')}<br><span class="en">Shelf</span></span><span class="fv">${p.shelf}</span></div>
-          <div class="field"><span class="fl">${_T('贮存','Storage')}<br><span class="en">Storage</span></span><span class="fv">${p.store}</span></div>
-          ${p.sc?`<div class="field"><span class="fl">${_T('标准','Standard')}<br><span class="en">Standard</span></span><span class="fv">${p.sc}</span></div>`:''}
-          <div class="field"><span class="fl">${_T('配料','Ingredients')}<br><span class="en">Ingredients</span></span><span class="fv">${p.ings}</span></div>
+          <div class="field"><span class="fl">${_T('净含量','Net Weight')}</span><span class="fv">${p.w}</span></div>
+          <div class="field"><span class="fl">${_T('保质期','Shelf Life')}</span><span class="fv">${p.shelf}</span></div>
+          <div class="field"><span class="fl">${_T('贮存','Storage')}</span><span class="fv">${p.store}</span></div>
+          ${p.sc?`<div class="field"><span class="fl">${_T('标准','Standard')}</span><span class="fv">${p.sc}</span></div>`:''}
+          <div class="field"><span class="fl">${_T('配料','Ingredients')}</span><span class="fv">${p.ings}</span></div>
         </div>
         <div class="section-t">${_T('食用方法','How to Use')}</div>
         <div class="section-c"><ol>${p.method.map(m=>`<li>${m}</li>`).join('')}</ol></div>
         <div class="section-t">${_T('工艺与优势','Craft & Advantage')}</div>
         <div class="section-c">${p.craft}</div>
-        ${p.tech?`<div class="note"><p><strong>${_T('核心技术：','Core Tech: ')}</strong>${p.tech}</p></div>`:''}
-        ${p.advantage?`<div class="note gold"><p><strong>${_T('核心优势：','Advantage: ')}</strong>${p.advantage}</p></div>`:''}
+        ${p.tech?`<div class="note"><p><strong>${_T('核心技术','Core Tech')}：</strong>${p.tech}</p></div>`:''}
+        ${p.advantage?`<div class="note gold"><p><strong>${_T('核心优势','Advantage')}：</strong>${p.advantage}</p></div>`:''}
         <button class="nutri-cta" onclick="navigate('nutrition',${p.id})">${_T('查看详细营养数据','View Nutrition Data')}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </div>
@@ -791,41 +865,41 @@ document.getElementById('app').innerHTML=`
 ${bgSection(BG.world,false,`
   <div class="sec-head reveal"><span class="eyebrow d">Brand · 品牌</span><h2 class="h2">品牌实力<span class="en">Brand Power</span></h2><p class="sec-sub">行业唯一肾科制药企业出品，30 年药企品质保障。产品出口 50+ 国家，全球同一条 GMP 标准生产线。</p></div>
   <div class="bigrows reveal">
-    <div class="bigrow"><div><div class="bk">母公司 / Parent Company</div><div class="bv">济民可信集团</div><div class="bd">1999 年成立，全国 13 大制药基地，产品出口 50+ 国家，覆盖肾病、肿瘤等多管线创新药。</div></div><div></div><div></div></div>
-    <div class="bigrow"><div><div class="bk">生产主体 / Manufacturer</div><div class="bv">南京恒生制药</div><div class="bd">1995 年建厂，国家高新技术企业，2016 年布局肾病特医食品赛道。</div></div><div></div><div></div></div>
-    <div class="bigrow"><div><div class="bk">自研平台 / R&D</div><div class="bv">南京生命科技</div><div class="bd">独立研发体系，持有实用新型专利 ZL 202021188836.6（低蛋白米饭炊饭装置）。</div></div><div></div><div></div></div>
+    <div class="bigrow clickable" onclick="navigate('brandDetail','company')"><div><div class="bk">${_T('母公司','Parent Company')}</div><div class="bv">${_T('济民可信集团','Jemincare Group')}</div><div class="bd">${_T('1999 年成立，全国 13 大制药基地，产品出口 50+ 国家。点击查看详情 →','Founded 1999, 13 pharma bases, exported to 50+ countries. Click for details →')}</div></div></div>
+    <div class="bigrow clickable" onclick="navigate('brandDetail','manufacturer')"><div><div class="bk">${_T('生产主体','Manufacturer')}</div><div class="bv">${_T('南京恒生制药','Nanjing Hencer Pharma')}</div><div class="bd">${_T('1995 年建厂，国家高新技术企业。点击查看详情 →','Founded 1995, national high-tech enterprise. Click for details →')}</div></div></div>
+    <div class="bigrow clickable" onclick="navigate('brandDetail','rd')"><div><div class="bk">${_T('自研平台','R&D')}</div><div class="bv">${_T('南京生命科技','Nanjing Life Science')}</div><div class="bd">${_T('独立研发体系，持有实用新型专利。点击查看详情 →','Independent R&D with utility patents. Click for details →')}</div></div></div>
   </div>
-  <div class="note reveal" style="margin-top:50px"><p><strong>品牌释义 / Brand Meaning：</strong>森（自然生机、健康活力）· 无忧（CKD / PKU 患者通过科学低蛋白饮食，摆脱饮食忌口焦虑）。</p></div>
+  <div class="note reveal" style="margin-top:50px"><p><strong>${_T('品牌释义','Brand Meaning')}：</strong>${_T('森（自然生机、健康活力）· 无忧（CKD / PKU 患者通过科学低蛋白饮食，摆脱饮食忌口焦虑）。','Sen (vitality) · Wuyou (worry-free) — freeing CKD/PKU patients from dietary anxiety.')}</p></div>
 `)}
 
 ${bgSection(BG.lab,true,`
-  <div class="sec-head reveal"><span class="eyebrow d">Prescription · 处方药</span><h2 class="h2">院内配套处方药<span class="en">Hospital Prescription</span></h2><p class="sec-sub">4 款肾科处方药临床背书，普通食品厂不具备的医药背景。</p></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Prescription · 处方药</span><h2 class="h2">${_T('院内配套处方药','Hospital Prescription')}<span class="en">Hospital Prescription</span></h2><p class="sec-sub">${_T('4 款肾科处方药临床背书，普通食品厂不具备的医药背景。','4 renal prescription drugs as clinical backing — unmatched pharma background.')}</p></div>
   <div class="values">
-    <div class="value reveal"><div class="vi">💊</div><h4>森铁能</h4><p>蔗糖铁注射液，肾病口服铁不耐受人群静脉补铁。</p></div>
-    <div class="value reveal"><div class="vi">💊</div><h4>森同</h4><p>复方 α 酮酸，配合低蛋白饮食延缓肾衰。</p></div>
-    <div class="value reveal"><div class="vi">💊</div><h4>森文</h4><p>碳酸司维拉姆，透析 / 非透析患者控高磷血症。</p></div>
-    <div class="value reveal" style="border-left:1px solid rgba(255,255,255,.14);padding-left:44px"><div class="vi">💊</div><h4>森能</h4><p>盐酸西那卡塞，控制继发性甲旁亢。</p></div>
+    <div class="value reveal clickable" onclick="navigate('brandDetail','drugs')"><div class="vi">💊</div><h4>${_T('森铁能','Sentieneng')}<span style="font-size:11px;color:var(--muted);font-weight:400;display:block">${_T('蔗糖铁注射液','Iron Sucrose Injection')}</span></h4><p>${_T('肾病口服铁不耐受人群静脉补铁。点击查看详情 →','IV iron supplementation. Click for details →')}</p></div>
+    <div class="value reveal clickable" onclick="navigate('brandDetail','drugs')"><div class="vi">💊</div><h4>${_T('森同','Sentong')}<span style="font-size:11px;color:var(--muted);font-weight:400;display:block">${_T('复方 α 酮酸','Compound α-Keto Acid')}</span></h4><p>${_T('配合低蛋白饮食延缓肾衰。点击查看详情 →','Slows kidney failure. Click for details →')}</p></div>
+    <div class="value reveal clickable" onclick="navigate('brandDetail','drugs')"><div class="vi">💊</div><h4>${_T('森文','Senwen')}<span style="font-size:11px;color:var(--muted);font-weight:400;display:block">${_T('碳酸司维拉姆','Sevelamer Carbonate')}</span></h4><p>${_T('透析/非透析控高磷血症。点击查看详情 →','Hyperphosphatemia control. Click for details →')}</p></div>
+    <div class="value reveal clickable" onclick="navigate('brandDetail','drugs')"><div class="vi">💊</div><h4>${_T('森能','Senneng')}<span style="font-size:11px;color:var(--muted);font-weight:400;display:block">${_T('盐酸西那卡塞','Cinacalcet HCl')}</span></h4><p>${_T('控制继发性甲旁亢。点击查看详情 →','SHPT control. Click for details →')}</p></div>
   </div>
 `)}
 
 ${bgSection(BG.data,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">Certification · 认证</span><h2 class="h2">专利与质控<span class="en">Patents & Quality</span></h2></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Certification · 认证</span><h2 class="h2">${_T('专利与质控','Patents & Quality')}<span class="en">Patents & Quality</span></h2></div>
   <div class="rows reveal">
-    <div class="row"><div class="rn">01</div><div><h4>实用新型专利 / Utility Patent</h4><p>低蛋白米饭炊饭装置 · ZL 202021188836.6</p></div></div>
-    <div class="row"><div class="rn">02</div><div><h4>药品 GMP / GMP Standard</h4><p>全流程对标药品 GMP 生产标准。</p></div></div>
-    <div class="row"><div class="rn">03</div><div><h4>ISO 9001 / Quality System</h4><p>质量管理体系认证，全线自有食品生产许可。</p></div></div>
-    <div class="row"><div class="rn">04</div><div><h4>GB 28050-2011 / Nutrition Label</h4><p>营养标签符合国家标准，SC 生产许可齐全。</p></div></div>
+    <div class="row clickable" onclick="navigate('brandDetail','manufacturer')"><div class="rn">01</div><div><h4>${_T('实用新型专利','Utility Patent')}</h4><p>${_T('低蛋白米饭炊饭装置 · ZL 202021188836.6','Low-protein rice cooking device')}</p></div></div>
+    <div class="row clickable" onclick="navigate('brandDetail','manufacturer')"><div class="rn">02</div><div><h4>${_T('药品 GMP','GMP Standard')}</h4><p>${_T('全流程对标药品 GMP 生产标准。点击查看详情 →','Full-process pharmaceutical GMP standard. Click →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('brandDetail','manufacturer')"><div class="rn">03</div><div><h4>${_T('ISO 9001','Quality System')}</h4><p>${_T('质量管理体系认证。点击查看详情 →','Quality management certified. Click →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('brandDetail','manufacturer')"><div class="rn">04</div><div><h4>${_T('GB 28050-2011','Nutrition Label')}</h4><p>${_T('营养标签符合国家标准。','Nutrition labels compliant.')}</p></div></div>
   </div>
-  <div class="note reveal" style="margin-top:50px"><p><strong>药品级生产线 / Production Line：</strong>完整大米 → 洗米 → X 光质检 → 生物酶解脱蛋白 → 蒸饭 → UHT 高温灭菌 → 三层氮气高阻隔封装 → 成品出库。</p></div>
+  <div class="note reveal" style="margin-top:50px"><p><strong>${_T('药品级生产线','Production Line')}：</strong>${_T('完整大米 → 洗米 → X 光质检 → 生物酶解脱蛋白 → 蒸饭 → UHT 高温灭菌 → 三层氮气高阻隔封装 → 成品出库。','Whole rice → washing → X-ray inspection → enzymatic deproteination → cooking → UHT sterilization → N2 packaging → finished product.')}</p></div>
 `)}
 
 ${bgSection(BG.riceField,true,`
-  <div class="sec-head reveal"><span class="eyebrow d">Advantage · 优势</span><h2 class="h2">竞品差异化优势<span class="en">Competitive Edge</span></h2></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Advantage · 优势</span><h2 class="h2">${_T('竞品差异化优势','Competitive Edge')}<span class="en">Competitive Edge</span></h2></div>
   <div class="values">
-    <div class="value reveal"><div class="vi">🥇</div><h4>行业唯一</h4><p>肾科制药企业出品，配套完整处方药临床背书。</p></div>
-    <div class="value reveal"><div class="vi">🍚</div><h4>真米原料</h4><p>完整大米酶解，口感贴近普通米饭，依从性更高。</p></div>
-    <div class="value reveal"><div class="vi">👥</div><h4>双人群适配</h4><p>CKD 肾病 + PKU 一套产品线覆盖。</p></div>
-    <div class="value reveal" style="border-left:1px solid rgba(255,255,255,.14);padding-left:44px"><div class="vi">💰</div><h4>价格最优</h4><p>米饭 13.8 元/盒，低于竞品中恩、圣健元等同类型。</p></div>
+    <div class="value reveal"><div class="vi">🥇</div><h4>${_T('行业唯一','Only Pharma-Backed')}</h4><p>${_T('肾科制药企业出品，配套完整处方药临床背书。','Renal pharma company with full prescription drug backing.')}</p></div>
+    <div class="value reveal"><div class="vi">🍚</div><h4>${_T('真米原料','Real Rice')}</h4><p>${_T('完整大米酶解，口感贴近普通米饭，依从性更高。','Whole rice enzymatic, tastes like regular rice, better compliance.')}</p></div>
+    <div class="value reveal"><div class="vi">👥</div><h4>${_T('双人群适配','Dual Population')}</h4><p>${_T('CKD 肾病 + PKU 一套产品线覆盖。','CKD + PKU covered with one product line.')}</p></div>
+    <div class="value reveal"><div class="vi">💰</div><h4>${_T('价格最优','Best Value')}</h4><p>${_T('米饭 13.8 元/盒，低于其他同类型产品。','Rice ¥13.8/box, better value than competitors.')}</p></div>
   </div>
 `)}`;
 document.getElementById('csSection').classList.remove('hidden')}
@@ -834,41 +908,41 @@ document.getElementById('csSection').classList.remove('hidden')}
 function _pageScience(){setTab(2);
 document.getElementById('app').innerHTML=`
 ${bgSection(BG.doctor,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">Clinical · 临床</span><h2 class="h2">CKD 肾病医学依据<span class="en">CKD Evidence</span></h2></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Clinical · 临床</span><h2 class="h2">${_T('CKD 肾病医学依据','CKD Evidence')}<span class="en">CKD Evidence</span></h2></div>
   <div class="rows reveal" style="margin-top:40px">
-    <div class="row"><div class="rn">📜</div><div><h4>WS/T 557-2017</h4><p>《慢性肾脏病患者膳食指导》卫健委发布，明确要求 CKD 患者替换普通米面，选用低蛋白、低磷、低钾专用主食。</p></div></div>
-    <div class="row"><div class="rn">📘</div><div><h4>2021 CKD 营养指南</h4><p>《中国慢性肾脏病营养治疗临床实践指南（2021版）》陈香美院士牵头，中华医学杂志发布。</p></div></div>
+    <div class="row clickable" onclick="navigate('scienceDetail','guideline')"><div class="rn">📜</div><div><h4>${_T('WS/T 557-2017','WS/T 557-2017')}</h4><p>${_T('《慢性肾脏病患者膳食指导》卫健委发布，明确要求 CKD 患者替换普通米面，选用低蛋白、低磷、低钾专用主食。点击查看详情 →','Dietary Guidelines for CKD Patients by National Health Commission. Click for details →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('scienceDetail','guideline')"><div class="rn">📘</div><div><h4>${_T('2021 CKD 营养指南','2021 CKD Guidelines')}</h4><p>${_T('《中国慢性肾脏病营养治疗临床实践指南（2021版）》陈香美院士牵头。点击查看详情 →','China CKD Nutrition Clinical Practice Guidelines 2021. Click for details →')}</p></div></div>
   </div>
 `)}
 
 ${bgSection(BG.data,true,`
-  <div class="sec-head reveal"><span class="eyebrow d">Evidence · 循证</span><h2 class="h2">循证临床数据<span class="en">Clinical Data</span></h2><p class="sec-sub">207 例 CKD 4-5 期患者 15 个月对照试验。</p></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Evidence · 循证</span><h2 class="h2">${_T('循证临床数据','Clinical Data')}<span class="en">Clinical Data</span></h2><p class="sec-sub">${_T('207 例 CKD 4-5 期患者 15 个月对照试验。','207 CKD stage 4-5 patients, 15-month controlled trial.')}</p></div>
   <div class="values">
-    <div class="value reveal"><div class="vi" style="color:#ff8a73">42%</div><h4>单纯低蛋白组</h4><p>进展至 ESRD 比例，透析需求 30%。</p></div>
-    <div class="value reveal"><div class="vi" style="color:#5fd49a">13%</div><h4>低蛋白 + 酮酸组</h4><p>进展至 ESRD 比例，透析需求仅 11%。</p></div>
-    <div class="value reveal"><div class="vi">🛡️</div><h4>五大作用</h4><p>减少含氮废物、减轻肾负担、保护残余肾功能、延缓透析、降低并发症。</p></div>
+    <div class="value reveal clickable" onclick="navigate('scienceDetail','data')"><div class="vi" style="color:#ff8a73">42%</div><h4>${_T('单纯低蛋白组','Low Protein Only')}</h4><p>${_T('进展至 ESRD 比例，透析需求 30%。点击查看完整数据 →','Progression to ESRD: 42%. Click for full data →')}</p></div>
+    <div class="value reveal clickable" onclick="navigate('scienceDetail','data')"><div class="vi" style="color:#5fd49a">13%</div><h4>${_T('低蛋白 + 酮酸组','Low Protein + Ketoacid')}</h4><p>${_T('进展至 ESRD 比例，透析需求仅 11%。点击查看完整数据 →','Progression to ESRD: 13%. Click for full data →')}</p></div>
+    <div class="value reveal clickable" onclick="navigate('scienceDetail','data')"><div class="vi">🛡️</div><h4>${_T('五大作用','5 Key Benefits')}</h4><p>${_T('减少含氮废物、减轻肾负担、保护残余肾功能、延缓透析、降低并发症。点击查看详情 →','Reduce nitrogen waste, protect kidney, delay dialysis. Click for details →')}</p></div>
   </div>
 `)}
 
 ${bgSection(BG.lab,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">Standard · 标准</span><h2 class="h2">各分期营养标准<span class="en">Stage Standards</span></h2></div>
-  <div class="table-scroll reveal"><div class="table-wrap"><table><thead><tr><th>分期 Stage</th><th>GFR</th><th>蛋白 Protein g/kg</th><th>热量 Energy kcal/kg</th><th>方案 Plan</th></tr></thead><tbody>
-  <tr><td>1-2 期</td><td>≥60</td><td>0.8</td><td>≥35</td><td>大量蛋白尿 + 酮酸</td></tr>
-  <tr><td>3 期</td><td>30-59</td><td>0.6</td><td>35</td><td>低蛋白 + 酮酸</td></tr>
-  <tr><td>4 期</td><td>15-29</td><td>0.4~0.6</td><td>30~35</td><td>极低蛋白 + 酮酸</td></tr>
-  <tr><td>5 期未透</td><td>&lt;15</td><td>0.6</td><td>—</td><td>限磷钾钠</td></tr>
-  <tr><td>血透</td><td>—</td><td>1.0~1.2</td><td>30~35</td><td>50% 优质蛋白</td></tr>
-  <tr><td>腹透</td><td>—</td><td>0.8~1.2</td><td>30~35</td><td>扣腹透热量</td></tr>
-  <tr><td>移植</td><td>—</td><td>1.4 / 0.6~0.8</td><td>30~35</td><td>—</td></tr>
-  </tbody></table></div></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Standard · 标准</span><h2 class="h2">${_T('各分期营养标准','Stage Standards')}<span class="en">Stage Standards</span></h2></div>
+  <div class="table-scroll reveal clickable" onclick="navigate('scienceDetail','stages')" style="cursor:pointer"><div class="table-wrap"><table><thead><tr><th>${_T('分期','Stage')}</th><th>GFR</th><th>${_T('蛋白','Protein')} g/kg</th><th>${_T('热量','Energy')} kcal/kg</th><th>${_T('方案','Plan')}</th></tr></thead><tbody>
+  <tr><td>${_T('1-2 期','Stage 1-2')}</td><td>≥60</td><td>0.8</td><td>≥35</td><td>${_T('大量蛋白尿 + 酮酸','Proteinuria + ketoacid')}</td></tr>
+  <tr><td>${_T('3 期','Stage 3')}</td><td>30-59</td><td>0.6</td><td>35</td><td>${_T('低蛋白 + 酮酸','Low protein + ketoacid')}</td></tr>
+  <tr><td>${_T('4 期','Stage 4')}</td><td>15-29</td><td>0.4~0.6</td><td>30~35</td><td>${_T('极低蛋白 + 酮酸','Very low protein + ketoacid')}</td></tr>
+  <tr><td>${_T('5 期未透','Stage 5 no HD')}</td><td>&lt;15</td><td>0.6</td><td>—</td><td>${_T('限磷钾钠','Restrict P, K, Na')}</td></tr>
+  <tr><td>${_T('血透','Hemodialysis')}</td><td>—</td><td>1.0~1.2</td><td>30~35</td><td>${_T('50% 优质蛋白','50% high quality')}</td></tr>
+  <tr><td>${_T('腹透','Peritoneal')}</td><td>—</td><td>0.8~1.2</td><td>30~35</td><td>${_T('扣腹透热量','Adjust for PD')}</td></tr>
+  <tr><td>${_T('移植','Transplant')}</td><td>—</td><td>1.4 / 0.6~0.8</td><td>30~35</td><td>—</td></tr>
+  </tbody></table></div></div><p style="text-align:center;margin-top:12px;font-size:13px;color:var(--green);font-weight:600">${_T('点击查看完整分期详解 →','Click for full stage-by-stage guide →')}</p>
 `)}
 
 ${bgSection(BG.wheat,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">Why · 意义</span><h2 class="h2">低蛋白饮食核心意义<span class="en">Why Low Protein</span></h2></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Why · 意义</span><h2 class="h2">${_T('低蛋白饮食核心意义','Why Low Protein')}<span class="en">Why Low Protein</span></h2></div>
   <div class="rows reveal">
-    <div class="row"><div class="rn">01</div><div><h4>肾脏负担从何而来</h4><p>普通米面蛋白 6~12g/100g，代谢产生尿素、肌酐、磷钾，损伤残存肾功能。</p></div></div>
-    <div class="row"><div class="rn">02</div><div><h4>少吃主食的陷阱</h4><p>单纯少吃主食控蛋白，热量不足，身体分解肌肉，引发 PEW 蛋白质能量消耗。</p></div></div>
-    <div class="row"><div class="rn">03</div><div><h4>森无忧的方案</h4><p>0 蛋白主食补足碳水热量，既控非优质蛋白，又避免肌肉分解，延缓肾病进展。</p></div></div>
+    <div class="row clickable" onclick="navigate('scienceDetail','meaning')"><div class="rn">01</div><div><h4>${_T('肾脏负担从何而来','Where Kidney Burden Comes From')}</h4><p>${_T('普通米面蛋白6-12g/100g，代谢加重肾脏负担。点击查看详细原理 →','Regular rice has 6-12g protein/100g. Click for detailed explanation →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('scienceDetail','meaning')"><div class="rn">02</div><div><h4>${_T('少吃主食的陷阱','The Trap of Eating Less')}</h4><p>${_T('少吃主食控蛋白却导致肌肉分解和PEW。点击查看分析 →','Eating less rice causes muscle breakdown and PEW. Click →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('scienceDetail','meaning')"><div class="rn">03</div><div><h4>${_T('森无忧的方案','The Senwuyou Solution')}</h4><p>${_T('0蛋白主食既控蛋白又补能量，延缓肾病进展。点击查看详情 →','0g protein staples provide energy without burden. Click →')}</p></div></div>
   </div>
 `)}`;
 document.getElementById('csSection').classList.remove('hidden')}
@@ -877,34 +951,166 @@ document.getElementById('csSection').classList.remove('hidden')}
 function _pagePKU(){setTab(3);
 document.getElementById('app').innerHTML=`
 ${bgSection(BG.family,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">PKU · 苯丙酮尿症</span><h2 class="h2">苯丙酮尿症科普<span class="en">PKU Science</span></h2></div>
+  <div class="sec-head reveal"><span class="eyebrow d">PKU · 苯丙酮尿症</span><h2 class="h2">${_T('苯丙酮尿症科普','PKU Science')}<span class="en">PKU Science</span></h2></div>
   <div class="rows reveal" style="margin-top:40px">
-    <div class="row"><div class="rn">🧬</div><div><h4>发病原理 / Cause</h4><p>常染色体隐性遗传病，体内 PAH 酶缺乏，无法分解食物苯丙氨酸，蓄积损伤大脑，造成智力低下。</p></div></div>
-    <div class="row"><div class="rn">🍽️</div><div><h4>治疗要求 / Treatment</h4><p>终身低苯丙氨酸饮食，主食是 Phe 最大来源，必须全部替换特米特面。</p></div></div>
-    <div class="row"><div class="rn">📐</div><div><h4>80/20 原则</h4><p>每日 80% 蛋白来自专用营养粉，仅 20% 来自少量天然食物；普通米面 Phe 极高占用每日额度。</p></div></div>
-    <div class="row"><div class="rn">✅</div><div><h4>森无忧数据 / Data</h4><p>低蛋白大米 Phe 仅 0.014%，为普通大米约 1/20，适配 PKU 儿童与成人长期饮食。</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','cause')"><div class="rn">🧬</div><div><h4>${_T('发病原理','Cause')}</h4><p>${_T('PKU由PAH酶基因突变引起，导致苯丙氨酸蓄积损伤大脑。点击查看完整科普 →','PKU is caused by PAH gene mutation. Click for full explanation →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','cause')"><div class="rn">🍽️</div><div><h4>${_T('治疗要求','Treatment')}</h4><p>${_T('终身低苯丙氨酸饮食，主食是 Phe 最大来源。点击查看完整方案 →','Lifelong low-Phe diet. Click for full plan →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','cause')"><div class="rn">📐</div><div><h4>${_T('80/20 原则','80/20 Rule')}</h4><p>${_T('80%蛋白来自专用营养粉，20%来自天然食物。点击查看详情 →','80% protein from formula. Click for details →')}</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','cause')"><div class="rn">✅</div><div><h4>${_T('森无忧数据','Senwuyou Data')}</h4><p>${_T('Phe仅0.014%，约为普通大米1/20。点击查看详情 →','Phe only 0.014%. Click for details →')}</p></div></div>
   </div>
-  <div class="note gold reveal" style="margin-top:50px"><p><strong>政策加分 / Policy：</strong>国内多地 PKU 特殊食品纳入医保，刚需复购，家长接受度高。</p></div>
+  <div class="note gold reveal" style="margin-top:50px"><p><strong>${_T('政策加分','Policy')}：</strong>${_T('国内多地 PKU 特殊食品纳入医保，刚需复购，家长接受度高。','PKU special foods covered by medical insurance in many regions.')}</p></div>
 `)}
 
 ${bgSection(BG.family,true,`
-  <div class="sec-head reveal"><span class="eyebrow d">Standard · 标准</span><h2 class="h2">分年龄段摄入标准<span class="en">Age Standards</span></h2></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Standard · 标准</span><h2 class="h2">${_T('分年龄段摄入标准','Age Standards')}<span class="en">Age Standards</span></h2></div>
   <div class="rows reveal" style="margin-top:40px">
-    <div class="row"><div class="rn">👶</div><div><h4>0-3 月 / 0-3 Months</h4><p>Phe 130-430mg/天 · 蛋白 2.5-3.5g/kg · 热量 115-130kcal/kg</p></div></div>
-    <div class="row"><div class="rn">🧒</div><div><h4>1-3 岁 / 1-3 Years</h4><p>Phe 200-600mg/天 · 蛋白 1.5-2g/kg · 热量 90-100kcal/kg</p></div></div>
-    <div class="row"><div class="rn">👧</div><div><h4>4-10 岁 / 4-10 Years</h4><p>Phe 250-700mg/天 · 蛋白 1.2-1.8g/kg · 热量 70-90kcal/kg</p></div></div>
-    <div class="row"><div class="rn">🧑</div><div><h4>成人 / Adult</h4><p>Phe 300-1000mg/天 · 蛋白 0.8-1.2g/kg · 热量 30-40kcal/kg</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','standards')"><div class="rn">👶</div><div><h4>${_T('0-3 月','0-3 Months')}</h4><p>Phe 130-430mg/天 · ${_T('蛋白','Protein')} 2.5-3.5g/kg · 点击查看各年龄段完整标准 →</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','standards')"><div class="rn">🧒</div><div><h4>${_T('1-3 岁','1-3 Years')}</h4><p>Phe 200-600mg/天 · ${_T('蛋白','Protein')} 1.5-2g/kg · 点击查看各年龄段完整标准 →</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','standards')"><div class="rn">👧</div><div><h4>${_T('4-10 岁','4-10 Years')}</h4><p>Phe 250-700mg/天 · ${_T('蛋白','Protein')} 1.2-1.8g/kg · 点击查看各年龄段完整标准 →</p></div></div>
+    <div class="row clickable" onclick="navigate('pkuDetail','standards')"><div class="rn">🧑</div><div><h4>${_T('成人','Adult')}</h4><p>Phe 300-1000mg/天 · ${_T('蛋白','Protein')} 0.8-1.2g/kg · 点击查看各年龄段完整标准 →</p></div></div>
   </div>
 `)}
 
 ${bgSection(BG.plant,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">Monitor · 监测</span><h2 class="h2">血值监测规范<span class="en">Blood Monitoring</span></h2></div>
+  <div class="sec-head reveal"><span class="eyebrow d">Monitor · 监测</span><h2 class="h2">${_T('血值监测规范','Blood Monitoring')}<span class="en">Blood Monitoring</span></h2></div>
   <div class="rows reveal">
-    <div class="row"><div class="rn">📅</div><div><h4>监测频率 / Frequency</h4><p>新生儿每周 1 次 · 1 岁内每周 1 次 · 1 岁以上每月 2~4 次 · 孕期每周 1~2 次。</p></div></div>
+    <div class="row"><div class="rn">📅</div><div><h4>${_T('监测频率','Frequency')}</h4><p>${_T('新生儿每周 1 次 · 1 岁内每周 1 次 · 1 岁以上每月 2~4 次 · 孕期每周 1~2 次。','Newborns weekly, under 1y weekly, over 1y 2-4 times/month, pregnancy 1-2/week.')}</p></div></div>
   </div>
 `)}`;
 document.getElementById('csSection').classList.remove('hidden')}
 
+
+// ═══ 品牌详情数据 ═══
+const BD={
+company:{id:'company',
+  title:_T('济民可信集团','Jemincare Group'),
+  desc:_T("中国领先的现代化大健康产业集团","China’s leading modern health industry group"),
+  sections:[
+    {h:_T('集团概况','Overview'),p:_T('济民可信集团成立于1999年，总部位于江西南昌，是中国领先的综合性大健康产业集团。旗下拥有13大制药基地，覆盖肾病、肿瘤、呼吸、心脑血管等多管线创新药与仿制药。年销售额超百亿元，产品出口全球50多个国家和地区，连续多年入选"中国民营企业500强"。','Founded in 1999, headquartered in Nanchang, Jiangxi. China’s leading comprehensive health industry group with 13 pharmaceutical bases covering nephrology, oncology, respiratory, cardiovascular and more. Products exported to 50+ countries.')},
+    {h:_T('研发实力','R&D Strength'),p:_T('集团设有国家级企业技术中心、博士后科研工作站、院士工作站等高端研发平台。每年研发投入占销售额的8%以上，拥有数百项专利技术和多个国家一类新药。在肾病领域，集团深耕近20年，积累了丰富的临床经验和患者数据。','National-level enterprise technology center, postdoctoral工作站, academician工作站. Annual R&D investment exceeds 8% of sales. Hundreds of patents and multiple Class 1 innovative drugs. Nearly 20 years of focus in nephrology.')},
+    {h:_T('社会责任','Social Responsibility'),p:_T('济民可信长期致力于公益事业，在扶贫、助学、救灾等领域累计捐款超亿元。特别是在肾病患者援助方面，集团通过"肾友关爱计划"等项目，为贫困患者提供药品援助和健康教育。','Long-term commitment to public welfare with over 100 million RMB in donations. Through the "Kidney Care Program", provides medication assistance and health education to patients in need.')}
+  ]
+},
+manufacturer:{id:'manufacturer',
+  title:_T('南京恒生制药','Nanjing Hencer Pharma'),
+  desc:_T('国家高新技术企业，30年制药品质传承','National high-tech enterprise, 30 years of pharma excellence'),
+  sections:[
+    {h:_T('企业概况','Overview'),p:_T('南京恒生制药有限公司成立于1995年，坐落于南京市溧水经济开发区，是济民可信集团旗下核心制药企业。公司占地100余亩，拥有现代化的GMP标准生产车间和先进的质量检测中心。2016年，公司率先布局肾病特医食品赛道，将药品级生产标准引入特殊医学用途配方食品领域。','Founded in 1995 in Nanjing Lishui Economic Development Zone. Core pharmaceutical subsidiary of Jemincare Group. Covers over 100 mu (16+ acres) with modern GMP-standard production workshops. In 2016, pioneered CKD medical food products, bringing pharmaceutical-grade standards to the medical food field.')},
+    {h:_T('生产标准','Production Standards'),p:_T('全线通过药品GMP认证，严格遵循药品质量管理规范（GMP）。从原料采购、生产过程到成品出厂，每一个环节都经过严格的质量控制。特别在低蛋白食品生产中，公司采用真米脱蛋白专利技术，确保产品既符合营养需求，又保持优良口感。','Full-line GMP certified. From raw material procurement to finished product, every step undergoes strict quality control. The patented real-rice deproteination technology ensures products meet nutritional needs while maintaining excellent taste.')},
+    {h:_T('资质认证','Certifications'),p:_T('通过ISO9001质量管理体系认证、ISO22000食品安全管理体系认证。持有江苏省食品药品监督管理局颁发的食品生产许可证（SC编号），及多项实用新型专利。公司检测中心配备高效液相色谱仪、气相色谱仪等先进检测设备，确保每一批次产品都达到标准。','ISO9001 certified, ISO22000 certified. Holds Jiangsu FDA food production license (SC number) and multiple utility patents. Equipped with HPLC, GC and other advanced testing equipment.')}
+  ]
+},
+rd:{id:'rd',
+  title:_T('南京生命科技研究院','Nanjing Life Science R&D'),
+  desc:_T('独立研发体系，专注于特殊营养领域','Independent R&D, focused on specialized nutrition'),
+  sections:[
+    {h:_T('研发体系','R&D System'),p:_T('南京生命科技研究院是济民可信集团旗下独立的科研机构，专注于肾病特医食品、特殊膳食配方、生物酶工程技术等前沿领域。研究院拥有一支由博士、硕士组成的专业研发团队，并与国内外多家高校和科研机构建立了长期合作关系。','Independent research institute under Jemincare Group. Focuses on CKD medical foods, special dietary formulas, and bio-enzyme engineering. PhD and Master-level R&D team with partnerships across universities and research institutes.')},
+    {h:_T('核心技术','Core Technology'),p:_T('核心专利技术——低蛋白米饭炊饭装置（专利号：ZL 202021188836.6），突破了传统低蛋白食品口感差的行业难题。此外，公司还拥有真米酶解脱蛋白技术、复配无胶配方技术、UHT高温灭菌技术等多项自主知识产权技术。','Core patent: Low-protein rice cooking device (ZL 202021188836.6), solving industry-wide taste issues. Additional patented technologies include enzymatic deproteination, gum-free formula, UHT sterilization.')},
+    {h:_T('研发成果','Achievements'),p:_T('已成功推出9大品类低蛋白产品线，覆盖从即食米饭到家庭烹饪的全场景需求。产品在口感、营养、安全性方面均达到行业领先水平，获得了CKD和PKU患者群体的广泛认可。','Successfully launched 9 product categories covering instant to home cooking scenarios. Industry-leading taste, nutrition, and safety, widely recognized by CKD and PKU patients.')}
+  ]
+},
+drugs:{id:'drugs',
+  title:_T('院内配套处方药','Hospital Prescription Drugs'),
+  desc:_T('4款肾科处方药，临床医学强力背书。普通食品厂不具备的医药背景。——4 renal prescription drugs, strong clinical backing unmatched by ordinary food companies.'),
+  sections_info:[
+    {name:_T('森铁能','Sentieneng'),type:_T('蔗糖铁注射液','Iron Sucrose Injection'),usage:_T('用于肾病口服铁不耐受人群静脉补铁。适用于慢性肾衰竭患者，包括透析和非透析患者。','For IV iron supplementation in CKD patients with oral iron intolerance, both dialysis and non-dialysis.')},
+    {name:_T('森同','Sentong'),type:_T('复方α-酮酸','Compound α-Keto Acid'),usage:_T('配合低蛋白饮食，预防和治疗慢性肾衰竭患者的蛋白质代谢紊乱。提供必需氨基酸，减轻氮质血症，延缓肾衰竭进展。','With low-protein diet, prevents protein metabolism disorders in CKD. Provides essential amino acids, reduces azotemia, delays kidney failure.')},
+    {name:_T('森文','Senwen'),type:_T('碳酸司维拉姆片','Sevelamer Carbonate'),usage:_T('用于控制透析和非透析慢性肾病患者的高磷血症。不含钙的磷结合剂，降低血管钙化风险。','For hyperphosphatemia control. Non-calcium-based phosphate binder, reduces vascular calcification risk.')},
+    {name:_T('森能','Senneng'),type:_T('盐酸西那卡塞片','Cinacalcet HCl'),usage:_T('用于治疗慢性肾病透析患者的继发性甲状旁腺功能亢进（SHPT）。通过增加甲状旁腺钙敏感受体的敏感性来降低PTH水平。','For secondary hyperparathyroidism in dialysis patients. Lowers PTH by increasing sensitivity of calcium-sensing receptors.')}
+  ]
+  }
+};
+const BD_text=(b)=>`<div class='page-bg'>${imgOrFallback(BG.lab,'','pb-fb')}</div><div class='detail' style='max-width:800px'><div class='detail-card' style='border-radius:var(--radius-xl);box-shadow:var(--shadow-l)'><div class='dtl-hero reveal' style='background:linear-gradient(135deg,var(--green-d),var(--green));border-radius:var(--radius-xl);padding:clamp(28px,3.5vw,42px);margin-bottom:24px;color:#fff'><div class='hero-deco'>🏢</div><div class='tags' style='margin-bottom:10px'><span style='background:rgba(255,255,255,.15);color:#fff'>品牌详情</span></div><h2 style='font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.2;margin-bottom:8px'>${b.title}</h2><p style='font-size:15px;color:rgba(255,255,255,.7);max-width:600px;line-height:1.6'>${b.desc}</p></div>${b.sections.map((s,i)=>`<div class='dtl-card reveal' style='background:#fff;border-radius:var(--radius-l);padding:28px;box-shadow:var(--shadow-card);border:1px solid var(--line-l)'><div style='display:flex;align-items:center;gap:14px;margin-bottom:14px'><div class='card-num'><span>${String(i+1).padStart(2,'0')}</span></div><h3 style='font-size:16px;font-weight:700;color:var(--ink);line-height:1.3'>${s.h}</h3></div><p style='font-size:14px;color:var(--muted);line-height:1.85'>${s.p}</p></div>`).join('')}<button class='nutri-cta' onclick="navigate('pageBrand')"><svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><path d='M19 12H5M12 19l-7-7 7-7'/></svg> ${_T('返回品牌页','Back to Brand')}</button></div></div>`;
+
+function _brandDetail(id){
+  setTab(1);const b=BD[id];if(!b){navigate('pageBrand');return}
+  if(b.id==='drugs'){
+    document.getElementById('app').innerHTML=BD_text(b);
+    document.getElementById('csSection').classList.remove('hidden')
+  }else{
+    document.getElementById('app').innerHTML=BD_text(b);
+    document.getElementById('csSection').classList.remove('hidden')
+  }
+  setTimeout(setupReveal,30)
+}
+
+// ═══ CKD 详情数据 ═══
+const CKD_DETAILS={
+guideline:{id:'guideline',
+  title:_T('CKD临床指南权威依据','CKD Clinical Guidelines'),
+  sections:[
+    {h:_T('WS/T 557-2017 膳食指导','WS/T 557-2017 Dietary Guidelines'),p:_T('国家卫生健康委员会于2017年发布《慢性肾脏病患者膳食指导》（WS/T 557-2017），这是我国第一部针对CKD患者营养管理的行业标准。标准明确指出：CKD患者必须替换普通米面等主食，选用低蛋白、低磷、低钾的专用主食。同时，要求保证充足的热量摄入（30-35kcal/kg/天），防止蛋白质-能量消耗（PEW）。','Issued by the National Health Commission in 2017. China’s first industry standard for CKD nutritional management. Clearly states that CKD patients MUST replace regular rice and flour with low-protein, low-phosphorus, low-potassium special staples.')},
+    {h:_T('2021 CKD 营养治疗指南','2021 CKD Nutrition Guidelines'),p:_T('由中国工程院院士陈香美教授牵头的《中国慢性肾脏病营养治疗临床实践指南（2021版）》，在WS/T 557-2017基础上进一步细化了各分期的营养治疗标准。指南强调：低蛋白饮食是延缓CKD进展的三大支柱之一（药物、饮食、血压控制），推荐0.4-0.6g/kg/天的极低蛋白饮食配合酮酸治疗，可显著延缓透析启动时间。','Led by Academician Chen Xiangmei. Further detailed nutritional standards for each CKD stage. Emphasizes that low-protein diet is one of three pillars (medication, diet, blood pressure control) for delaying CKD progression.')}
+  ]
+},
+data:{id:'data',
+  title:_T('207例临床研究数据','207-case Clinical Study'),
+  sections:[
+    {h:_T('研究设计','Study Design'),p:_T('这是一项为期15个月的前瞻性对照研究，纳入207例CKD 4-5期患者（eGFR < 30ml/min），分为两组：单纯低蛋白饮食组（控制蛋白但不补充酮酸）和低蛋白饮食+酮酸组。主要终点为进展至终末期肾病（ESRD）和启动透析的比例。','A 15-month prospective controlled study of 207 CKD stage 4-5 patients (eGFR < 30ml/min) divided into two groups: low-protein diet only vs low-protein diet + ketoacid. Primary endpoint: progression to ESRD and dialysis initiation.')},
+    {h:_T('关键结果','Key Results'),p:_T('单纯低蛋白饮食组：进展至ESRD的比例为42%，30%的患者在15个月内启动透析。低蛋白饮食+酮酸组：进展至ESRD的比例仅13%，仅11%的患者需要透析。这意味着在严格低蛋白饮食的基础上补充酮酸，可以将肾病进展风险降低约70%。','Low-protein only: 42% progressed to ESRD, 30% started dialysis. Low-protein + ketoacid: only 13% progressed to ESRD, only 11% needed dialysis. This means adding ketoacid reduces kidney disease progression risk by ~70%.')},
+    {h:_T('五大保护机制','5 Protective Mechanisms'),p:_T('1）减少含氮废物生成，降低尿素氮水平；2）减轻残存肾单位的高滤过压力，保护残余肾功能；3）改善钙磷代谢紊乱，降低高磷血症；4）提供必需氨基酸和酮酸，维持正氮平衡，防止肌肉分解；5）通过降低蛋白尿，减轻肾间质纤维化进程。','1) Reduce nitrogen waste and BUN levels. 2) Reduce hyperfiltration pressure on residual nephrons. 3) Improve calcium-phosphorus metabolism. 4) Maintain positive nitrogen balance. 5) Reduce proteinuria and renal interstitial fibrosis.')}
+  ]
+},
+stages:{id:'stages',
+  title:_T('CKD各分期营养治疗标准','CKD Stage-by-Stage Standards'),
+  sections:[
+    {h:_T('1-2期（GFR ≥ 60）','Stage 1-2 (GFR ≥ 60)'),p:_T('显著蛋白尿患者推荐蛋白摄入量0.8g/kg/天，热量≥35kcal/kg/天。此时肾脏已有损伤但功能尚可代偿，及早干预可延缓疾病进展。建议每3-6个月复查一次肾功能和营养指标。','For patients with significant proteinuria: protein 0.8g/kg/day, energy ≥35kcal/kg/day. Early intervention can delay progression. Check renal function every 3-6 months.')},
+    {h:_T('3期（GFR 30-59）','Stage 3 (GFR 30-59)'),p:_T('蛋白摄入量降至0.6g/kg/天，热量35kcal/kg/天。此时肾功能明显减退，需配合酮酸治疗。建议将此阶段视为关键干预窗口期。','Reduce protein to 0.6g/kg/day. Ketoacid supplementation needed. Consider this the critical intervention window.')},
+    {h:_T('4期（GFR 15-29）','Stage 4 (GFR 15-29)'),p:_T('极低蛋白饮食，蛋白0.4-0.6g/kg/天，热量30-35kcal/kg/天。必须配合足量酮酸治疗。森无忧0蛋白主食在此阶段替代所有普通米面最为关键。','Very low protein 0.4-0.6g/kg/day. MUST combine with adequate ketoacid. Senwuyou 0-protein staples are most critical at this stage.')},
+    {h:_T('5期未透析 & 透析期','Stage 5 & Dialysis'),p:_T('未透析：蛋白0.6g/kg/天，严格限磷钾钠。血透：蛋白增加至1.0-1.2g/kg/天，其中50%为优质蛋白。腹透：蛋白0.8-1.2g/kg/天，需扣除腹透液中的热量。移植后：初期1.4g/kg，稳定期0.6-0.8g/kg。','Pre-dialysis: protein 0.6g. Hemodialysis: protein 1.0-1.2g/kg, 50% high-quality. PD: 0.8-1.2g/kg, deduct PD calories. Post-transplant: initial 1.4g/kg, stable 0.6-0.8g/kg.')}
+  ]
+},
+meaning:{id:'meaning',
+  title:_T('低蛋白饮食核心原理','Why Low Protein Matters'),
+  sections:[
+    {h:_T('原理一：肾脏负担从何而来','Principle 1: Where Kidney Burden Comes From'),p:_T('普通大米蛋白含量约6-8g/100g，面粉约10-12g/100g。这些蛋白质代谢后产生尿素、肌酐、尿酸等含氮废物，以及磷、钾等离子，全部需要经过肾脏排泄。当肾功能已经受损时，这些废物无法有效排出，在体内蓄积加重病情。','Regular rice has 6-8g protein/100g, flour 10-12g/100g. Protein metabolism produces urea, creatinine, uric acid, phosphorus, and potassium — all requiring kidney excretion. When kidneys are damaged, these waste products accumulate and worsen the condition.')},
+    {h:_T('原理二：少吃主食的致命陷阱','Principle 2: The Deadly Trap of Eating Less'),p:_T('很多患者知道要控蛋白，于是减少三餐主食量。但人体每日需要充足的热量（30-35kcal/kg），当主食吃不够，热量摄入不足时，身体开始分解自身肌肉和脂肪来供能。这导致蛋白质-能量消耗（PEW），表现为消瘦、乏力、免疫力下降，反而加速死亡风险。','Many patients reduce food portions to control protein, but the body needs adequate energy (30-35kcal/kg). When energy intake is insufficient, the body breaks down its own muscle and fat — this is PEW (protein-energy wasting), accelerating mortality risk.')},
+    {h:_T('森无忧的科学方案','The Senwuyou Solution'),p:_T('用0蛋白低磷低钾的森无忧主食完全替换普通米面：补足碳水热量（替代能量来源），不增加蛋白/磷/钾负担（保护肾脏）。真正做到"吃饱不伤肾"，让患者在不挨饿、不缺乏热量的前提下有效控制肾病进展。','Replace regular rice/flour with Senwuyou 0-protein staples: provides carbohydrate energy without protein/phosphorus/potassium burden. Truly "eat well without damaging kidneys" — effective CKD management without hunger or malnutrition.')}
+  ]
+}
+};
+
+// ═══ PKU 详情数据 ═══
+const PKU_DETAILS={
+cause:{id:'cause',
+  title:_T('PKU 苯丙酮尿症详解','PKU Explained'),
+  sections:[
+    {h:_T('发病原因','Cause'),p:_T('苯丙酮尿症（PKU）是一种常染色体隐性遗传病，由苯丙氨酸羟化酶（PAH）基因突变引起。PAH酶负责将食物中的苯丙氨酸（Phe）转化为酪氨酸。当PAH酶缺乏或活性降低时，Phe在体内蓄积，超过一定浓度就会对大脑产生毒性，导致不可逆的智力损害。新生儿筛查可以早期发现PKU，及时干预可避免智力损伤。','PKU is an autosomal recessive disorder caused by PAH gene mutation. PAH enzyme converts dietary phenylalanine (Phe) to tyrosine. When deficient, Phe accumulates and becomes neurotoxic, causing irreversible brain damage. Newborn screening enables early detection and prevention of intellectual disability.')},
+    {h:_T('治疗原则','Treatment Principles'),p:_T('PKU的治疗核心是终身低苯丙氨酸饮食。由于苯丙氨酸广泛存在于天然蛋白质中，患者需要严格控制各类食物的摄入。其中，主食（米、面）是日常饮食中Phe的最大来源，必须全部用特制低蛋白/去蛋白产品替代。配合专用无苯丙氨酸营养粉，确保生长发育所需的氨基酸和营养素摄入。','Core treatment: lifelong low-Phe diet. Since Phe is found in all natural proteins, patients must strictly control food intake. Staples (rice, flour) are the largest daily Phe source and MUST be completely replaced. Combined with Phe-free formula for essential amino acids and nutrients.')},
+    {h:_T('血值监测','Blood Monitoring'),p:_T('血苯丙氨酸水平是衡量治疗效果的核心指标。控制目标因年龄而异：0-12岁120-360μmol/L，12岁以上120-600μmol/L。新生儿期每周检测1次，1岁内每1-2周1次，稳定后可减少频率。孕期女性需更严格控制，避免胎儿受损。','Blood Phe level is the core monitoring indicator. Targets vary by age: 0-12y: 120-360μmol/L, 12y+: 120-600μmol/L. Newborns: weekly; under 1y: every 1-2 weeks; reduce when stable. Pregnancy requires stricter control.')}
+  ]
+},
+standards:{id:'standards',
+  title:_T('分年龄段营养摄入标准','Age-based Intake Standards'),
+  sections:[
+    {h:_T('0-3个月','0-3 Months'),p:_T('Phe耐受量130-430mg/天，蛋白需求2.5-3.5g/kg/天，热量115-130kcal/kg/天。新生儿期是饮食干预的黄金窗口，严格控制在安全范围内可完全避免智力损伤。母乳喂养需配合专用低Phe配方。','Phe tolerance: 130-430mg/day. Protein: 2.5-3.5g/kg/day. Energy: 115-130kcal/kg/day. The golden window for dietary intervention. Strict control prevents all intellectual damage. Breastfeeding with special low-Phe formula.')},
+    {h:_T('1-3岁','1-3 Years'),p:_T('Phe耐受量200-600mg/天，蛋白需求1.5-2g/kg/天，热量90-100kcal/kg/天。此阶段儿童开始尝试更多种类的食物，需密切监测血值。森无忧低蛋白面条、馒头粉等可帮助丰富孩子的餐桌，提高依从性。','Phe: 200-600mg/day. Protein: 1.5-2g/kg/day. Energy: 90-100kcal/kg/day. Children start exploring more foods. Senwuyou low-protein noodles and bun flour help diversify the diet and improve compliance.')},
+    {h:_T('4-10岁','4-10 Years'),p:_T('Phe耐受量250-700mg/天，蛋白需求1.2-1.8g/kg/天，热量70-90kcal/kg/天。学龄期儿童面临学校就餐的挑战，森无忧即食米饭和便携装产品可帮助解决在校用餐难题。','Phe: 250-700mg/day. Protein: 1.2-1.8g/kg/day. Energy: 70-90kcal/kg/day. School-age children face dining challenges. Senwuyou instant rice and portable products help solve school meal issues.')},
+    {h:_T('成人期','Adulthood'),p:_T('Phe耐受量300-1000mg/天，蛋白需求0.8-1.2g/kg/天，热量30-40kcal/kg/天。成人PKU患者需终身坚持饮食控制，但可以享有更大的食物选择空间。森无忧9大品类覆盖三餐加餐，适应成人多样化的饮食需求。','Phe: 300-1000mg/day. Protein: 0.8-1.2g/kg/day. Energy: 30-40kcal/kg/day. Adult PKU patients need lifelong control but have more food choices. Senwuyou’s 9 categories cover all meal needs.')}
+  ]
+},
+monitoring:{id:'monitoring',
+  title:_T('血值监测与随访管理','Blood Monitoring & Follow-up'),
+  sections:[
+    {h:_T('监测频率','Monitoring Frequency'),p:_T('新生儿期（0-1月）：每周1次。婴儿期（1-12月）：每1-2周1次。幼儿及学龄前（1-6岁）：每月2-4次。学龄期及青少年（6-18岁）：每月1-2次。成人期：每月1次（稳定后可每2-3月1次）。孕期：每周1-2次。如出现感染、发热、食欲不振等情况，需增加监测频率。','Newborns (0-1m): weekly. Infants (1-12m): every 1-2w. Toddlers (1-6y): 2-4 times/month. School-age (6-18y): 1-2 times/month. Adults: monthly (every 2-3m if stable). Pregnancy: 1-2 times/week. Increase frequency during illness.')},
+    {h:_T('日常管理要点','Daily Management Tips'),p:_T('1）精确计算每餐Phe摄入量并记录。2）定期带患者到专业医院营养科复诊，调整饮食方案。3）准备便携式低蛋白食物，方便外出和学校就餐。4）加入PKU患者互助组织，获取支持和新产品信息。5）关注患者心理健康，避免因饮食限制产生自卑或焦虑情绪。','1) Calculate and record Phe intake per meal. 2) Regular follow-ups with nutrition clinic. 3) Prepare portable low-protein foods. 4) Join PKU patient support groups. 5) Monitor mental health to prevent anxiety or low self-esteem from dietary restrictions.')}
+  ]
+}
+};
+
+function _scienceDetail(id){
+  setTab(2);const d=CKD_DETAILS[id];if(!d){navigate('pageScience');return}
+  document.getElementById('app').innerHTML=`<div class="page-bg">${imgOrFallback(BG.doctor,'','pb-fb')}</div><div class="detail" style="max-width:800px"><div class="detail-card" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-l)"><div class='dtl-hero reveal' style='background:linear-gradient(135deg,#073b27,#0b5e3e);border-radius:var(--radius-xl);padding:clamp(28px,3.5vw,42px);margin-bottom:24px;color:#fff'><div class='hero-deco'>📋</div><div class='tags' style='margin-bottom:10px'><span style='background:rgba(255,255,255,.15);color:#fff'>CKD · ${_T('肾病科普','Education')}</span></div><h2 style='font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.2'>${d.title}</h2></div>${d.sections.map((s,i)=>`<div class='dtl-card reveal' style='background:#fff;border-radius:var(--radius-l);padding:28px;box-shadow:var(--shadow-card);border:1px solid var(--line-l)'><div style='display:flex;align-items:center;gap:14px;margin-bottom:14px'><div class='card-num'><span>${String(i+1).padStart(2,'0')}</span></div><h3 style='font-size:16px;font-weight:700;color:var(--ink);line-height:1.3'>${s.h}</h3></div><p style='font-size:14px;color:var(--muted);line-height:1.85'>${s.p}</p></div>`).join('')}<button class="nutri-cta" onclick="navigate('pageScience')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> ${_T('返回CKD页','Back to CKD')}</button></div></div>`;
+  document.getElementById('csSection').classList.remove('hidden');setTimeout(setupReveal,30)
+}
+
+function _pkuDetail(id){
+  setTab(3);const d=PKU_DETAILS[id];if(!d){navigate('pagePKU');return}
+  document.getElementById('app').innerHTML=`<div class="page-bg">${imgOrFallback(BG.family,'','pb-fb')}</div><div class="detail" style="max-width:800px"><div class="detail-card" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-l)"><div class='dtl-hero reveal' style='background:linear-gradient(135deg,#073b27,#0b5e3e);border-radius:var(--radius-xl);padding:clamp(28px,3.5vw,42px);margin-bottom:24px;color:#fff'><div class='hero-deco'>🧬</div><div class='tags' style='margin-bottom:10px'><span style='background:rgba(255,255,255,.15);color:#fff'>PKU · ${_T('苯丙酮尿症','Education')}</span></div><h2 style='font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.2'>${d.title}</h2></div>${d.sections.map((s,i)=>`<div class='dtl-card reveal' style='background:#fff;border-radius:var(--radius-l);padding:28px;box-shadow:var(--shadow-card);border:1px solid var(--line-l)'><div style='display:flex;align-items:center;gap:14px;margin-bottom:14px'><div class='card-num'><span>${String(i+1).padStart(2,'0')}</span></div><h3 style='font-size:16px;font-weight:700;color:var(--ink);line-height:1.3'>${s.h}</h3></div><p style='font-size:14px;color:var(--muted);line-height:1.85'>${s.p}</p></div>`).join('')}<button class="nutri-cta" onclick="navigate('pagePKU')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> ${_T('返回PKU页','Back to PKU')}</button></div></div>`;
+  document.getElementById('csSection').classList.remove('hidden');setTimeout(setupReveal,30)
+}
+
+// ═══ 品牌/CKD/PKU 各板块详情CSS ═══
 window.addEventListener('scroll',()=>{
   const h=document.documentElement;
   const st=h.scrollTop;
