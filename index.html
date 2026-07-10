@@ -635,6 +635,15 @@ table tbody tr:hover{background:var(--green-soft)}
 .calc-suggest .cs-item .cs-name{font-weight:600}
 .calc-suggest .cs-item .cs-data{font-size:11px;color:var(--muted)}
 
+/* Quick-add food buttons */
+.qadd{display:inline-block;font-size:11px;padding:4px 10px;background:var(--green-soft);color:var(--green);border-radius:100px;cursor:pointer;transition:all .2s;font-weight:600;border:1px solid transparent}
+.qadd:hover{background:var(--green);color:#fff;border-color:var(--green)}
+/* Calculator result cells */
+.cr-cell{text-align:center;padding:16px 12px;background:var(--paper-card);border-radius:var(--radius);border:1px solid var(--line-l)}
+.crv{font-size:24px;font-weight:700;color:var(--green);line-height:1.1;margin-bottom:4px;font-family:var(--font-serif)}
+.crlab{font-size:11px;color:var(--muted);font-weight:500}
+
+
 /* ═══ CONTACT FORM (联系咨询) ═══ */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);max-width:880px;margin:0 auto}
 @media(max-width:680px){.contact-grid{grid-template-columns:1fr}}
@@ -1113,72 +1122,271 @@ document.getElementById('app').innerHTML=`
 document.getElementById('csSection').classList.remove('hidden')}
 
 // ═══ 一日三餐营养计算器 ═══
+const FOOD_DB={
+  米饭:{protein:2.6,fiber:0.3,energy:116,carb:25.9,fat:0.3},
+  森无忧米饭:{protein:0,fiber:0.5,energy:160,carb:38,fat:0.5},
+  森无忧大米:{protein:0,fiber:1.2,energy:350,carb:82,fat:0.8},
+  面条:{protein:8.3,fiber:0.8,energy:284,carb:60,fat:0.7},
+  馒头:{protein:7,fiber:1.3,energy:223,carb:44,fat:1.1},
+  全麦面包:{protein:9,fiber:6,energy:246,carb:43,fat:3.4},
+  燕麦:{protein:13.5,fiber:10.6,energy:367,carb:61,fat:7},
+  小米粥:{protein:1.4,fiber:0.7,energy:46,carb:8.4,fat:0.7},
+  红薯:{protein:1.1,fiber:1.6,energy:86,carb:20,fat:0.1},
+  玉米:{protein:4,fiber:2.9,energy:112,carb:22.8,fat:1.2},
+  鸡蛋:{protein:13,fiber:0,energy:144,carb:2.8,fat:8.8},
+  鸡胸肉:{protein:24.6,fiber:0,energy:133,carb:0,fat:5},
+  猪瘦肉:{protein:20.3,fiber:0,energy:143,carb:1.5,fat:6.2},
+  牛肉:{protein:20,fiber:0,energy:125,carb:2,fat:4.2},
+  鱼肉:{protein:17,fiber:0,energy:110,carb:0,fat:4},
+  虾仁:{protein:18.6,fiber:0,energy:93,carb:2.8,fat:0.8},
+  豆腐:{protein:8.1,fiber:0.4,energy:81,carb:3.8,fat:3.7},
+  豆浆:{protein:1.8,fiber:0.5,energy:30,carb:1.1,fat:0.7},
+  牛奶:{protein:3,fiber:0,energy:54,carb:3.4,fat:3.2},
+  酸奶:{protein:2.5,fiber:0,energy:72,carb:9.3,fat:2.7},
+  西兰花:{protein:4.1,fiber:1.6,energy:36,carb:4.3,fat:0.6},
+  番茄:{protein:0.9,fiber:0.5,energy:15,carb:3.3,fat:0.2},
+  黄瓜:{protein:0.8,fiber:0.5,energy:15,carb:2.5,fat:0.2},
+  青菜:{protein:1.5,fiber:1.1,energy:18,carb:2,fat:0.3},
+  菠菜:{protein:2.6,fiber:1.7,energy:28,carb:4.5,fat:0.3},
+  胡萝卜:{protein:1,fiber:1.1,energy:37,carb:8.8,fat:0.2},
+  土豆:{protein:2,fiber:0.7,energy:81,carb:17.2,fat:0.2},
+  香菇:{protein:2.2,fiber:3.3,energy:26,carb:5,fat:0.3},
+  南瓜:{protein:0.7,fiber:0.8,energy:23,carb:5,fat:0.1},
+  苹果:{protein:0.2,fiber:1.2,energy:53,carb:13.5,fat:0.2},
+  香蕉:{protein:1.4,fiber:1.2,energy:93,carb:22,fat:0.2},
+  橙子:{protein:0.8,fiber:0.6,energy:48,carb:11,fat:0.2},
+  猕猴桃:{protein:1,fiber:2.6,energy:61,carb:14,fat:0.5},
+  蓝莓:{protein:0.7,fiber:2.4,energy:57,carb:14,fat:0.3},
+  坚果:{protein:15,fiber:9,energy:560,carb:20,fat:45},
+};
+
 function _calculator(){setTab(0);
 document.getElementById('app').innerHTML=`
 <div class="page-bg">${imgOrFallback(BG.lab,'','pb-fb')}</div>
 <div class="detail" style="max-width:760px">
-  <div class="sec-head reveal" style="margin-bottom:32px"><span class="eyebrow d">Calculator · ${_T('计算器','Calculator')}</span><h2 class="h2">${_T('一日三餐营养估算','Daily Meal Nutrition Estimator')}<span class="en">Nutrition Calculator</span></h2><p class="sec-sub">${_T('填写一日三餐大致摄入，快速估算蛋白质、膳食纤维等营养素总量。','Enter your daily meals to estimate total protein, fiber and other nutrients.')}</p></div>
+  <div class="sec-head reveal" style="margin-bottom:32px"><span class="eyebrow d">Calculator · ${_T('计算器','Calculator')}</span><h2 class="h2">${_T('一日三餐营养计算器','Daily Meal Nutrition Calculator')}<span class="en">Auto Calculator</span></h2><p class="sec-sub">${_T('告诉我你今天三餐吃了什么，我帮你算营养素含量。','Tell me what you ate today, I will calculate the nutritional content.')}</p></div>
   <div class="calc-box reveal" style="padding:28px">
-    <div style="display:grid;gap:20px">
-      <div class="calc-field"><label>${_T('早餐主食 (g)','Breakfast Staples (g)')}</label><input type="number" id="b1" placeholder="${_T('如：米饭200g','e.g. rice 200g')}" oninput="updateCalc()" min="0" max="1000" value="0"></div>
-      <div class="calc-field"><label>${_T('早餐蛋白质类 (g)','Breakfast Protein (g)')}</label><input type="number" id="b2" placeholder="${_T('如：鸡蛋1个≈50g','e.g. 1 egg ≈50g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
-      <div class="calc-field"><label>${_T('早餐蔬菜水果 (g)','Breakfast Veg & Fruit (g)')}</label><input type="number" id="b3" placeholder="${_T('如：苹果200g','e.g. apple 200g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
-      <div class="calc-field"><label>${_T('午餐主食 (g)','Lunch Staples (g)')}</label><input type="number" id="l1" placeholder="${_T('如：米饭300g','e.g. rice 300g')}" oninput="updateCalc()" min="0" max="1000" value="0"></div>
-      <div class="calc-field"><label>${_T('午餐蛋白质类 (g)','Lunch Protein (g)')}</label><input type="number" id="l2" placeholder="${_T('如：鸡胸肉100g','e.g. chicken 100g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
-      <div class="calc-field"><label>${_T('午餐蔬菜 (g)','Lunch Vegetables (g)')}</label><input type="number" id="l3" placeholder="${_T('如：西兰花150g','e.g. broccoli 150g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
-      <div class="calc-field"><label>${_T('晚餐主食 (g)','Dinner Staples (g)')}</label><input type="number" id="d1" placeholder="${_T('如：米饭200g','e.g. rice 200g')}" oninput="updateCalc()" min="0" max="1000" value="0"></div>
-      <div class="calc-field"><label>${_T('晚餐蛋白质类 (g)','Dinner Protein (g)')}</label><input type="number" id="d2" placeholder="${_T('如：鱼肉120g','e.g. fish 120g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
-      <div class="calc-field"><label>${_T('晚餐蔬菜 (g)','Dinner Vegetables (g)')}</label><input type="number" id="d3" placeholder="${_T('如：青菜150g','e.g. greens 150g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
+    <div style="display:grid;gap:16px">
+      <!-- 早餐 -->
+      <div class="calc-field" style="background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+        <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">🌅 ${_T('早餐','Breakfast')}</label>
+        <input type="text" id="bkfst" placeholder="${_T('如：米饭200g+鸡蛋1个+牛奶250ml','e.g. rice 200g + egg 1 + milk 250ml')}" oninput="updateCalc()" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--font-sans)">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+          <span class="qadd" onclick="addFood('bkfst','米饭200g')">🍚 米饭</span>
+          <span class="qadd" onclick="addFood('bkfst','鸡蛋1个')">🥚 鸡蛋</span>
+          <span class="qadd" onclick="addFood('bkfst','牛奶250ml')">🥛 牛奶</span>
+          <span class="qadd" onclick="addFood('bkfst','全麦面包50g')">🍞 面包</span>
+          <span class="qadd" onclick="addFood('bkfst','森无忧米饭180g')">🍚 森无忧</span>
+        </div>
+      </div>
+      <!-- 午餐 -->
+      <div class="calc-field" style="background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+        <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">☀️ ${_T('午餐','Lunch')}</label>
+        <input type="text" id="lunch" placeholder="${_T('如：米饭300g+鸡胸肉100g+西兰花150g','e.g. rice 300g + chicken 100g + broccoli 150g')}" oninput="updateCalc()" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--font-sans)">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+          <span class="qadd" onclick="addFood('lunch','米饭300g')">🍚 米饭</span>
+          <span class="qadd" onclick="addFood('lunch','鸡胸肉100g')">🍗 鸡肉</span>
+          <span class="qadd" onclick="addFood('lunch','西兰花150g')">🥦 西兰花</span>
+          <span class="qadd" onclick="addFood('lunch','鱼肉100g')">🐟 鱼肉</span>
+          <span class="qadd" onclick="addFood('lunch','森无忧米饭300g')">🍚 森无忧</span>
+        </div>
+      </div>
+      <!-- 晚餐 -->
+      <div class="calc-field" style="background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+        <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">🌙 ${_T('晚餐','Dinner')}</label>
+        <input type="text" id="dinner" placeholder="${_T('如：米饭200g+鱼肉120g+菠菜150g','e.g. rice 200g + fish 120g + spinach 150g')}" oninput="updateCalc()" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--font-sans)">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+          <span class="qadd" onclick="addFood('dinner','米饭200g')">🍚 米饭</span>
+          <span class="qadd" onclick="addFood('dinner','鱼肉120g')">🐟 鱼肉</span>
+          <span class="qadd" onclick="addFood('dinner','菠菜150g')">🥬 菠菜</span>
+          <span class="qadd" onclick="addFood('dinner','豆腐100g')">🧈 豆腐</span>
+          <span class="qadd" onclick="addFood('dinner','森无忧米饭200g')">🍚 森无忧</span>
+        </div>
+      </div>
     </div>
     <div class="calc-result" id="calcResult" style="margin-top:24px">
-      <div class="cr-val" id="crVal">--</div>
-      <div class="cr-lbl" id="crLbl">${_T('请输入三餐数据','Enter meal data above')}</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div class="cr-cell"><div class="crv" id="crv1">--</div><div class="crlab">${_T('蛋白质','Protein')}</div></div>
+        <div class="cr-cell"><div class="crv" id="crv2">--</div><div class="crlab">${_T('膳食纤维','Fiber')}</div></div>
+        <div class="cr-cell"><div class="crv" id="crv3">--</div><div class="crlab">${_T('能量','Energy')}</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px">
+        <div class="cr-cell"><div class="crv" id="crv4" style="font-size:18px">--</div><div class="crlab">${_T('碳水化合物','Carbs')}</div></div>
+        <div class="cr-cell"><div class="crv" id="crv5" style="font-size:18px">--</div><div class="crlab">${_T('脂肪','Fat')}</div></div>
+      </div>
     </div>
+    <div id="calcDetail" style="margin-top:16px;font-size:12px;color:var(--muted);line-height:1.8"></div>
     <div class="calc-suggest" id="calcSuggest" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"></div>
   </div>
-  <div class="note reveal" style="margin-top:24px;max-width:640px;margin-left:auto;margin-right:auto"><p><strong>${_T('温馨提示','Note')}：</strong>${_T('本工具为粗略估算，仅供参考。实际营养需求因人而异，建议咨询营养师。','This is a rough estimate for reference only. Consult a dietitian for personalized advice.')}</p></div>
+  <div class="note reveal" style="margin-top:24px;max-width:640px;margin-left:auto;margin-right:auto"><p><strong>${_T('温馨提示','Note')}：</strong>${_T('本工具基于常见食物营养数据库估算，仅供参考。实际营养需求因人而异，建议咨询营养师。格式：食物名+数量，多个用加号分隔。','Estimates based on common food nutrition database. For reference only. Format: food+amount, separate with + sign.')}</p></div>
 </div>`;
 document.getElementById('csSection').classList.remove('hidden');setTimeout(setupReveal,30)}
 
+function addFood(mealId, foodStr){
+  const el=document.getElementById(mealId);
+  const cur=el.value.trim();
+  el.value=cur+(cur?'+':'')+foodStr;
+  updateCalc();
+}
+
+function parseMeal(text){
+  if(!text||!text.trim()) return [];
+  const items=[];
+  const parts=text.split(/[+＋、，,]/);
+  for(let p of parts){
+    p=p.trim();
+    if(!p) continue;
+    // Try to match "foodName amountWithUnit" or "amount foodName"
+    // Common patterns: "米饭200g", "鸡蛋1个", "牛奶250ml", "苹果1个"
+    let foodName='', amount=0;
+    // Try "foodName number+unit" pattern
+    const m1=p.match(/^(.+?)([0-9]+\.?[0-9]*)\s*(g|克|ml|毫升|个|只|条|碗|杯|斤|两|kg|L|盒)$/);
+    if(m1){
+      foodName=m1[1].trim();
+      const num=parseFloat(m1[2]);
+      const unit=m1[3];
+      amount=estimateWeight(foodName,num,unit);
+    } else {
+      // Try just "foodName number" 
+      const m2=p.match(/^(.+?)([0-9]+\.?[0-9]*)$/);
+      if(m2){
+        foodName=m2[1].trim();
+        amount=parseFloat(m2[2]);
+      }
+    }
+    if(foodName && amount>0){
+      // Find matching food in DB
+      const match=findFood(foodName);
+      if(match) items.push({name:match.key,amount:amount});
+    }
+  }
+  return items;
+}
+
+function estimateWeight(foodName,num,unit){
+  const name=foodName.toLowerCase();
+  // Approximate weights for common units
+  if(unit==='g'||unit==='克'||unit==='ml'||unit==='毫升') return num;
+  if(unit==='kg') return num*1000;
+  if(unit==='L'||unit==='l') return num*1000;
+  if(unit==='斤') return num*500;
+  if(unit==='两') return num*50;
+  if(unit==='个'||unit==='只'||unit==='条'){
+    if(name.includes('蛋')) return num*50;
+    if(name.includes('苹果')||name.includes('橙')) return num*200;
+    if(name.includes('香蕉')) return num*100;
+    if(name.includes('猕猴桃')) return num*80;
+    if(name.includes('番茄')||name.includes('西红柿')) return num*150;
+    if(name.includes('土豆')) return num*150;
+    if(name.includes('粽子')) return num*100;
+    return num*100; // default
+  }
+  if(unit==='碗'){
+    if(name.includes('饭')||name.includes('米')) return num*200;
+    if(name.includes('粥')||name.includes('面')) return num*300;
+    return num*200;
+  }
+  if(unit==='杯') return num*250;
+  if(unit==='盒'){
+    if(name.includes('森无忧')) return num*180;
+    return num*200;
+  }
+  return num*100;
+}
+
+function findFood(input){
+  const inp=input.toLowerCase().trim();
+  const keys=Object.keys(FOOD_DB);
+  // Exact match
+  for(let k of keys) if(inp===k) return {key:k};
+  // Contains match
+  let best=null;
+  for(let k of keys){
+    if(k.includes(inp)||inp.includes(k)){
+      if(!best||k.length>best.length) best=k;
+    }
+  }
+  if(best) return {key:best};
+  // Partial keyword matching
+  const kwMap={'饭':'米饭','米':'米饭','饭团':'米饭','炒饭':'米饭',
+    '鸡':'鸡胸肉','猪':'猪瘦肉','牛':'牛肉','鱼':'鱼肉','虾':'虾仁',
+    '蛋':'鸡蛋','面':'面条','包':'全麦面包',
+    '奶':'牛奶','豆':'豆腐','浆':'豆浆',
+    '菜':'青菜','菠':'菠菜','西':'西兰花','花':'西兰花',
+    '果':'苹果','蕉':'香蕉','莓':'蓝莓','果':'苹果',
+    '薯':'红薯','瓜':'南瓜','菇':'香菇',
+    '坚果':'坚果','核桃':'坚果','杏仁':'坚果',
+    '森':'森无忧米饭'};
+  for(let [kw,food] of Object.entries(kwMap)){
+    if(inp.includes(kw)) return {key:food};
+  }
+  // Check if it's a common food word in any key
+  for(let k of keys){
+    if(k.length>=2 && inp.startsWith(k.substring(0,2))) return {key:k};
+  }
+  return null;
+}
+
 function updateCalc(){
-  const ids=['b1','b2','b3','l1','l2','l3','d1','d2','d3'];
-  let total=0;
-  ids.forEach(id=>{
-    const el=document.getElementById(id);
-    if(el) total+=parseFloat(el.value)||0;
-  });
-  // Rough estimation: staples ~8g protein/100g, protein foods ~20g/100g, veg ~2g/100g
-  const b1=parseFloat(document.getElementById('b1')?.value)||0;
-  const b2=parseFloat(document.getElementById('b2')?.value)||0;
-  const b3=parseFloat(document.getElementById('b3')?.value)||0;
-  const l1=parseFloat(document.getElementById('l1')?.value)||0;
-  const l2=parseFloat(document.getElementById('l2')?.value)||0;
-  const l3=parseFloat(document.getElementById('l3')?.value)||0;
-  const d1=parseFloat(document.getElementById('d1')?.value)||0;
-  const d2=parseFloat(document.getElementById('d2')?.value)||0;
-  const d3=parseFloat(document.getElementById('d3')?.value)||0;
-  const proteinStaple=((b1+l1+d1)*0.08).toFixed(1);
-  const proteinMeat=((b2+l2+d2)*0.20).toFixed(1);
-  const proteinVeg=((b3+l3+d3)*0.02).toFixed(1);
-  const proteinTotal=(parseFloat(proteinStaple)+parseFloat(proteinMeat)+parseFloat(proteinVeg)).toFixed(1);
-  const fiberTotal=((b1+l1+d1)*0.025+(b3+l3+d3)*0.03).toFixed(1);
-  const energyTotal=((b1+l1+d1)*1.2+(b2+l2+d2)*1.5+(b3+l3+d3)*0.3).toFixed(0);
+  const bkfst=document.getElementById('bkfst')?.value||'';
+  const lunch=document.getElementById('lunch')?.value||'';
+  const dinner=document.getElementById('dinner')?.value||'';
   
-  document.getElementById('crVal').textContent=proteinTotal+' g';
-  document.getElementById('crLbl').textContent=_T('估算蛋白质总量 · 膳食纤维≈','Estimated Protein · Fiber≈')+fiberTotal+'g · '+_T('能量≈','Energy≈')+energyTotal+'kcal';
+  const allItems=[
+    ...parseMeal(bkfst),
+    ...parseMeal(lunch),
+    ...parseMeal(dinner)
+  ];
+  
+  if(allItems.length===0){
+    document.getElementById('crv1').textContent='--';
+    document.getElementById('crv2').textContent='--';
+    document.getElementById('crv3').textContent='--';
+    document.getElementById('crv4').textContent='--';
+    document.getElementById('crv5').textContent='--';
+    document.getElementById('calcDetail').innerHTML='';
+    document.getElementById('calcSuggest').innerHTML='';
+    return;
+  }
+  
+  let totalP=0,totalF=0,totalE=0,totalC=0,totalFat=0;
+  const detailLines=[];
+  for(let item of allItems){
+    const f=FOOD_DB[item.name];
+    if(!f) continue;
+    const ratio=item.amount/100;
+    const p=(f.protein*ratio).toFixed(1);
+    const fib=(f.fiber*ratio).toFixed(1);
+    const e=(f.energy*ratio).toFixed(0);
+    detailLines.push(item.name+' '+item.amount+'g → '+_T('蛋白质','Protein')+' '+p+'g · '+_T('纤维','Fiber')+' '+fib+'g · '+_T('能量','Energy')+' '+e+'kcal');
+    totalP+=f.protein*ratio;
+    totalF+=f.fiber*ratio;
+    totalE+=f.energy*ratio;
+    totalC+=f.carb*ratio;
+    totalFat+=f.fat*ratio;
+  }
+  
+  document.getElementById('crv1').textContent=totalP.toFixed(1)+'g';
+  document.getElementById('crv2').textContent=totalF.toFixed(1)+'g';
+  document.getElementById('crv3').textContent=Math.round(totalE)+'kcal';
+  document.getElementById('crv4').textContent=totalC.toFixed(1)+'g';
+  document.getElementById('crv5').textContent=totalFat.toFixed(1)+'g';
+  document.getElementById('calcDetail').innerHTML='<div style="background:var(--paper-card);border-radius:8px;padding:12px 16px"><strong>'+_T('按每种食物分解','Per Food Breakdown')+'：</strong><br>'+detailLines.join('<br>')+'</div>';
   
   let sugg='';
-  if(proteinTotal<40) sugg+=`<div class="cs-item"><span class="cs-icon">⬆️</span><span class="cs-name">${_T('蛋白质偏低','Protein low')}</span><span class="cs-data">${_T('建议增加优质蛋白','Add quality protein')}</span></div>`;
-  else if(proteinTotal>120) sugg+=`<div class="cs-item"><span class="cs-icon">⬇️</span><span class="cs-name">${_T('蛋白质偏高','Protein high')}</span><span class="cs-data">${_T('建议咨询营养师','Consult dietitian')}</span></div>`;
-  else sugg+=`<div class="cs-item"><span class="cs-icon">✅</span><span class="cs-name">${_T('蛋白质摄入合理','Protein intake OK')}</span><span class="cs-data">${_T('保持在合理范围','Within normal range')}</span></div>`;
+  if(totalP<40) sugg+=`<div class="cs-item"><span class="cs-icon">⬆️</span><span class="cs-name">${_T('蛋白质偏低','Protein Low')}</span><span class="cs-data">${_T('建议增加优质蛋白','Add quality protein')}</span></div>`;
+  else if(totalP>120) sugg+=`<div class="cs-item"><span class="cs-icon">⬇️</span><span class="cs-name">${_T('蛋白质偏高','Protein High')}</span><span class="cs-data">${_T('建议咨询营养师','Consult dietitian')}</span></div>`;
+  else sugg+=`<div class="cs-item"><span class="cs-icon">✅</span><span class="cs-name">${_T('蛋白质合理','Protein OK')}</span><span class="cs-data">${_T('保持在合理范围','Within range')}</span></div>`;
   
-  if(fiberTotal<15) sugg+=`<div class="cs-item"><span class="cs-icon">🥬</span><span class="cs-name">${_T('膳食纤维偏低','Fiber low')}</span><span class="cs-data">${_T('建议25-30g/天','Aim for 25-30g/day')}</span></div>`;
-  else sugg+=`<div class="cs-item"><span class="cs-icon">✅</span><span class="cs-name">${_T('膳食纤维充足','Fiber adequate')}</span><span class="cs-data">${_T('继续保持','Keep it up')}</span></div>`;
+  if(totalF<20) sugg+=`<div class="cs-item"><span class="cs-icon">🥬</span><span class="cs-name">${_T('纤维偏少','Fiber Low')}</span><span class="cs-data">${_T('目标25-30g/天','Goal 25-30g/day')}</span></div>`;
+  else sugg+=`<div class="cs-item"><span class="cs-icon">✅</span><span class="cs-name">${_T('纤维充足','Fiber Good')}</span><span class="cs-data">${_T('继续保持','Keep it up')}</span></div>`;
   
-  sugg+=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('森无忧低蛋白米饭','Senwuyou Rice')}</span><span class="cs-data">${_T('均衡营养 三餐适用','Balanced 3 meals')}</span></div>
-    <div class="cs-item"><span class="cs-icon">🦠</span><span class="cs-name">${_T('森无忧复合益生菌','Senwuyou Probiotics')}</span><span class="cs-data">${_T('肠道健康好帮手','Gut health support')}</span></div>`;
+  sugg+=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('森无忧低蛋白米饭','Senwuyou Rice')}</span><span class="cs-data">${_T('0g蛋白/100g','0g protein')}</span></div>
+    <div class="cs-item"><span class="cs-icon">🦠</span><span class="cs-name">${_T('森无忧复合益生菌','Senwuyou Probiotics')}</span><span class="cs-data">${_T('肠道健康','Gut health')}</span></div>`;
   document.getElementById('calcSuggest').innerHTML=sugg;
 }
+
+window.addFood=addFood;
 
 // ═══ 联系我们 / 营养咨询 ═══
 function _contact(){setTab(0);
@@ -1438,7 +1646,7 @@ window.addEventListener('scroll',()=>{
   if(heroBg) heroBg.style.transform=`translateY(${st*0.35}px)`;
 });
 
-window.navigate=navigate;window.goBack=goBack;window.prevProduct=prevProduct;window.nextProduct=nextProduct;window.updateCalc=updateCalc;window.submitContact=submitContact;window._academyTopic=_academyTopic;window._scienceTopic=_scienceTopic;
+window.navigate=navigate;window.goBack=goBack;window.prevProduct=prevProduct;window.nextProduct=nextProduct;window.updateCalc=updateCalc;window.submitContact=submitContact;window.addFood=addFood;window._academyTopic=_academyTopic;window._scienceTopic=_scienceTopic;
 navigate('home');
 </script>
 </body>
