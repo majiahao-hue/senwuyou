@@ -877,7 +877,7 @@ const D={
 },
 5:{
   taste:_T('成品松软，有馒头香气，操作简单新手友好','Soft and fluffy, tastes like real steamed buns'),
-  scenes:[_T('自制馒头花卷','Homemade steamed buns'),_T('有需要的人群/PKU家庭早餐主食','Breakfast staple for CKD/PKU families'),_T('新手第一次做也能成功','Foolproof for beginners')],
+  scenes:[_T('自制馒头花卷','Homemade steamed buns'),_T('有需要的人群/PKU家庭早餐主食','Breakfast staple for families'),_T('新手第一次做也能成功','Foolproof for beginners')],
   revs:[{u:'📱 买**家',r:_T('按说明做的，蒸出来的馒头很松软。','Followed instructions — buns came out super soft!'),s:5}],
   pn:_T('500g装，配好比例新手无压力','500g, pre-mixed ratio, beginner-friendly'),
   sd:_T('专用发酵酶配方，成品松软如普通馒头','Special enzyme formula, fluffy as regular buns')
@@ -905,10 +905,10 @@ const D={
 },
 9:{
   taste:_T('真米粽香，软糯适中','Real rice dumpling aroma, perfectly soft'),
-  scenes:[_T('端午节日必备','Must-have for Dragon Boat Festival'),_T('有需要的人群节日加餐，单只定量','Festive treat with portion control'),_T('送礼给有需要的人群亲友','Gift for kidney person friends')],
+  scenes:[_T('端午节日必备','Must-have for Dragon Boat Festival'),_T('有需要的人群节日加餐，单只定量','Festive treat with portion control'),_T('送礼给有需要的人群亲友','Gift for health-conscious friends')],
   revs:[{u:'📱 购**户',r:_T('真空包装方便保存，加热就能吃。赤豆味很香。','Vacuum-packed, heat & eat. Red bean flavor is great.'),s:5}],
   pn:_T('100g/只，4种口味可选','100g each, 4 flavors'),
-  sd:_T('低磷低钾极低钠，有需要的人群也能吃的端午粽','Low phosphorus & potassium, CKD-safe zongzi')
+  sd:_T('低磷低钾极低钠，有需要的人群也能吃的端午粽','Low phosphorus & potassium, health-conscious zongzi')
 }
 };
 
@@ -1098,79 +1098,72 @@ document.getElementById('app').innerHTML=`
   <tr><td>${_T('贮存','Storage')}</td><td>${p.store}</td></tr></tbody></table></div></div></div>`;
 document.getElementById('csSection').classList.remove('hidden')}
 
-// ═══ 蛋白质/Phe 计算器 ═══
+// ═══ 一日三餐营养计算器 ═══
 function _calculator(){setTab(0);
 document.getElementById('app').innerHTML=`
 <div class="page-bg">${imgOrFallback(BG.lab,'','pb-fb')}</div>
 <div class="detail" style="max-width:760px">
-  <div class="sec-head reveal" style="margin-bottom:32px"><span class="eyebrow d">Calculator · ${_T('计算器','Calculator')}</span><h2 class="h2">${_T('蛋白质 / Phe 摄入计算器','Protein / Phe Calculator')}<span class="en">Intake Calculator</span></h2><p class="sec-sub">${_T('输入体重和特定健康状态情，自动推荐每日摄入量。','Enter weight and condition for daily intake recommendations.')}</p></div>
-  <div class="calc-box reveal">
-    <div class="calc-field">
-      <label>${_T('人群类型','Patient Type')}</label>
-      <select id="calcType" onchange="updateCalc()">
-        <option value="">${_T('请选择','Please select')}</option>
-        <option value="ckd3">CKD 3期 (GFR 30-59)</option>
-        <option value="ckd4">CKD 4期 (GFR 15-29)</option>
-        <option value="ckd5">CKD 5期未特殊营养阶段 (GFR <15)</option>
-        <option value="hd">${_T('血液特殊营养阶段','Hemodialysis')}</option>
-        <option value="pd">${_T('腹膜特殊营养阶段','Peritoneal Dialysis')}</option>
-        <option value="pku_c">PKU ${_T('儿童','Child')} (1-10岁)</option>
-        <option value="pku_a">PKU ${_T('成人','Adult')}</option>
-      </select>
+  <div class="sec-head reveal" style="margin-bottom:32px"><span class="eyebrow d">Calculator · ${_T('计算器','Calculator')}</span><h2 class="h2">${_T('一日三餐营养估算','Daily Meal Nutrition Estimator')}<span class="en">Nutrition Calculator</span></h2><p class="sec-sub">${_T('填写一日三餐大致摄入，快速估算蛋白质、膳食纤维等营养素总量。','Enter your daily meals to estimate total protein, fiber and other nutrients.')}</p></div>
+  <div class="calc-box reveal" style="padding:28px">
+    <div style="display:grid;gap:20px">
+      <div class="calc-field"><label>${_T('早餐主食 (g)','Breakfast Staples (g)')}</label><input type="number" id="b1" placeholder="${_T('如：米饭200g','e.g. rice 200g')}" oninput="updateCalc()" min="0" max="1000" value="0"></div>
+      <div class="calc-field"><label>${_T('早餐蛋白质类 (g)','Breakfast Protein (g)')}</label><input type="number" id="b2" placeholder="${_T('如：鸡蛋1个≈50g','e.g. 1 egg ≈50g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
+      <div class="calc-field"><label>${_T('早餐蔬菜水果 (g)','Breakfast Veg & Fruit (g)')}</label><input type="number" id="b3" placeholder="${_T('如：苹果200g','e.g. apple 200g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
+      <div class="calc-field"><label>${_T('午餐主食 (g)','Lunch Staples (g)')}</label><input type="number" id="l1" placeholder="${_T('如：米饭300g','e.g. rice 300g')}" oninput="updateCalc()" min="0" max="1000" value="0"></div>
+      <div class="calc-field"><label>${_T('午餐蛋白质类 (g)','Lunch Protein (g)')}</label><input type="number" id="l2" placeholder="${_T('如：鸡胸肉100g','e.g. chicken 100g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
+      <div class="calc-field"><label>${_T('午餐蔬菜 (g)','Lunch Vegetables (g)')}</label><input type="number" id="l3" placeholder="${_T('如：西兰花150g','e.g. broccoli 150g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
+      <div class="calc-field"><label>${_T('晚餐主食 (g)','Dinner Staples (g)')}</label><input type="number" id="d1" placeholder="${_T('如：米饭200g','e.g. rice 200g')}" oninput="updateCalc()" min="0" max="1000" value="0"></div>
+      <div class="calc-field"><label>${_T('晚餐蛋白质类 (g)','Dinner Protein (g)')}</label><input type="number" id="d2" placeholder="${_T('如：鱼肉120g','e.g. fish 120g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
+      <div class="calc-field"><label>${_T('晚餐蔬菜 (g)','Dinner Vegetables (g)')}</label><input type="number" id="d3" placeholder="${_T('如：青菜150g','e.g. greens 150g')}" oninput="updateCalc()" min="0" max="500" value="0"></div>
     </div>
-    <div class="calc-field">
-      <label>${_T('体重 (kg)','Body Weight (kg)')}</label>
-      <input type="number" id="calcWeight" placeholder="${_T('请输入体重','Enter weight')}" oninput="updateCalc()" min="1" max="200">
-    </div>
-    <div class="calc-result" id="calcResult" style="display:none">
+    <div class="calc-result" id="calcResult" style="margin-top:24px">
       <div class="cr-val" id="crVal">--</div>
-      <div class="cr-lbl" id="crLbl"></div>
+      <div class="cr-lbl" id="crLbl">${_T('请输入三餐数据','Enter meal data above')}</div>
     </div>
-    <div class="calc-suggest" id="calcSuggest" style="display:none"></div>
+    <div class="calc-suggest" id="calcSuggest" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"></div>
   </div>
-  <div class="note reveal" style="margin-top:24px;max-width:640px;margin-left:auto;margin-right:auto"><p><strong>${_T('免责声明','Disclaimer')}：</strong>${_T('本工具仅供参考，实际摄入量请遵医嘱。','For reference only. Follow your doctor\u2019s advice.')}</p></div>
+  <div class="note reveal" style="margin-top:24px;max-width:640px;margin-left:auto;margin-right:auto"><p><strong>${_T('温馨提示','Note')}：</strong>${_T('本工具为粗略估算，仅供参考。实际营养需求因人而异，建议咨询营养师。','This is a rough estimate for reference only. Consult a dietitian for personalized advice.')}</p></div>
 </div>`;
 document.getElementById('csSection').classList.remove('hidden');setTimeout(setupReveal,30)}
 
 function updateCalc(){
-  const type=document.getElementById('calcType').value;
-  const wt=parseFloat(document.getElementById('calcWeight').value);
-  const result=document.getElementById('calcResult');
-  const suggest=document.getElementById('calcSuggest');
-  if(!type||!wt||wt<=0){result.style.display='none';suggest.style.display='none';return}
-  const cfg={
-    ckd3:{protein:0.6,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:true},
-    ckd4:{protein:0.5,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:true},
-    ckd5:{protein:0.6,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:true},
-    hd:{protein:1.1,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:false},
-    pd:{protein:1.0,unit:'g/kg',label:_T('每日蛋白质推荐','Daily Protein'),ketoacid:false},
-    pku_c:{protein:1.5,phe:400,unit:'mg/天',label:_T('每日Phe耐受量','Daily Phe Tolerance'),ketoacid:false},
-    pku_a:{protein:1.0,phe:600,unit:'mg/天',label:_T('每日Phe耐受量','Daily Phe Tolerance'),ketoacid:false}
-  };
-  const c=cfg[type];if(!c)return;
-  result.style.display='block';suggest.style.display='grid';
-  if(type.startsWith('pku')){
-    document.getElementById('crVal').textContent=c.phe+' mg';
-    document.getElementById('crLbl').textContent=c.label+_T('（参考值）',' (reference)');
-  }else{
-    const total=(c.protein*wt).toFixed(1);
-    document.getElementById('crVal').textContent=total+' g';
-    document.getElementById('crLbl').textContent=c.label+_T('（',' (')+c.protein+'g/kg \u00d7 '+wt+'kg）';
-  }
+  const ids=['b1','b2','b3','l1','l2','l3','d1','d2','d3'];
+  let total=0;
+  ids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) total+=parseFloat(el.value)||0;
+  });
+  // Rough estimation: staples ~8g protein/100g, protein foods ~20g/100g, veg ~2g/100g
+  const b1=parseFloat(document.getElementById('b1')?.value)||0;
+  const b2=parseFloat(document.getElementById('b2')?.value)||0;
+  const b3=parseFloat(document.getElementById('b3')?.value)||0;
+  const l1=parseFloat(document.getElementById('l1')?.value)||0;
+  const l2=parseFloat(document.getElementById('l2')?.value)||0;
+  const l3=parseFloat(document.getElementById('l3')?.value)||0;
+  const d1=parseFloat(document.getElementById('d1')?.value)||0;
+  const d2=parseFloat(document.getElementById('d2')?.value)||0;
+  const d3=parseFloat(document.getElementById('d3')?.value)||0;
+  const proteinStaple=((b1+l1+d1)*0.08).toFixed(1);
+  const proteinMeat=((b2+l2+d2)*0.20).toFixed(1);
+  const proteinVeg=((b3+l3+d3)*0.02).toFixed(1);
+  const proteinTotal=(parseFloat(proteinStaple)+parseFloat(proteinMeat)+parseFloat(proteinVeg)).toFixed(1);
+  const fiberTotal=((b1+l1+d1)*0.025+(b3+l3+d3)*0.03).toFixed(1);
+  const energyTotal=((b1+l1+d1)*1.2+(b2+l2+d2)*1.5+(b3+l3+d3)*0.3).toFixed(0);
+  
+  document.getElementById('crVal').textContent=proteinTotal+' g';
+  document.getElementById('crLbl').textContent=_T('估算蛋白质总量 · 膳食纤维≈','Estimated Protein · Fiber≈')+fiberTotal+'g · '+_T('能量≈','Energy≈')+energyTotal+'kcal';
+  
   let sugg='';
-  if(type.startsWith('pku')){
-    sugg=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('森无忧低蛋白米饭','Senwuyou Rice')}</span><span class="cs-data">Phe ~14mg/100g</span></div>
-    <div class="cs-item"><span class="cs-icon">🌾</span><span class="cs-name">${_T('森无忧低蛋白大米','Senwuyou Rice Grain')}</span><span class="cs-data">Phe ~14mg/100g</span></div>
-    <div class="cs-item"><span class="cs-icon">🍪</span><span class="cs-name">${_T('森无忧低蛋白曲奇','Senwuyou Cookies')}</span><span class="cs-data">Phe ~15mg/包</span></div>`;
-  }else{
-    sugg=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('森无忧低蛋白米饭','Senwuyou Rice')}</span><span class="cs-data">0g ${_T('蛋白','protein')} · ${_T('三餐主食','3 meals')}</span></div>
-    <div class="cs-item"><span class="cs-icon">🍜</span><span class="cs-name">${_T('森无忧低蛋白米粉','Senwuyou Noodles')}</span><span class="cs-data">0g ${_T('蛋白','protein')} · ${_T('换口味','variety')}</span></div>
-    <div class="cs-item"><span class="cs-icon">🍪</span><span class="cs-name">${_T('森无忧低蛋白曲奇','Senwuyou Cookies')}</span><span class="cs-data">0.2g ${_T('蛋白/包','protein/pack')} · ${_T('加餐','snack')}</span></div>`;
-    if(c.ketoacid){
-      sugg+=`<div class="cs-item"><span class="cs-icon">💊</span><span class="cs-name">${_T('复方α-酮酸（遵医嘱）','Ketoacid (Rx only)')}</span><span class="cs-data">${_T('配合低蛋白饮食','With low-protein diet')}</span></div>`;
-    }
-  }
-  suggest.innerHTML=sugg;
+  if(proteinTotal<40) sugg+=`<div class="cs-item"><span class="cs-icon">⬆️</span><span class="cs-name">${_T('蛋白质偏低','Protein low')}</span><span class="cs-data">${_T('建议增加优质蛋白','Add quality protein')}</span></div>`;
+  else if(proteinTotal>120) sugg+=`<div class="cs-item"><span class="cs-icon">⬇️</span><span class="cs-name">${_T('蛋白质偏高','Protein high')}</span><span class="cs-data">${_T('建议咨询营养师','Consult dietitian')}</span></div>`;
+  else sugg+=`<div class="cs-item"><span class="cs-icon">✅</span><span class="cs-name">${_T('蛋白质摄入合理','Protein intake OK')}</span><span class="cs-data">${_T('保持在合理范围','Within normal range')}</span></div>`;
+  
+  if(fiberTotal<15) sugg+=`<div class="cs-item"><span class="cs-icon">🥬</span><span class="cs-name">${_T('膳食纤维偏低','Fiber low')}</span><span class="cs-data">${_T('建议25-30g/天','Aim for 25-30g/day')}</span></div>`;
+  else sugg+=`<div class="cs-item"><span class="cs-icon">✅</span><span class="cs-name">${_T('膳食纤维充足','Fiber adequate')}</span><span class="cs-data">${_T('继续保持','Keep it up')}</span></div>`;
+  
+  sugg+=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('森无忧低蛋白米饭','Senwuyou Rice')}</span><span class="cs-data">${_T('均衡营养 三餐适用','Balanced 3 meals')}</span></div>
+    <div class="cs-item"><span class="cs-icon">🦠</span><span class="cs-name">${_T('森无忧复合益生菌','Senwuyou Probiotics')}</span><span class="cs-data">${_T('肠道健康好帮手','Gut health support')}</span></div>`;
+  document.getElementById('calcSuggest').innerHTML=sugg;
 }
 
 // ═══ 联系我们 / 营养咨询 ═══
@@ -1186,8 +1179,7 @@ document.getElementById('app').innerHTML=`
         <input type="tel" placeholder="${_T('联系电话','Phone number')}" required>
         <select required>
           <option value="">${_T('请选择人群类型','Select person type')}</option>
-          <option>CKD ${_T('特殊营养需求','Kidney Disease')}</option>
-          <option>PKU ${_T('苯丙酮尿症','Phenylketonuria')}</option>
+          <option>CKD ${_T('特殊营养需求','General')}</option> ${_T('营养关注','Nutrition Focus')}</option>
           <option>${_T('其他','Other')}</option>
         </select>
         <textarea placeholder="${_T('请描述您的问题或需求...','Describe your question or need...')}" required></textarea>
@@ -1394,7 +1386,7 @@ ${bgSection(BG.family,false,`
 <div class="closing reveal" style="padding:clamp(40px,5vw,60px) clamp(20px,4vw,48px);background:var(--paper-card);text-align:center"><h2>${_T('加入森无忧营养社区','Join Senwuyou Community')}</h2><p>${_T('分享你的饮食心得，帮助更多人实现科学营养、无忧生活。','Share your dietary insights and help more people achieve scientific nutrition.')}</p></div>`;
 document.getElementById('csSection').classList.remove('hidden')}
 
-// ═══ 品牌/CKD/PKU 各板块详情CSS ═══
+// ═══ 页面公共CSS ═══
 window.addEventListener('scroll',()=>{
   const h=document.documentElement;
   const st=h.scrollTop;
