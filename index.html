@@ -826,15 +826,15 @@ const IMG={
   probiotic:'images/1-rice.jpg',
 };
 const BG={
-  riceField:'images/2-grain.jpg',
-  wheat:'images/4-flour.jpg',
-  lab:'images/3-granule.png',
-  doctor:'images/5-bun.jpg',
-  world:'images/9-zongzi.jpg',
-  family:'images/7-cookie.jpg',
-  data:'images/6-noodle.jpg',
-  kitchen:'images/8-snack.png',
-  plant:'images/1-rice.jpg'
+  riceField:'',
+  wheat:'',
+  lab:'',
+  doctor:'',
+  world:'',
+  family:'',
+  data:'',
+  kitchen:'',
+  plant:''
 };
 const IC=['🍚','🌾','🌽','🫓','🥟','🍜','🍪','🥨','🫔'];
 
@@ -941,7 +941,7 @@ function goBack(){if(navStack.length<=1){navStack=[];fH();_home();window.scrollT
 function prevProduct(id){if(id>1)navigate('detail',id-1)}
 function nextProduct(id){if(id<10)navigate('detail',id+1)}
 
-function imgOrFallback(img,fb,cls,lazy=true){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}" ${lazy?'loading="lazy"':''} referrerpolicy="no-referrer" onerror="this.style.display='none'" decoding="async">`:'')}
+function imgOrFallback(img,fb,cls,lazy=true){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}" ${lazy?'loading="lazy"':''} onerror="this.style.display='none'" decoding="async">`:'')}
 function bgSection(img,dark,inner){return `<section class="sec-bg reveal ${dark?'dark':''}"><div class="bg-img ph">${imgOrFallback(img,'','bg-fb')}</div><div class="bg-overlay"></div><div class="inner">${inner}</div></section>`}
 
 let _io;
@@ -977,15 +977,13 @@ document.getElementById('app').innerHTML=`
         <span class="link-arrow" onclick="navigate('pageAcademy')">${_T('走进营养学院','Nutrition Academy')} →</span>
       </div>
     </div>
-    <div class="hero-img reveal">
-      <img src="images/2-grain.jpg" alt="${_T('森无忧营养科学院产业园区','Senwuyou Academy Campus')}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-      <div class="hero-floats" style="position:absolute;bottom:12px;left:12px;right:12px;display:flex;gap:8px;flex-wrap:wrap">
-        <span style="background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:5px 12px;border-radius:100px;backdrop-filter:blur(4px)">${_T('科研级生产线','Research Facility')}</span>
-        <span style="background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:5px 12px;border-radius:100px;backdrop-filter:blur(4px)">${_T('30年深耕营养','30 Years Research')}</span>
-      </div>
+    <div class="hero-img reveal" style="background:linear-gradient(135deg,rgba(11,94,62,.2),rgba(7,59,39,.35));display:flex;align-items:center;justify-content:center;border-radius:var(--radius-l);overflow:hidden">
+      <div style="text-align:center;padding:30px"><div style="font-size:clamp(40px,4vw,64px);margin-bottom:12px">🏛️</div><div style="font-size:clamp(14px,2vw,18px);font-weight:700;color:rgba(255,255,255,.9)">森无忧营养科学院</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:8px">科研级生产园区</div></div>
+      <div class="hero-floats" style="position:absolute;bottom:12px;left:12px;right:12px;display:flex;gap:8px;flex-wrap:wrap"><span style="background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:5px 12px;border-radius:100px;backdrop-filter:blur(4px)">科研级生产线</span><span style="background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:5px 12px;border-radius:100px;backdrop-filter:blur(4px)">30年深耕营养</span></div>
     </div>
   </div>
-  <div class="scroll-hint"><span class="line"></span>SCROLL</div>
+</div>
+<div class="scroll-hint"><span class="line"></span>SCROLL</div>
 </div>
 
 <div class="trust">
