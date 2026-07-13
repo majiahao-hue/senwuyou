@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><title>图片测试</title></head>
+<body style="padding:20px;font-family:sans-serif">
+<h2>森无忧产品图片测试</h2>
+<p>如果下面的图片能显示，说明图片托管正常，问题在网站代码</p>
+<hr>
+<div id="imgs"></div>
+<script>
+const imgs=[
+  ['米饭','1-rice.jpg'],
+  ['大米','2-grain.jpg'],
+  ['颗粒','3-granule.png'],
+  ['面粉','4-flour.jpg'],
+  ['馒头粉','5-bun.jpg'],
+  ['米粉','6-noodle.jpg'],
+  ['曲奇','7-cookie.jpg'],
+  ['零食','8-snack.png'],
+  ['粽子','9-zongzi.jpg'],
+];
+imgs.forEach(([name,file])=>{
+  const d=document.createElement('div');
+  d.style.cssText='display:inline-block;margin:10px;text-align:center;border:1px solid #ddd;padding:10px;border-radius:8px;width:200px';
+  d.innerHTML=`<img src="https://senwuyou.com/images/${file}" style="width:180px;height:180px;object-fit:cover;border-radius:4px" onerror="this.parentElement.style.background='#fee';this.alt='加载失败: ${file}'"><br><b>${name}</b><br><small>${file}</small>`;
+  document.getElementById('imgs').appendChild(d);
+});
+</script>
+</body>
+</html>
