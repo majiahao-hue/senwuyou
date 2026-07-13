@@ -815,16 +815,16 @@ table tbody tr:hover{background:var(--green-soft)}
 
 <script>
 const IMG={
-  rice:'https://senwuyou.com/images/1-rice.jpg',
-  grain:'https://senwuyou.com/images/2-grain.jpg',
-  granule:'https://senwuyou.com/images/3-granule.png',
-  flour:'https://senwuyou.com/images/4-flour.jpg',
-  bun:'https://senwuyou.com/images/5-bun.jpg',
-  noodle:'https://senwuyou.com/images/6-noodle.jpg',
-  cookie:'https://senwuyou.com/images/7-cookie.jpg',
-  snack:'https://senwuyou.com/images/8-snack.png',
-  zongzi:'https://senwuyou.com/images/9-zongzi.jpg',
-  probiotic:'https://senwuyou.com/images/1-rice.jpg',
+  rice:'images/1-rice.jpg',
+  grain:'images/2-grain.jpg',
+  granule:'images/3-granule.png',
+  flour:'images/4-flour.jpg',
+  bun:'images/5-bun.jpg',
+  noodle:'images/6-noodle.jpg',
+  cookie:'images/7-cookie.jpg',
+  snack:'images/8-snack.png',
+  zongzi:'images/9-zongzi.jpg',
+  probiotic:'images/1-rice.jpg',
 };
 const BG={
   riceField:'',
@@ -1620,19 +1620,50 @@ document.getElementById('csSection').classList.remove('hidden')}
 // ═══ 社区 ═══
 function _pageCommunity(){setTab(6);
 document.getElementById('app').innerHTML=`
-${bgSection(BG.family,false,`
-  <div class="sec-head reveal"><span class="eyebrow d">${_T('营养社区','Community')}</span><h2 class="h2">${_T('分享交流 共同成长','Share & Grow Together')}<span class="en">Community</span></h2><p class="sec-sub">${_T('森无忧营养社区——用户间交流科学饮食心得，分享健康生活体验，让营养知识在互动中传播。','Share dietary insights, exchange healthy living tips in our community.')}</p></div>
-`)}
-
-<div class="qa-grid reveal" style="max-width:var(--max-w);margin:20px auto clamp(40px,5vw,60px);padding:0 clamp(20px,4vw,48px)">
-  <div class="qa-card"><h4>${_T('🍚 如何判断自己每天该吃多少主食？','How much staple food daily?')}</h4><p>${_T('一般成年人每日主食推荐量为200-400克（生重）。每餐主食约为一个拳头大小。建议根据活动量调整，体力劳动者适当增加。','Adults typically need 200-400g of staples daily. Use fist size as rough guide — one fist per meal. Adjust based on activity.')}</p></div>
-  <div class="qa-card"><h4>${_T('🥗 三餐怎么搭配最合理？','Best meal combination?')}</h4><p>${_T('推荐餐盘法则：每餐主食1/4、蛋白质类1/4、蔬菜水果1/2。保证食材多样化，每周摄入25种以上不同食材。','Plate rule: 1/4 staples, 1/4 protein, 1/2 vegetables per meal. Aim for 25+ different ingredients weekly.')}</p></div>
-  <div class="qa-card"><h4>${_T('💪 运动前后怎么吃？','What to eat around exercise?')}</h4><p>${_T('运动前1-2小时摄入复合碳水。运动后30分钟内补充蛋白质+碳水，如酸奶+水果或鸡蛋+全麦面包。','Complex carbs 1-2h before exercise. Protein + carbs within 30min after, like yogurt with fruit.')}</p></div>
-  <div class="qa-card"><h4>${_T('🥘 森无忧米饭可以直接冷吃吗？','Can Senwuyou rice be eaten cold?')}</h4><p>${_T('森无忧米饭常温开袋即食，冷热均可。如需加热，请按包装说明操作。加热后请尽快食用完毕。','Ready-to-eat at room temperature, hot or cold. Follow package instructions if heating.')}</p></div>
-</div>
-
-<div class="closing reveal" style="padding:clamp(40px,5vw,60px) clamp(20px,4vw,48px);background:var(--paper-card);text-align:center"><h2>${_T('加入森无忧营养社区','Join Senwuyou Community')}</h2><p>${_T('分享你的饮食心得，帮助更多人实现科学营养、无忧生活。','Share your dietary insights and help more people achieve scientific nutrition.')}</p></div>`;
-document.getElementById('csSection').classList.remove('hidden')}
+<div class="detail" style="max-width:900px;padding:clamp(20px,4vw,32px) clamp(20px,4vw,48px)">
+  <div class="sec-head reveal" style="margin-bottom:24px"><span class="eyebrow d">${_T('营养社区','Community')}</span><h2 class="h2">${_T('分享交流 共同成长','Share & Grow Together')}<span class="en">Community</span></h2><p class="sec-sub">${_T('森无忧营养社区——自由交流饮食心得，分享健康生活，上传美食图片，让营养知识在互动中传递。','Share freely: dietary tips, healthy living, food photos. Connect with fellow nutrition enthusiasts.')}</p></div>
+  <div class="note reveal" style="margin-bottom:24px;background:#fff8e1;border-left:4px solid #ff9800;padding:clamp(12px,2vw,20px) clamp(16px,3vw,24px);border-radius:var(--radius);font-size:13px;line-height:1.8;color:#8a6300">
+    <strong>\u{1f4ac} ${_T('社区使用说明','Community Guide')}</strong><br>
+    ${_T('1. 下方评论区支持自由发言、回复、点赞。','1. Comment, reply, and react freely below.')}<br>
+    ${_T('2. 可上传图片分享你的美食作品和饮食心得。','2. Upload images to share your food creations and tips.')}<br>
+    ${_T('3. 首次使用需授权 GitHub 账号登录（安全可靠）。','3. First-time users: sign in with GitHub (secure).')}<br>
+    ${_T('4. 也可加入我们的微信群/QQ群，搜索"森无忧营养社区"。','4. Or join our WeChat/QQ groups — search "森无忧营养社区".')}
+  </div>
+  <div class="reveal" style="background:#fff;border-radius:var(--radius-l);padding:clamp(16px,3vw,32px);box-shadow:var(--shadow-card);border:1px solid var(--line-l);min-height:400px">
+    <div id="giscus-container" style="min-height:300px;text-align:center;padding:40px;color:var(--muted)">
+      <p style="font-size:15px;margin-bottom:12px">${_T('正在加载社区交流区...','Loading community discussion...')}</p>
+      <p style="font-size:12px">${_T('如长时间未加载，请确保网络畅通或刷新页面。','If loading takes long, check your network or refresh.')}</p>
+    </div>
+  </div>
+</div>`;
+document.getElementById('csSection').classList.remove('hidden');
+// Load Giscus when community page is shown
+setTimeout(function(){
+  var container=document.getElementById('giscus-container');
+  if(!container||container.querySelector('script'))return;
+  container.innerHTML='';
+  var s=document.createElement('script');
+  s.src='https://giscus.app/client.js';
+  s.setAttribute('data-repo','majiahao-hue/senwuyou');
+  s.setAttribute('data-repo-id','R_kgDO_NOT_SET');
+  s.setAttribute('data-category','General');
+  s.setAttribute('data-category-id','DIC_kwDO_NOT_SET');
+  s.setAttribute('data-mapping','pathname');
+  s.setAttribute('data-strict','0');
+  s.setAttribute('data-reactions-enabled','1');
+  s.setAttribute('data-emit-metadata','0');
+  s.setAttribute('data-input-position','bottom');
+  s.setAttribute('data-theme','light');
+  s.setAttribute('data-lang','zh-CN');
+  s.crossOrigin='anonymous';
+  s.async=true;
+  s.onerror=function(){
+    container.innerHTML='<div style=\"text-align:center;padding:40px;color:var(--muted)\"><p style=\"font-size:15px;margin-bottom:12px\">'+_T('社区评论系统尚未配置','Discussion system not configured yet')+'</p><p style=\"font-size:12px;margin-bottom:16px\">'+_T('请访问 giscus.app 配置后即可使用，或先加入微信群交流。','Visit giscus.app to configure, or join WeChat group.')+'</p><p style=\"font-size:13px;color:var(--green);font-weight:600\">'+_T('森无忧营养社区交流群：搜索微信/QQ群','Community groups: Search WeChat/QQ')+'</p></div>';
+  };
+  container.appendChild(s);
+  setupReveal();
+},500);
+}
 
 // ═══ 页面公共CSS ═══
 window.addEventListener('scroll',()=>{
@@ -1650,7 +1681,7 @@ navigate('home');
 </script>
 <!-- 诊断：如果下面图片能显示，说明图片URL可访问 -->
 <div id="imgDiag" style="position:fixed;bottom:8px;right:8px;z-index:9999;background:#fff;border:2px solid red;padding:4px;border-radius:4px;font-size:10px;max-width:120px">
-<img src="https://senwuyou.com/images/1-rice.jpg" style="width:100%;max-height:80px;object-fit:cover" onerror="document.getElementById('imgDiag').innerHTML='<b style=color:red>IMG FAILED</b>'" onload="document.getElementById('imgDiag').style.borderColor='green';document.getElementById('imgDiag').innerHTML+='<b style=color:green>IMG OK</b>'">
+<img src="images/1-rice.jpg" style="width:100%;max-height:80px;object-fit:cover" onerror="document.getElementById('imgDiag').innerHTML='<b style=color:red>IMG FAILED</b>'" onload="document.getElementById('imgDiag').style.borderColor='green';document.getElementById('imgDiag').innerHTML+='<b style=color:green>IMG OK</b>'">
 <small>诊断图</small>
 </div>
 </body>
