@@ -1141,8 +1141,31 @@ ${(function showProducts(){return P.map((p,i)=>`<div class="film-item reveal" on
       <div style="padding:16px 20px"><span style="display:inline-block;font-size:10px;padding:3px 10px;border-radius:100px;background:var(--green-soft);color:var(--green);font-weight:600;margin-bottom:8px">合作发展</span><h4 style="font-size:15px;font-weight:700;line-height:1.3;margin-bottom:6px">9个月内完成3笔自研产品对外授权</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">济民可信先后与沪亚生物、芬兰Orion、罗氏基因泰克达成授权合作，创新实力获国际认可。</p></div>
     </div>
   </div>
-</div>`;
-}
+</div>
+
+<div class="reveal" style="max-width:var(--max-w);margin:clamp(40px,5vw,60px) auto;padding:0 clamp(20px,4vw,48px)">
+  <div class="sec-head"><span class="eyebrow d">荣誉资质</span><h2 class="h2" style="font-size:clamp(22px,2.5vw,32px)">品牌荣誉与行业认可<span class="en">Honors</span></h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+    <div class="tech-block"><div style="font-size:32px;margin-bottom:10px">🏆</div><h4 style="font-weight:700;color:var(--green);margin-bottom:6px">国家实用新型专利</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">2020年获得国家实用新型专利认证，真米脱蛋白技术受知识产权保护</p></div>
+    <div class="tech-block"><div style="font-size:32px;margin-bottom:10px">🔬</div><h4 style="font-weight:700;color:var(--green);margin-bottom:6px">国家级科研课题</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">参与国家级营养研究课题，与多所高校建立产学研合作</p></div>
+    <div class="tech-block"><div style="font-size:32px;margin-bottom:10px">✅</div><h4 style="font-weight:700;color:var(--green);margin-bottom:6px">一致性评价通过</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">森同复方a-酮酸片获国家药监局一致性评价批准</p></div>
+    <div class="tech-block"><div style="font-size:32px;margin-bottom:10px">🤝</div><h4 style="font-weight:700;color:var(--green);margin-bottom:6px">国际授权合作</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">先后与沪亚生物、芬兰Orion、罗氏基因泰克达成授权合作</p></div>
+    <div class="tech-block"><div style="font-size:32px;margin-bottom:10px">📋</div><h4 style="font-weight:700;color:var(--green);margin-bottom:6px">SC食品许可证</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">食品生产许可证SC10732012400833，药企质量管理体系保障</p></div>
+  </div>
+</div>
+
+${bgSection(BG.wheat,false,`
+  <div class="sec-head reveal"><span class="eyebrow d">服务保障</span><h2 class="h2" style="font-size:clamp(22px,2.5vw,32px)">从研发到餐桌的全流程品质保障<span class="en">Service</span></h2></div>
+  <div class="tech-grid reveal">
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">🧪</div><h4>源头甄选</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">优选黑龙江优质稻米原料产地，建立专属种植基地，从源头把控品质与安全，确保每一粒米的纯净和营养</p></div>
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">⚙️</div><h4>制药级生产</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">依托济民可信恒生制药生产基地，执行GMP标准生产规范，10万级洁净车间，全程智能化温控管理</p></div>
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">🔍</div><h4>质量检测</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">X光异物检测+HPLC精密分析+微生物指标全项检测，三检体系确保每批次产品均通过严格质检标准</p></div>
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">🚚</div><h4>全国配送</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">全国范围的顺丰冷链配送网络，确保产品从出厂到消费者手中始终保持最佳品质状态</p></div>
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">🏥</div><h4>专业服务</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">全国热线400-009-2535，专业营养师团队提供在线咨询服务，持续输出科学膳食知识</p></div>
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">💚</div><h4>国民营养计划</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">积极响应国家《国民营养计划2030》，以科学膳食推动全民营养健康，让均衡营养成为每个家庭的日常</p></div>
+  </div>
+`)}`;
+
 
 // ═══ 详情 ═══
 function _detail(id){setTab(0);document.getElementById('csSection').classList.add('hidden');const p=P.find(x=>x.id===id);if(!p){goBack();return}
@@ -1579,8 +1602,29 @@ ${bgSection(BG.doctor,true,`
   <div class="flow-step"><div class="flow-num">04</div><h4>X光检测</h4><p>全覆盖X光异物检测，确保每一份产品的安全。</p></div>
   <div class="flow-step"><div class="flow-num">05</div><h4>HPLC分析</h4><p>高效液相色谱精准分析，品质数据化管控。</p></div>
   <div class="flow-step"><div class="flow-num">06</div><h4>无菌封装</h4><p>全程无菌环境封装，确保产品从出厂到餐桌的品质。</p></div>
+</div>
+
+<div class="reveal" style="max-width:var(--max-w);margin:clamp(40px,5vw,60px) auto;padding:0 clamp(20px,4vw,48px)">
+  <div class="sec-head"><span class="eyebrow d">企业荣誉</span><h2 class="h2" style="font-size:clamp(22px,2.5vw,32px)">科研实力与行业影响力<span class="en">Credentials</span></h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+    <div class="tech-block"><div style="font-size:36px;margin-bottom:10px">🏆</div><h4 style="font-weight:700;margin-bottom:6px">国家实用新型专利</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">2020年获国家实用新型专利认证，真米脱蛋白技术获知识产权保护，技术水平行业领先</p></div>
+    <div class="tech-block"><div style="font-size:36px;margin-bottom:10px">🔬</div><h4 style="font-weight:700;margin-bottom:6px">产学研合作</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">与多所高校及科研机构建立长期产学研合作关系，参与国家级营养研究课题</p></div>
+    <div class="tech-block"><div style="font-size:36px;margin-bottom:10px">📋</div><h4 style="font-weight:700;margin-bottom:6px">药品一致性评价</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">森同复方a-酮酸片通过仿制药质量和安全性一致性评价，药品质控能力业内标杆</p></div>
+    <div class="tech-block"><div style="font-size:36px;margin-bottom:10px">🌍</div><h4 style="font-weight:700;margin-bottom:6px">国际化战略</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">先后与沪亚生物、芬兰Orion、罗氏基因泰克等国际医药巨头达成授权合作，创新获全球认可</p></div>
+    <div class="tech-block"><div style="font-size:36px;margin-bottom:10px">🤝</div><h4 style="font-weight:700;margin-bottom:6px">行业认可</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">森无忧营养研究院获评年度健康品牌，以科学营养理念和优质产品获行业与消费者双重认可</p></div>
+    <div class="tech-block"><div style="font-size:36px;margin-bottom:10px">📚</div><h4 style="font-weight:700;margin-bottom:6px">全国合作网络</h4><p style="font-size:12px;color:var(--muted);line-height:1.6">与数十家医疗机构建立稳定的供应合作关系，持续推动科学特殊膳食方案走进实践应用</p></div>
+  </div>
+</div>
+
+<div class="reveal" style="max-width:var(--max-w);margin:clamp(40px,5vw,60px) auto;padding:0 clamp(20px,4vw,48px)">
+  <div class="sec-head"><span class="eyebrow d">社会责任</span><h2 class="h2" style="font-size:clamp(22px,2.5vw,32px)">公益行动与社会担当<span class="en">CSR</span></h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">💝</div><h4 style="font-weight:700;margin-bottom:8px">上海疫情公益捐赠</h4><p style="font-size:12px;color:var(--muted);line-height:1.7">2022年上海疫情期间，森无忧背后的济民可信恒生制药向上海百余名肾脏健康与氨基酸代谢需求人群，无偿捐赠低蛋白米饭、大米、曲奇各100箱，价值10.7万元，保障特殊需求人士一个月口粮。（据新华财经报道）</p></div>
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">📖</div><h4 style="font-weight:700;margin-bottom:8px">全民营养科普行动</h4><p style="font-size:12px;color:var(--muted);line-height:1.7">2023年启动全民营养科普行动，联合多家机构推广科学膳食理念，覆盖线上知识传播与线下社区讲座，年触达人群超百万人次</p></div>
+    <div class="tech-block"><div style="font-size:28px;margin-bottom:8px">🎓</div><h4 style="font-weight:700;margin-bottom:8px">校园营养教育</h4><p style="font-size:12px;color:var(--muted);line-height:1.7">与高校和中小学合作开展营养科普课堂，培养青少年科学膳食意识，从娃娃抓起推动国民营养健康</p></div>
+  </div>
 </div>`;
-}
+
 
 // ═══ 科普 ═══
 function _pageScience(){setTab(4);document.getElementById('csSection').classList.add('hidden');
