@@ -137,6 +137,60 @@ function setupReveal(){
   _io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');_io.unobserve(e.target);if(e.target.dataset.count)animateCount(e.target.querySelector('b'),e.target.dataset.count)}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});
   document.querySelectorAll('#app '+sel).forEach(el=>_io.observe(el));
   document.querySelectorAll('#app .mask').forEach((m,i)=>{setTimeout(()=>m.classList.add('show'),200+i*120)});
+  init3DTilt();
+}
+function init3DTilt(){
+  document.querySelectorAll('#app .detail-img-3d').forEach(function(card){
+    if(card.dataset.tiltInited) return;
+    card.dataset.tiltInited = '1';
+    var inner = card.querySelector('.detail-img-3d-inner');
+    var shine = card.querySelector('.detail-img-3d-shine');
+    var img = inner ? inner.querySelector('img') : null;
+    if(!inner) return;
+    function reset(){
+      inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      if(img) img.style.transform = 'translate(-2.5%,-2.5%) scale(1)';
+      if(shine) shine.style.opacity = '0';
+    }
+    card.addEventListener('mousemove', function(e){
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var cx = rect.width / 2;
+      var cy = rect.height / 2;
+      var rx = ((y - cy) / cy) * -12;
+      var ry = ((x - cx) / cx) * 12;
+      inner.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+      if(img) img.style.transform = 'translate(-2.5%,-2.5%) scale(1.04)';
+      if(shine){
+        var sx = (x / rect.width) * 100;
+        var sy = (y / rect.height) * 100;
+        shine.style.background = 'radial-gradient(circle at ' + sx.toFixed(0) + '% ' + sy.toFixed(0) + '%, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 65%)';
+        shine.style.opacity = '1';
+      }
+    });
+    card.addEventListener('mouseleave', reset);
+    card.addEventListener('touchmove', function(e){
+      e.preventDefault();
+      var touch = e.touches[0];
+      var rect = card.getBoundingClientRect();
+      var x = touch.clientX - rect.left;
+      var y = touch.clientY - rect.top;
+      var cx = rect.width / 2;
+      var cy = rect.height / 2;
+      var rx = ((y - cy) / cy) * -10;
+      var ry = ((x - cx) / cx) * 10;
+      inner.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+      if(img) img.style.transform = 'translate(-2.5%,-2.5%) scale(1.04)';
+      if(shine){
+        var sx = (x / rect.width) * 100;
+        var sy = (y / rect.height) * 100;
+        shine.style.background = 'radial-gradient(circle at ' + sx.toFixed(0) + '% ' + sy.toFixed(0) + '%, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 65%)';
+        shine.style.opacity = '1';
+      }
+    }, {passive: false});
+    card.addEventListener('touchend', reset);
+  });
 }
 function animateCount(el,target){
   if(!el)return;
@@ -272,7 +326,7 @@ document.getElementById('app').innerHTML=`
 <div class="page-bg">${imgOrFallback(BG.riceField,'','pb-fb')}</div>
 <div class="detail">
   <div class="detail-hero">
-    <div class="detail-img ph reveal">${imgOrFallback(p.img,IC[p.id-1],'df')}</div>
+    <div class="detail-img-3d ph reveal"><div class="detail-img-3d-inner">${imgOrFallback(p.img,IC[p.id-1],'df')}</div><div class="detail-img-3d-shine"></div><div class="detail-img-3d-label">360° 拖拽查看</div></div>
     <div class="detail-info reveal">
       <div class="detail-card">
         <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
