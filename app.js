@@ -140,56 +140,45 @@ function setupReveal(){
   init3DTilt();
 }
 function init3DTilt(){
-  document.querySelectorAll('#app .detail-img-3d').forEach(function(card){
-    if(card.dataset.tiltInited) return;
-    card.dataset.tiltInited = '1';
-    var inner = card.querySelector('.detail-img-3d-inner');
-    var shine = card.querySelector('.detail-img-3d-shine');
-    var img = inner ? inner.querySelector('img') : null;
-    if(!inner) return;
+  document.querySelectorAll('#app .cube-scene').forEach(function(scene){
+    if(scene.dataset.tiltInited) return;
+    scene.dataset.tiltInited = '1';
+    var cube = scene.querySelector('.cube');
+    var shadow = scene.querySelector('.cube-shadow');
+    if(!cube) return;
+    var baseX = -8, baseY = 15;
+    var maxDeg = 22;
     function reset(){
-      inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
-      if(img) img.style.transform = 'translate(-2.5%,-2.5%) scale(1)';
-      if(shine) shine.style.opacity = '0';
+      cube.style.transform = 'rotateX(' + baseX + 'deg) rotateY(' + baseY + 'deg)';
+      if(shadow) shadow.style.transform = 'translateZ(0)';
+      if(shadow) shadow.style.opacity = '1';
     }
-    card.addEventListener('mousemove', function(e){
-      var rect = card.getBoundingClientRect();
+    scene.addEventListener('mousemove', function(e){
+      var rect = scene.getBoundingClientRect();
       var x = e.clientX - rect.left;
       var y = e.clientY - rect.top;
-      var cx = rect.width / 2;
-      var cy = rect.height / 2;
-      var rx = ((y - cy) / cy) * -12;
-      var ry = ((x - cx) / cx) * 12;
-      inner.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
-      if(img) img.style.transform = 'translate(-2.5%,-2.5%) scale(1.04)';
-      if(shine){
-        var sx = (x / rect.width) * 100;
-        var sy = (y / rect.height) * 100;
-        shine.style.background = 'radial-gradient(circle at ' + sx.toFixed(0) + '% ' + sy.toFixed(0) + '%, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 65%)';
-        shine.style.opacity = '1';
+      var rx = ((y / rect.height) - 0.5) * -2;
+      var ry = ((x / rect.width) - 0.5) * 2;
+      var rotX = baseX + rx * maxDeg;
+      var rotY = baseY + ry * maxDeg;
+      cube.style.transform = 'rotateX(' + rotX.toFixed(1) + 'deg) rotateY(' + rotY.toFixed(1) + 'deg)';
+      if(shadow){
+        shadow.style.transform = 'translateX(' + (ry * 12).toFixed(0) + 'px) scaleX(' + (1 - Math.abs(ry) * 0.15).toFixed(2) + ')';
+        shadow.style.opacity = (0.7 + Math.abs(ry) * 0.3).toFixed(2);
       }
     });
-    card.addEventListener('mouseleave', reset);
-    card.addEventListener('touchmove', function(e){
+    scene.addEventListener('mouseleave', reset);
+    scene.addEventListener('touchmove', function(e){
       e.preventDefault();
       var touch = e.touches[0];
-      var rect = card.getBoundingClientRect();
+      var rect = scene.getBoundingClientRect();
       var x = touch.clientX - rect.left;
       var y = touch.clientY - rect.top;
-      var cx = rect.width / 2;
-      var cy = rect.height / 2;
-      var rx = ((y - cy) / cy) * -10;
-      var ry = ((x - cx) / cx) * 10;
-      inner.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
-      if(img) img.style.transform = 'translate(-2.5%,-2.5%) scale(1.04)';
-      if(shine){
-        var sx = (x / rect.width) * 100;
-        var sy = (y / rect.height) * 100;
-        shine.style.background = 'radial-gradient(circle at ' + sx.toFixed(0) + '% ' + sy.toFixed(0) + '%, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 65%)';
-        shine.style.opacity = '1';
-      }
+      var rx = ((y / rect.height) - 0.5) * -2;
+      var ry = ((x / rect.width) - 0.5) * 2;
+      cube.style.transform = 'rotateX(' + (baseX + rx * maxDeg).toFixed(1) + 'deg) rotateY(' + (baseY + ry * maxDeg).toFixed(1) + 'deg)';
     }, {passive: false});
-    card.addEventListener('touchend', reset);
+    scene.addEventListener('touchend', reset);
   });
 }
 function animateCount(el,target){
@@ -326,7 +315,7 @@ document.getElementById('app').innerHTML=`
 <div class="page-bg">${imgOrFallback(BG.riceField,'','pb-fb')}</div>
 <div class="detail">
   <div class="detail-hero">
-    <div class="detail-img-3d ph reveal"><div class="detail-img-3d-inner">${imgOrFallback(p.img,IC[p.id-1],'df')}</div><div class="detail-img-3d-shine"></div><div class="detail-img-3d-label">360° 拖拽查看</div></div>
+    <div class="cube-scene reveal"><div class="cube"><div class="cube-face cube-front">${p.img?`<img src="${p.img}" alt="${p.name}">`:imgOrFallback('',IC[p.id-1],'df')}</div><div class="cube-face cube-right"><div class="cr-icon">📦</div><div class="cr-title">${p.name}</div><div class="cr-sub">${p.w}</div></div><div class="cube-face cube-top">🍚</div></div><div class="cube-shadow"></div><div class="cube-hint">🖱 拖拽旋转查看</div></div>
     <div class="detail-info reveal">
       <div class="detail-card">
         <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
@@ -384,6 +373,7 @@ document.getElementById('app').innerHTML=`
     <button class="next" onclick="nextProduct(${p.id})" ${next?'':'disabled'}><div><div class="dn-label">下一款 →</div><div class="dn-name">${next?next.name:_T('已是最后一款','Last Product')}</div></div></button>
   </div>
 </div>`;
+setTimeout(init3DTilt, 80);
 }
 
 // ═══ 营养 ═══
