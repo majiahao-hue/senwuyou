@@ -43,7 +43,7 @@ function switchLang(l){
   _L=l;
   document.querySelectorAll('#lang button').forEach((b,i)=>b.classList.toggle('active',(i===0&&l==='zh')||(i===1&&l==='en')));
   document.querySelectorAll('.nav-tabs button').forEach((b,i)=>{
-    const t=[_T('首页','Home'),_T('品牌','Brand'),_T('营养学院','Academy'),_T('科学成就','Achieve'),_T('科普','Science'),_T('商城','Store'),_T('计算器','Calc')];
+    const t=[_T('首页','Home'),_T('品牌','Brand'),_T('营养学院','Academy'),_T('科学成就','Achieve'),_T('科普','Science'),_T('商城','Store'),_T('营养工具','Tools')];
     b.childNodes[0].textContent=t[i];
   });
   if(_curFn)window['_'+_curFn.fn](..._curFn.args);
@@ -407,7 +407,7 @@ function _calculator(id){setTab(6);
 document.getElementById('app').innerHTML=`
 <div class="page-bg">${imgOrFallback(BG.lab,'','pb-fb')}</div>
 <div class="detail" style="max-width:820px">
-  <div class="sec-head reveal" style="margin-bottom:28px"><span class="eyebrow d">Calculator · 营养计算器</span><h2 class="h2">${_T('一日三餐营养计算器','Daily Nutrition Calculator')}<span class="en">${_T('控蛋白 · 控钠钾磷','Track Protein · Na · K · P')}</span></h2><p class="sec-sub">${_T('输入今天三餐吃了什么，自动核算蛋白质、钠、钾、磷是否超出每日限额——专为需要控制蛋白与矿物质摄入的人群设计。','Enter your three meals to auto-check protein, sodium, potassium and phosphorus against your daily limits.')}</p></div>
+  <div class="sec-head reveal" style="margin-bottom:28px"><span class="eyebrow d">Tools · 营养工具</span><h2 class="h2">${_T('一日三餐营养测算','Daily Nutrition Tools')}<span class="en">${_T('控蛋白 · 控钠钾磷','Track Protein · Na · K · P')}</span></h2><p class="sec-sub">${_T('输入今天三餐吃了什么，自动核算蛋白质、钠、钾、磷是否超出每日限额——专为需要控制蛋白与矿物质摄入的人群设计。','Enter your three meals to auto-check protein, sodium, potassium and phosphorus against your daily limits.')}</p></div>
   <div class="calc-split">
     <button class="cs-tab on" id="tabNutri" onclick="switchCalc('nutri')">🍽️ ${_T('营养计算器','Nutrition')}</button>
     <button class="cs-tab" id="tabHealth" onclick="switchCalc('health')">❤️ ${_T('健康度评估','Health Score')}</button>
