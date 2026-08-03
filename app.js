@@ -920,7 +920,7 @@ ${bgSection(BG.wheat,false,`
   <a class="channel-card" href="https://mall.jd.com/index-森无忧.html" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-jd.png" alt="京东" class="brand-img" width="68" height="68"></div><h3>京东旗舰店</h3><p>森无忧京东官方旗舰店，正品直营，快速配送。点击进入选购全品类产品。</p><span class="ch-link">进入店铺 →</span></a>
   <a class="channel-card" href="https://森无忧.taobao.com" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-taobao.png" alt="淘宝" class="brand-img" width="68" height="68"></div><h3>淘宝旗舰店</h3><p>森无忧淘宝官方旗舰店，优惠活动丰富，购物更便捷。</p><span class="ch-link">进入店铺 →</span></a>
   <a class="channel-card" href="https://mobile.yangkeduo.com/mall_page.html?mall_id=森无忧" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-pdd.png" alt="拼多多" class="brand-img" width="68" height="68"></div><h3>拼多多旗舰店</h3><p>森无忧拼多多官方旗舰店，人人买得起的好产品。</p><span class="ch-link">进入店铺 →</span></a>
-  <a class="channel-card" href="https://www.douyin.com/" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-douyin.png" alt="抖音" class="brand-img" width="68" height="68"></div><h3>抖音旗舰店</h3><p>森无忧抖音官方旗舰店，短视频种草，直播专属福利。点击进入选购全品类产品。</p><span class="ch-link">进入店铺 →</span></a>
+  <div class="channel-card" style="cursor:default"><div class="ch-icon"><img src="images/icon-douyin.png" alt="抖音" class="brand-img" width="68" height="68"></div><h3>抖音旗舰店</h3><p>森无忧抖音官方旗舰店即将上线，短视频种草，直播专属福利，敬请期待。</p><span class="ch-link" style="opacity:.55;cursor:default">即将上线</span></div>
 </div>
 
 <div class="reveal" style="max-width:var(--max-w);margin:clamp(24px,3vw,40px) auto;padding:0 clamp(20px,4vw,48px)">
