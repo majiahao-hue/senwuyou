@@ -151,7 +151,7 @@ function animateCount(el,target){
 function _home(){setTab(0);document.getElementById('csSection').classList.remove('hidden');
 document.getElementById('app').innerHTML=`
 <div class="hero">
-  <div class="hero-bg ph"><img src="images/rc-hero-4k.png" alt="恒生制药厂区"></div>
+  <div class="hero-bg ph"><img src="images/rc-hero.jpg" alt="恒生制药厂区"></div>
   <div class="bg-overlay"></div>
   <div class="hero-inner">
     <div class="hero-txt">
