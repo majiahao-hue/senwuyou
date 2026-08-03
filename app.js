@@ -189,7 +189,7 @@ ${bgSection(BG.doctor,true,`
   <div class="tech-grid reveal">
     <div class="tech-item"><div class="tech-icon imgico"><img src="images/rd-lab3.jpg" alt="脱蛋白技术"></div><h4>真米脱蛋白技术</h4><p>采用物理酶解工艺，在保留天然米香和口感的同时，精准调控营养成分，实现科学配比。</p></div>
     <div class="tech-item"><div class="tech-icon imgico"><img src="images/rd-line3.jpg" alt="科研生产"></div><h4>高标准科研生产</h4><p>全程温控生产，X光异物检测，HPLC精准分析。每一个环节都经得起科学检验。</p></div>
-    <div class="tech-item"><div class="tech-icon imgico"><img src="images/meal-grain.jpg" alt="全品类覆盖"></div><h4>全品类覆盖</h4><p>从主食到大米、面粉、面条、曲奇、粽子，覆盖三餐加餐全部场景，满足多元需求。</p></div>
+    <div class="tech-item"><div class="tech-icon imgico"><img src="images/2-grain.jpg" alt="全品类覆盖"></div><h4>全品类覆盖</h4><p>从主食到大米、面粉、面条、曲奇、粽子，覆盖三餐加餐全部场景，满足多元需求。</p></div>
   </div>
 `)}
 
