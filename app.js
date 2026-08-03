@@ -917,9 +917,9 @@ ${bgSection(BG.wheat,false,`
 `)}
 
 <div class="channel-grid reveal" style="max-width:var(--max-w);margin:20px auto;padding:0 clamp(20px,4vw,48px)">
-  <a class="channel-card" href="https://mall.jd.com/index-森无忧.html" target="_blank" rel="noopener"><div class="ch-icon">🛒</div><h3>京东旗舰店</h3><p>森无忧京东官方旗舰店，正品直营，快速配送。点击进入选购全品类产品。</p><span class="ch-link">进入店铺 →</span></a>
-  <a class="channel-card" href="https://森无忧.taobao.com" target="_blank" rel="noopener"><div class="ch-icon">🛍️</div><h3>淘宝旗舰店</h3><p>森无忧淘宝官方旗舰店，优惠活动丰富，购物更便捷。</p><span class="ch-link">进入店铺 →</span></a>
-  <a class="channel-card" href="https://mobile.yangkeduo.com/mall_page.html?mall_id=森无忧" target="_blank" rel="noopener"><div class="ch-icon">📱</div><h3>拼多多旗舰店</h3><p>森无忧拼多多官方旗舰店，人人买得起的好产品。</p><span class="ch-link">进入店铺 →</span></div>
+  <a class="channel-card" href="https://mall.jd.com/index-森无忧.html" target="_blank" rel="noopener"><div class="ch-icon"><span class="brand-badge jd">京东</span></div><h3>京东旗舰店</h3><p>森无忧京东官方旗舰店，正品直营，快速配送。点击进入选购全品类产品。</p><span class="ch-link">进入店铺 →</span></a>
+  <a class="channel-card" href="https://森无忧.taobao.com" target="_blank" rel="noopener"><div class="ch-icon"><span class="brand-badge tb">淘宝</span></div><h3>淘宝旗舰店</h3><p>森无忧淘宝官方旗舰店，优惠活动丰富，购物更便捷。</p><span class="ch-link">进入店铺 →</span></a>
+  <a class="channel-card" href="https://mobile.yangkeduo.com/mall_page.html?mall_id=森无忧" target="_blank" rel="noopener"><div class="ch-icon"><span class="brand-badge pdd">拼多多</span></div><h3>拼多多旗舰店</h3><p>森无忧拼多多官方旗舰店，人人买得起的好产品。</p><span class="ch-link">进入店铺 →</span></div>
 
 <div class="reveal" style="max-width:var(--max-w);margin:clamp(24px,3vw,40px) auto;padding:0 clamp(20px,4vw,48px)">
   <div style="background:#fff;border-radius:var(--radius-l);border:1px solid var(--line-l);box-shadow:var(--shadow-card);padding:clamp(24px,3vw,40px);display:flex;gap:clamp(20px,3vw,40px);align-items:center;flex-wrap:wrap;justify-content:center">
