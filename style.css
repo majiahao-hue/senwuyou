@@ -878,6 +878,30 @@ table tbody tr:hover{background:var(--green-soft)}
 .cr-mini span{background:var(--paper-card);padding:4px 12px;border-radius:100px;border:1px solid var(--line-l)}
 .sec-bg.dark .cr-mini span{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
 
+/* ═══ 计算器内部分段（营养 / 健康度）═══ */
+.calc-split{display:flex;gap:8px;justify-content:center;margin:0 auto 24px;max-width:440px}
+.calc-split .cs-tab{padding:11px 22px;border:1px solid var(--line);background:var(--paper-card);border-radius:100px;font-size:13.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .3s;font-family:var(--font-sans)}
+.calc-split .cs-tab:hover{color:var(--ink)}
+.calc-split .cs-tab.on{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 4px 14px rgba(13,94,62,.25)}
+.seg{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#fff;border:1px solid var(--line);border-radius:100px;font-size:14px;font-weight:600;cursor:pointer}
+.sec-bg.dark .seg{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}
+.seg input{accent-color:var(--green);width:16px;height:16px}
+.health-score{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.score-ring{position:relative;width:140px;height:140px;flex-shrink:0}
+.score-ring svg{transform:rotate(-90deg);display:block}
+.score-ring .sq{fill:none;stroke-width:12;stroke-linecap:round}
+.score-ring .sq.bg{stroke:var(--line-l)}
+.score-ring .sq.fg{transition:stroke-dashoffset .7s cubic-bezier(.22,1,.36,1),stroke .4s}
+.score-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.score-num b{font-size:46px;font-weight:800;line-height:1;font-family:var(--font-num);color:var(--ink)}
+.score-num span{font-size:13px;font-weight:700;margin-top:3px}
+.score-desc{flex:1;min-width:220px;font-size:14px;line-height:1.75;color:var(--muted)}
+.hc-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.hc-m{background:var(--paper-card);border:1px solid var(--line-l);border-radius:var(--radius);padding:16px 10px;text-align:center}
+.sec-bg.dark .hc-m{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+.hc-m .v{font-size:22px;font-weight:800;font-family:var(--font-num);line-height:1.1;color:var(--ink)}
+.hc-m .l{font-size:12px;color:var(--muted);margin-top:5px}
+@media(max-width:560px){.hc-metrics{grid-template-columns:repeat(2,1fr)}.score-desc{min-width:100%}}
 /* ═══ LIGHTBOX ═══ */
 .lb-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.22,1,.36,1)}
 .lb-overlay.open{opacity:1;pointer-events:auto}

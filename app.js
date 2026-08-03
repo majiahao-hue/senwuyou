@@ -408,6 +408,11 @@ document.getElementById('app').innerHTML=`
 <div class="page-bg">${imgOrFallback(BG.lab,'','pb-fb')}</div>
 <div class="detail" style="max-width:820px">
   <div class="sec-head reveal" style="margin-bottom:28px"><span class="eyebrow d">Calculator · 营养计算器</span><h2 class="h2">${_T('一日三餐营养计算器','Daily Nutrition Calculator')}<span class="en">${_T('控蛋白 · 控钠钾磷','Track Protein · Na · K · P')}</span></h2><p class="sec-sub">${_T('输入今天三餐吃了什么，自动核算蛋白质、钠、钾、磷是否超出每日限额——专为需要控制蛋白与矿物质摄入的人群设计。','Enter your three meals to auto-check protein, sodium, potassium and phosphorus against your daily limits.')}</p></div>
+  <div class="calc-split">
+    <button class="cs-tab on" id="tabNutri" onclick="switchCalc('nutri')">🍽️ ${_T('营养计算器','Nutrition')}</button>
+    <button class="cs-tab" id="tabHealth" onclick="switchCalc('health')">❤️ ${_T('健康度评估','Health Score')}</button>
+  </div>
+  <div id="nutriPanel">
   <div class="calc-box reveal" style="padding:28px">
     <div class="calc-goals">
       <div class="cg-title">🎯 ${_T('每日营养限额','Daily Limits')}<span class="cg-hint">${_T('示例值，请遵医嘱调整','example — adjust per advice')}</span></div>
@@ -461,7 +466,48 @@ document.getElementById('app').innerHTML=`
     <div id="calcDetail" style="margin-top:16px;font-size:12px;color:var(--muted);line-height:1.8"></div>
     <div class="calc-suggest" id="calcSuggest" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"></div>
   </div>
-  <div class="note reveal" style="margin-top:24px;max-width:680px;margin-left:auto;margin-right:auto"><p><strong>${_T('温馨提示：','Tip: ')}</strong>${_T('本工具基于常见食物营养数据库估算，普通食物数据来自公共营养资料，森无忧产品以包装标签为准。结果仅供参考，不构成医疗建议，具体营养方案请遵医嘱。格式：食物名+数量，多个用加号分隔。','Estimates only. Common-food data from public nutrition references; Senwuyou products per package label. Not medical advice. Format: food+amount, separate with +.')}</p></div>
+  <div class="note reveal" style="margin-top:24px;max-width:680px;margin-left:auto;margin-    </div>
+    <div class="note reveal" style="margin-top:24px;max-width:680px;margin-left:auto;margin-right:auto"><p><strong>${_T('温馨提示：','Tip: ')}</strong>${_T('本工具基于常见食物营养数据库估算，普通食物数据来自公共营养资料，森无忧产品以包装标签为准。结果仅供参考，不构成医疗建议，具体营养方案请遵医嘱。格式：食物名+数量，多个用加号分隔。','Estimates only. Common-food data from public nutrition references; Senwuyou products per package label. Not medical advice. Format: food+amount, separate with +.')}</p></div>
+  </div>
+  <div id="healthPanel" style="display:none" class="reveal">
+    <div class="calc-box" style="padding:28px">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px">
+        <div class="calc-field" style="background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+          <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">⚧ ${_T('性别','Sex')}</label>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <label class="seg"><input type="radio" name="hcSex" value="male" checked onchange="calcHealth()"> ${_T('男','Male')}</label>
+            <label class="seg"><input type="radio" name="hcSex" value="female" onchange="calcHealth()"> ${_T('女','Female')}</label>
+          </div>
+        </div>
+        <div class="calc-field" style="background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+          <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">🎂 ${_T('年龄','Age')}（${_T('岁','yrs')}）</label>
+          <input id="hcAge" type="number" value="35" min="1" max="120" oninput="calcHealth()" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--font-sans)">
+        </div>
+        <div class="calc-field" style="background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+          <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">📏 ${_T('身高','Height')}（cm）</label>
+          <input id="hcHeight" type="number" value="170" min="50" max="250" oninput="calcHealth()" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--font-sans)">
+        </div>
+        <div class="calc-field" style="background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+          <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">⚖️ ${_T('体重','Weight')}（kg）</label>
+          <input id="hcWeight" type="number" value="65" min="20" max="300" oninput="calcHealth()" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--font-sans)">
+        </div>
+        <div class="calc-field" style="grid-column:1/-1;background:var(--paper-card);padding:16px;border-radius:var(--radius)">
+          <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:14px;font-weight:700">📐 ${_T('腰围','Waist')}（cm，${_T('选填','optional')}）</label>
+          <input id="hcWaist" type="number" value="80" min="40" max="200" oninput="calcHealth()" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--font-sans)">
+        </div>
+      </div>
+      <div class="health-score" style="margin-top:24px;background:var(--green-soft);border-radius:var(--radius);border-left:4px solid var(--green);padding:22px">
+        <div class="score-ring">
+          <svg width="140" height="140" viewBox="0 0 140 140"><circle class="sq bg" cx="70" cy="70" r="52"/><circle class="sq fg" id="hcRingFg" cx="70" cy="70" r="52"/></svg>
+          <div class="score-num"><b id="hcScore">--</b><span id="hcGrade">${_T('待评估','Pending')}</span></div>
+        </div>
+        <div class="score-desc" id="hcDesc">${_T('填写上方信息，自动测算您的综合健康度评分（基于 BMI、基础代谢率、腰围身高比等通用指标）。','Fill in the info to get your composite health score based on BMI, BMR and waist-to-height ratio.')}</div>
+      </div>
+      <div class="hc-metrics" id="healthMetrics"></div>
+      <div class="calc-suggest" id="healthSuggest" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"></div>
+    </div>
+    <div class="note reveal" style="margin-top:24px;max-width:680px;margin-left:auto;margin-right:auto"><p><strong>${_T('温馨提示：','Tip: ')}</strong>${_T('健康度评分基于 BMI、基础代谢率、腰围身高比等通用健康指标测算，仅供自我了解与生活方式参考，不构成医疗诊断。如有不适请及时就医；需要控制蛋白、钠、钾、磷摄入的人群，可切换到「营养计算器」核算每日膳食。','Health score is based on general metrics (BMI, BMR, waist-to-height ratio) for self-awareness only, not a medical diagnosis. For low-protein / Na / K / P diets, switch to the Nutrition Calculator.')}</p></div>
+  </div>
 </div>`;
   if(prefill){const le=document.getElementById('lunch');if(le)le.value=prefill;}
   setTimeout(()=>{setupReveal();updateCalc();},30);
@@ -637,6 +683,74 @@ function updateCalc(){
   suggest.innerHTML=sugg;
 }
 
+function switchCalc(t){
+  const n=t==='nutri';
+  const np=document.getElementById('nutriPanel'),hp=document.getElementById('healthPanel');
+  if(np)np.style.display=n?'block':'none';
+  if(hp)hp.style.display=n?'none':'block';
+  const a=document.getElementById('tabNutri'),b=document.getElementById('tabHealth');
+  if(a)a.classList.toggle('on',n);
+  if(b)b.classList.toggle('on',!n);
+  if(!n) calcHealth();
+}
+function calcHealth(){
+  const sex=document.querySelector('input[name="hcSex"]:checked')?.value||'male';
+  const age=parseFloat(document.getElementById('hcAge')?.value)||0;
+  const h=parseFloat(document.getElementById('hcHeight')?.value)||0;
+  const w=parseFloat(document.getElementById('hcWeight')?.value)||0;
+  const waist=parseFloat(document.getElementById('hcWaist')?.value)||0;
+  const scoreEl=document.getElementById('hcScore'),gradeEl=document.getElementById('hcGrade'),descEl=document.getElementById('hcDesc'),ring=document.getElementById('hcRingFg'),metrics=document.getElementById('healthMetrics'),suggest=document.getElementById('healthSuggest');
+  if(!h||!w||h<50||w<20){if(scoreEl)scoreEl.textContent='--';if(gradeEl)gradeEl.textContent=_T('待评估','Pending');if(metrics)metrics.innerHTML='';if(suggest)suggest.innerHTML='';return;}
+  const m=h/100, bmi=w/(m*m);
+  const bmr=sex==='male'?(10*w+6.25*h-5*age+5):(10*w+6.25*h-5*age-161);
+  const lo=18.5*m*m, hi=23.9*m*m;
+  const whtr= waist>0 ? waist/h : null;
+  let s=100, bmiG;
+  if(bmi<18.5){bmiG=_T('偏瘦','Underweight');s-=Math.min(35,(18.5-bmi)*5);}
+  else if(bmi<24){bmiG=_T('正常','Normal');}
+  else if(bmi<28){bmiG=_T('超重','Overweight');s-=Math.min(40,(bmi-23.9)*4);}
+  else {bmiG=_T('肥胖','Obese');s-=Math.min(55,(bmi-23.9)*4);}
+  let whtrG='', whtrPen=0;
+  if(whtr!=null){
+    if(whtr<0.4){whtrG=_T('偏低','Low');}
+    else if(whtr<=0.5){whtrG=_T('正常','Normal');}
+    else if(whtr<=0.6){whtrG=_T('偏高','Elevated');whtrPen=Math.min(12,(whtr-0.5)*40);}
+    else {whtrG=_T('风险','Risk');whtrPen=Math.min(25,(whtr-0.6)*60);}
+    s-=whtrPen;
+  }
+  if(age>60)s-=2; if(age>70)s-=3;
+  s=Math.max(0,Math.round(s));
+  let g,gd,col;
+  if(s>=85){g=_T('优秀','Excellent');gd=_T('您的身体指标处于优秀水平，请继续保持健康的生活方式。','Your metrics are excellent — keep up the healthy lifestyle.');col='#0b5e3e';}
+  else if(s>=70){g=_T('良好','Good');gd=_T('整体状况良好，个别指标可进一步优化。','Generally good; a few metrics can be optimized.');col='#3d9b5e';}
+  else if(s>=55){g=_T('一般','Fair');gd=_T('部分指标偏离理想区间，建议调整饮食与运动。','Some metrics off target — consider diet and exercise adjustments.');col='#c89b4c';}
+  else {g=_T('需关注','Watch');gd=_T('多项指标提示健康风险，建议咨询专业医生或营养师。','Several risk indicators — consult a doctor or dietitian.');col='#c0392b';}
+  if(scoreEl)scoreEl.textContent=s;
+  if(gradeEl){gradeEl.textContent=g;gradeEl.style.color=col;}
+  if(descEl)descEl.textContent=gd;
+  if(ring){
+    const C=2*Math.PI*52;
+    ring.style.strokeDasharray=C.toFixed(1);
+    ring.style.strokeDashoffset=(C*(1-s/100)).toFixed(1);
+    ring.style.stroke=col;
+  }
+  if(metrics){
+    metrics.innerHTML=`
+      <div class="hc-m"><div class="v">${bmi.toFixed(1)}</div><div class="l">BMI · ${bmiG}</div></div>
+      <div class="hc-m"><div class="v">${Math.round(bmr)}</div><div class="l">${_T('基础代谢','BMR')} kcal</div></div>
+      <div class="hc-m"><div class="v">${Math.round(lo)}–${Math.round(hi)}</div><div class="l">${_T('理想体重','Ideal')} kg</div></div>
+      <div class="hc-m"><div class="v">${whtr!=null?whtr.toFixed(2):'—'}</div><div class="l">${_T('腰高比','WHtR')}·${whtrG}</div></div>`;
+  }
+  if(suggest){
+    let sgl='';
+    if(bmi<18.5) sgl+=`<div class="cs-item"><span class="cs-icon">🍚</span><span class="cs-name">${_T('体重偏轻','Underweight')}</span><span class="cs-data">${_T('建议适当增加优质碳水与蛋白','add healthy carbs & protein')}</span></div>`;
+    else if(bmi>=24) sgl+=`<div class="cs-item"><span class="cs-icon">🏃</span><span class="cs-name">${bmi<28?_T('体重超重','Overweight'):_T('肥胖','Obese')}</span><span class="cs-data">${_T('建议控制总热量、增加运动','cut calories, move more')}</span></div>`;
+    else sgl+=`<div class="cs-item"><span class="cs-icon">✅</span><span class="cs-name">BMI ${_T('正常','Normal')}</span><span class="cs-data">${_T('继续保持','Keep it up')}</span></div>`;
+    if(whtr!=null&&whtr>0.5) sgl+=`<div class="cs-item"><span class="cs-icon">⚠️</span><span class="cs-name">${_T('中心性肥胖风险','Central fat risk')}</span><span class="cs-data">${_T('关注腰围，减少精制糖油','watch waist, cut sugar/oil')}</span></div>`;
+    sgl+=`<div class="cs-item"><span class="cs-icon">🥗</span><span class="cs-name">${_T('森无忧低蛋白主食','Senwuyou staples')}</span><span class="cs-data">${_T('控蛋白人群优选','for low-protein diets')}</span></div>`;
+    suggest.innerHTML=sgl;
+  }
+}
 window.addFood=addFood;
 
 // ═══ 联系我们 / 营养咨询 ═══
@@ -1021,7 +1135,7 @@ window.addEventListener('scroll',()=>{
 
 
 
-window.navigate=navigate;window.goBack=goBack;window.prevProduct=prevProduct;window.nextProduct=nextProduct;window.updateCalc=updateCalc;window.submitContact=submitContact;window.addFood=addFood;window._academyTopic=_academyTopic;window._scienceTopic=_scienceTopic;window.switchLang=switchLang;window.toggleTheme=toggleTheme;
+window.navigate=navigate;window.goBack=goBack;window.prevProduct=prevProduct;window.nextProduct=nextProduct;window.updateCalc=updateCalc;window.submitContact=submitContact;window.addFood=addFood;window.switchCalc=switchCalc;window.calcHealth=calcHealth;window._academyTopic=_academyTopic;window._scienceTopic=_scienceTopic;window.switchLang=switchLang;window.toggleTheme=toggleTheme;
 window.toggleFaq=function(el){el.classList.toggle('open')};
 navigate('home');
 
