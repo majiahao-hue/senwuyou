@@ -1,12 +1,12 @@
 const IMG={
   rice:'images/1-rice.jpg',
   grain:'images/2-grain.jpg',
-  granule:'images/3-granule.png',
+  granule:'images/3-granule.jpg',
   flour:'images/4-flour.jpg',
   bun:'images/5-bun.jpg',
   noodle:'images/6-noodle.jpg',
   cookie:'images/7-cookie.jpg',
-  snack:'images/8-snack.png',
+  snack:'images/8-snack.jpg',
   zongzi:'images/9-zongzi.jpg',
   probiotic:'images/1-rice.jpg'
 };
@@ -127,7 +127,7 @@ function goBack(){if(navStack.length<=1){navStack=[];fH();_home();window.scrollT
 function prevProduct(id){if(id>1)navigate('detail',id-1)}
 function nextProduct(id){if(id<10)navigate('detail',id+1)}
 
-function imgOrFallback(img,fb,cls,lazy=true){return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}">`:'')}
+function imgOrFallback(img,fb,cls,lazy=true){const a=lazy?' loading="lazy"':'';return `<span class="fb-wrap ${cls}"><span class="fb-icon">${fb}</span></span>`+(img?`<img src="${img}"${a} decoding="async" alt="">`:'')}
 function bgSection(img,dark,inner){return `<section class="sec-bg reveal ${dark?'dark':''}"><div class="bg-img ph">${imgOrFallback(img,'','bg-fb')}</div><div class="bg-overlay"></div><div class="inner">${inner}</div></section>`}
 
 let _io;
@@ -1031,10 +1031,10 @@ ${bgSection(BG.wheat,false,`
 `)}
 
 <div class="channel-grid reveal" style="max-width:var(--max-w);margin:20px auto;padding:0 clamp(20px,4vw,48px)">
-  <a class="channel-card" href="https://mall.jd.com/index-森无忧.html" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-jd.png" alt="京东" class="brand-img" width="68" height="68"></div><h3>京东旗舰店</h3><p>森无忧京东官方旗舰店，正品直营，快速配送。点击进入选购全品类产品。</p><span class="ch-link">进入店铺 →</span></a>
-  <a class="channel-card" href="https://森无忧.taobao.com" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-taobao.png" alt="淘宝" class="brand-img" width="68" height="68"></div><h3>淘宝旗舰店</h3><p>森无忧淘宝官方旗舰店，优惠活动丰富，购物更便捷。</p><span class="ch-link">进入店铺 →</span></a>
-  <a class="channel-card" href="https://mobile.yangkeduo.com/mall_page.html?mall_id=森无忧" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-pdd.png" alt="拼多多" class="brand-img" width="68" height="68"></div><h3>拼多多旗舰店</h3><p>森无忧拼多多官方旗舰店，人人买得起的好产品。</p><span class="ch-link">进入店铺 →</span></a>
-  <div class="channel-card" style="cursor:default"><div class="ch-icon"><img src="images/icon-douyin.png" alt="抖音" class="brand-img" width="68" height="68"></div><h3>抖音旗舰店</h3><p>森无忧抖音官方旗舰店即将上线，短视频种草，直播专属福利，敬请期待。</p><span class="ch-link" style="opacity:.55;cursor:default">即将上线</span></div>
+  <a class="channel-card" href="https://mall.jd.com/index-森无忧.html" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-jd.jpg" alt="京东" class="brand-img" width="68" height="68"></div><h3>京东旗舰店</h3><p>森无忧京东官方旗舰店，正品直营，快速配送。点击进入选购全品类产品。</p><span class="ch-link">进入店铺 →</span></a>
+  <a class="channel-card" href="https://森无忧.taobao.com" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-taobao.jpg" alt="淘宝" class="brand-img" width="68" height="68"></div><h3>淘宝旗舰店</h3><p>森无忧淘宝官方旗舰店，优惠活动丰富，购物更便捷。</p><span class="ch-link">进入店铺 →</span></a>
+  <a class="channel-card" href="https://mobile.yangkeduo.com/mall_page.html?mall_id=森无忧" target="_blank" rel="noopener"><div class="ch-icon"><img src="images/icon-pdd.jpg" alt="拼多多" class="brand-img" width="68" height="68"></div><h3>拼多多旗舰店</h3><p>森无忧拼多多官方旗舰店，人人买得起的好产品。</p><span class="ch-link">进入店铺 →</span></a>
+  <div class="channel-card" style="cursor:default"><div class="ch-icon"><img src="images/icon-douyin.jpg" alt="抖音" class="brand-img" width="68" height="68"></div><h3>抖音旗舰店</h3><p>森无忧抖音官方旗舰店即将上线，短视频种草，直播专属福利，敬请期待。</p><span class="ch-link" style="opacity:.55;cursor:default">即将上线</span></div>
 </div>
 
 <div class="reveal" style="max-width:var(--max-w);margin:clamp(24px,3vw,40px) auto;padding:0 clamp(20px,4vw,48px)">
